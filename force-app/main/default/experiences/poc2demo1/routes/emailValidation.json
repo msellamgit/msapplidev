@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "a8113b78-0f96-4894-a8a2-3bd6db4ee942",
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "configurationTags" : [ ],
+  "devName" : "Email_Validation__c",
+  "id" : "d0991e11-f0cd-45d4-ab90-023246a67b76",
+  "label" : "Email Validation",
+  "routeType" : "custom-emailvalidation",
+  "type" : "route",
+  "urlPrefix" : "emailvalidation"
+}

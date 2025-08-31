@@ -1,0 +1,1 @@
+<apex:page showHeader="false" sidebar="false" standardController="Opportunity"><cfr:CloudFiles object="Opportunity"></cfr:CloudFiles></apex:page>

@@ -1,0 +1,360 @@
+<template>
+    <c-lwc-poc2-language></c-lwc-poc2-language>
+    <template if:true={isModalDelete}>
+        <div class="overlay">
+            <div class="modalcontainer">
+                <!-- <div class="modalheader">
+                    <span>Anmeldung Abbrechen</span>
+                </div> -->
+                <div class="modalmain">
+                    <p><strong>{lbl_card_promptdelete_title}</strong></p>
+                    <p>{lbl_card_promptdelete_label}</p>
+                </div>
+                <div class="modalfoofer">
+                    <a onclick={closemodaldelete} class="btn stepBtn">
+                        <span>{lbl_card_btn_aborddelete}</span>
+                    </a>
+                    <a onclick={deletecard} class="slds-float_right btn stepBtn">
+                        <span>{lbl_card_btn_confirmdelete}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </template>
+    <div class="pageWrapper">
+        <section>
+            <div class="inner">
+                <p class="osttitlepage">
+                    <img class="ostheadimg" src={imageorder} alt="">
+                    <template if:true={stepnumofcards}>{lbl_card_title0}</template>
+                    <template if:false={stepnumofcards}>{lbl_card_title}</template>
+                </p>
+                <template if:false={stepnumofcards}>
+                    <template if:false={stepcompanyname}>
+                            <p class="ostsubtitle">{subtitle}<template if:false={numbercardsok}><a class="labelsubtitle slds-button" onclick={gotobankdetail}>{lbl_card_msg_skip}</a></template> </p>
+                    </template>
+                </template>
+                <div class="formStep4">
+                    <template if:true={stepnumofcards}>
+                        <div class="card">
+                            <div class="grid gap30">
+                                <div class="col1T betweenFW mobFW">
+                                    <span class="ostfldlblbold">{lbl_card_fld_numbercards}</span>
+                                </div>
+                                <div class="col1T betweenFW mobFW">
+                                    <lightning-combobox class="selectnbcard" label="Number of cards needed"
+                                        variant="label-hidden" name="choicenbcards" value={valueChoiceCards}
+                                        options={optionChoiceCards} onchange={entryChange} placeholder="Select">
+                                    </lightning-combobox>
+                                </div>
+                                <!-- <div class="col1T betweenFW mobFW">
+                                    <a onclick={ordercard} class="btn stepBtn">
+                                        <span>Order your cards</span>
+                                    </a>                                    
+                                </div> -->
+                            </div>
+                            <template if:true={askincrease}>
+                                <template if:false={showincrease}>
+                                    <div class="infocredit">
+                                        <span class="roundcredit"> i </span>
+                                        <!-- <span class="roundcreditlabel"> {lbl_card_msg_credit} </span> -->
+                                        <span class="msgcredit roundcreditlabel"></span>
+                                    </div>
+                                    <a onclick={defineincrease} class="labelincrease slds-button"> <span> {lbl_card_msg_increase}</span></a>
+                                </template>
+                            </template>
+                            <template if:true={cardsmore20}>
+                                <div class="cardincrease">
+                                    <p style="font-weight: bold; margin-bottom: 15px; color: #333E4D;">
+                                        {lbl_card_msg_another}</p>
+                                    <p style="color: #5C6F8A;">{lbl_card_msg_telesales}</p>
+                                    <div class="slds-clearfix">
+                                        <a onclick={redirectcontact} class="slds-float_right btntocontact">
+                                            <span>{lbl_card_btn_contact}</span>
+                                        </a>
+                                        <a onclick={redirectnocontact} class="slds-float_right btntocontactno slds-button">
+                                            <span>{lbl_card_btn_nocontact}</span>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        <template if:true={showincrease}>
+                            <div class="card">
+                                <p class="ostfldlblbold">{lbl_card_msg_estimate}</p>
+                                <div class="grid gap15">
+                                    <div class="lgtinputamount col1T betweenFW mobFW">
+                                        <lightning-input class="lgtinputamount" max-length="40" name="entryAmount"
+                                            label="Amount" variant="label-hidden" type="number" value={entryAmount}
+                                            onchange={entryChange}></lightning-input>
+                                    </div>
+                                    <div class="col2T betweenFW mobFW">
+                                        <div class="infoprefilled">
+                                            <span class="roundcredit"> i </span>
+                                            <span class="roundcreditlabel"> {lbl_card_msg_prefilled} </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <template if:true={errorestimation}>
+                                    <div class="divinfoyellow">
+                                        <span class="roundinfoyellow"> i </span>
+                                        <span class="infolabel">{msgerrorestimate}</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </template>
+                    <template if:false={stepnumofcards}>
+                        <template if:true={stepcompanyname}>
+                            <div class="grid gap18">
+                                <div class="col7D betweenFW mobFW left">
+                                    <div class="card">
+                                        <div class="grid gap20">
+                                            <div class="colH betweenH mobFW">
+                                                <fieldset>
+                                                    <label class="ostfldlbl">{lbl_card_fld_companyname} <span class="ostroundcomment"> i <span class="tooltiptext">{lbl_card_info_company}</span></span></label>
+                                                    <lightning-input class="inputCompanyName lgtinputclass" name="entryCompanyName"
+                                                        label="CompanyName" variant="label-hidden" type="text"
+                                                        value={entryCompanyName} onchange={entryChange}></lightning-input>
+                                                    <!-- <input type="text"> -->
+                                                </fieldset> 
+                                            </div>
+                                            <div class="positionrelative colH betweenH mobFW">
+                                                <img src={imagecreditCard} alt="">
+                                                <div class="cardlabelnames">
+                                                    <label>{entryCompanyName}</label><br /><br />
+                                                    <label>{entryNameCard}</label>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                    <div class="btnnavigblock slds-clearfix">
+                                        <a onclick={backnumbercard} class="btn stepBtn">
+                                            <span class="material-icons material-icons-round">
+                                                arrow_back
+                                            </span>
+                                            <span>{lbl_card_btn_back}</span>
+                                        </a>
+                                        <a onclick={confirmname} class="slds-float_right btnconfirmname btn stepBtn inactive">
+                                            <span> {lbl_card_btn_confirm}</span>                                        
+                                            <span class="material-icons material-icons-round">
+                                                arrow_forward
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </template> 
+                        <template if:false={stepcompanyname}>
+                            <div class="grid gap18">
+                                <div class="col7D betweenFW mobFW left">
+                                    <div class="card">
+                                        <template if:true={numbercardsok}>
+                                            <p class="lbl_card_msg_congratulate">{lbl_card_msg_congratulate}</p>
+                                        </template>    
+                                        <div class="grid gap20">
+                                            <template if:false={numbercardsok}>
+                                            <div class="colH betweenH mobFW">
+                                                <fieldset>
+                                                    <label class="ostfldlblbold">{lbl_card_fld_cardtype} <span class="ostroundcomment"> i <span class="tooltiptext">{lbl_card_info_card}</span></span> </label>
+                                                    <div class="radioBox">
+                                                        <label for="driverCard">
+                                                            <input checked={isdrivercard} disabled={typecarddisable} type="radio" name="driverCard" id="driverCard" onchange={handleCardtype}>
+                                                            <span>{lbl_card_fldopt_driver}</span>
+                                                        </label>
+                                                        <label for="vehicleCard">
+                                                            <input checked={isvehiclecard} disabled={typecarddisable} type="radio" name="vehicleCard" id="vehicleCard" onchange={handleCardtype}>
+                                                            <span>{lbl_card_fldopt_vehicle}</span>
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                                <template if:true={isdrivercard}>
+                                                <fieldset>
+                                                    <label class="ostfldlblbold">{lbl_card_fld_firstname}</label>
+                                                    <!-- <input type="text"> -->
+                                                    <lightning-input class="lgtinputclass inputFirstName" name="entryFirstName"
+                                                        label="First name" variant="label-hidden" type="text"
+                                                        value={entryFirstName} onchange={entryChange} onblur={updatecardname}></lightning-input>
+                                                </fieldset>
+                                                <fieldset>
+                                                    <label class="ostfldlblbold">{lbl_card_fld_lastname}</label>
+                                                    <lightning-input class="lgtinputclass inputLastName" name="entryLastName"
+                                                        label="Last name" variant="label-hidden" type="text"
+                                                        value={entryLastName} onchange={entryChange} onblur={updatecardname}></lightning-input>
+                                                    <!-- <input type="text"> -->
+                                                </fieldset>
+                                                <fieldset>
+                                                    <label class="ostfldlblbold">{lbl_card_fld_namecard} <span class="ostroundcomment"> i <span class="tooltiptext">{lbl_card_info_name}</span></span></label>
+                                                    <lightning-input class="lgtinputclass inputNameCard" name="entryNameCard"
+                                                        label="Name Card" variant="label-hidden" type="text"
+                                                        value={entryNameCard} onchange={entryChange}></lightning-input>
+                                                    <!-- <input type="text"> -->
+                                                </fieldset> 
+                                                </template>
+                                                <template if:true={isvehiclecard}>
+                                                    <fieldset>
+                                                        <label class="ostfldlblbold">{lbl_card_fld_registration}</label>
+                                                        <!-- <input type="text"> -->
+                                                        <lightning-input class="lgtinputclass inputRegistration" name="entryRegistration"
+                                                            label="Vehicle Registration Number" variant="label-hidden" type="text"
+                                                            value={entryRegistration} onchange={entryChange}  onblur={updatecardname}></lightning-input>
+                                                    </fieldset>
+                                                </template>
+                                                <fieldset>
+                                                    <label class="ostfldlblbold">{lbl_card_fld_cardpin}</label>
+                                                    <div class="radioBox">
+                                                        <label for="genPIN">
+                                                            <input type="radio" name="genpin" id="genPIN" checked={genpin} onchange={choicepin}>
+                                                            <span>{lbl_card_fldopt_generate}</span>
+                                                        </label>
+                                                        <label for="cusPIN">
+                                                            <input type="radio" name="cuspin" id="cusPIN" checked={cuspin} onchange={choicepin}>
+                                                            <span>{lbl_card_fldopt_choose}</span>
+                                                        </label>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                            <div class="colH betweenH mobFW">
+                                                <div class="positionrelative">
+                                                    <img src={imagecreditCard} alt="">
+                                                    <div class="cardlabelnames">
+                                                        <label>{entryCompanyName}</label><br /><br />
+                                                        <label>{entryNameCard}</label>
+                                                    </div> 
+                                                </div>                                               
+                                            </div>
+                                            </template>
+                                        </div>
+                                        <template if:true={cuspin}>
+                                            <!-- <input class="lgtinputclass inputCodePin" name="entryCodePin" type="text"
+                                            value={entryCodePinShow} onkeypress={entryChangePin}></input>
+                                            <span>{entryCodePin}</span> -->
+                                            <fieldset class="fieldsetpin">
+                                                <div class="wrapperpin">
+                                                    <input class="lgtinputclass inputCodePin inputpin" name="entryCodePin" type="password" oninput={limitPinCodeLength} onkeypress={entryChangePin}>
+                                                    <label for="show_pincode">
+                                                        <input class="chkpin" type="checkbox" name="show_pincode" id="show_pincode" onclick={hideshowcodepin}>
+                                                        <span class="eye material-icons material-icons-round">visibility</span>
+                                                        <span class="noEye material-icons material-icons-round">visibility_off</span>            
+                                                    </label>
+                                                </div>
+                                                <p class="digitOnly">{msg_error_pincode}</p>
+                                            </fieldset>
+                                        </template>
+                                        <template if:false={numbercardsok}>
+                                            <p class="infoP margTop12">
+                                                <span class="material-icons material-icons-round blue">info</span>
+                                                {lbl_card_info_createcard}
+                                            </p>
+                                        </template>
+                                    </div>
+                                    <div class="btnnavigblock slds-clearfix">
+                                        <template if:true={selectedid}>
+                                            <a onclick={abordedit} class="marginbottom10 btn stepBtn cancel">
+                                                <span>Cancel</span>
+                                                <!-- <span class="material-icons material-icons-round">
+                                                    clear
+                                                </span> -->
+                                            </a>
+                                        </template>
+                                        <template if:false={selectedid}>
+                                            <a onclick={backcompanyname} class="btn stepBtnprevious slds-button">
+                                                <span class="material-icons material-icons-round">
+                                                    arrow_back
+                                                </span>
+                                                <span>{lbl_card_btn_companyname}</span>
+                                            </a>
+                                        </template>    
+                                        <template if:false={numbercardsok}>
+                                        <a onclick={addcard} class="slds-float_right btnmodify btn stepBtn inactive">
+                                            <span>
+                                                <template if:true={selectedid}>
+                                                    {lbl_card_btn_modifycard}
+                                                </template>
+                                                <template if:false={selectedid}>
+                                                    {lbl_card_btn_addcard}
+                                                </template>
+                                            </span>
+                                        </a>
+                                        </template>
+                                    </div>
+                                </div>
+                                <div class="col5D betweenFW mobFW right">
+                                    <div class="card">
+                                        <div>
+                                            <template if:true={numbercardstoomuck}>
+                                                <div class="deletemessage"><span class="fz12">{lblcardtodelete}</span></div>
+                                            </template>
+                                        </div>                                       
+                                        <div>
+                                            <span class="ostfldlblbold">{lbl_card_basket}</span>
+                                            <div>
+                                                <p style="text-align: right;"><span style="font-size: 20px; font-weight: 700; color: black;">{numbercardsfilled}</span><span style="font-size: 20px; font-weight: 700; color: #B3BDCC;"> / {valueChoiceCards} </span> <span style="font-size: 14px; font-weight: 500; color: #B3BDCC;"> <template if:true={onecardonly}>{lbl_card_lbl_card}</template><template if:false={onecardonly}>{lbl_card_lbl_cards}</template> </span> </p>
+                                                <a class="linkbskchange slds-button" onclick={changenumber}>{lbl_card_basket_change}</a>
+                                            </div>
+                                        </div>
+                                        <template if:true={nocard}>
+                                            <div style="border-bottom: 0px;">
+                                                <div>
+                                                    <p><strong>{lbl_card_basket_empty}</strong></p>
+                                                    <p class='infoP margTop12'>{lbl_card_basket_useform}</p>
+                                                </div>                                        
+                                            </div>
+                                        </template>
+                                        <template for:each={lstcards} for:item="cli">
+                                            <div key={cli.id} class={cli.clsdiv}>
+                                                <div class="persona">
+                                                    <template if:true={cli.isdrivercard}>
+                                                        <span class="material-icons material-icons-round">
+                                                            person
+                                                        </span>                                                        
+                                                    </template>
+                                                    <template if:false={cli.isdrivercard}>
+                                                        <span class="material-icons material-icons-round">
+                                                            directions_car
+                                                        </span>                                                        
+                                                    </template>                                                    
+                                                    <h5>{cli.name}</h5>
+                                                    <p>{cli.type}</p>
+                                                </div>
+                                                <div class="ctaBox">
+                                                    <button name={cli.id} onclick={editcard}
+                                                        class="langSwitcher btn secondary">
+                                                        <div class={cli.clsbtnedit}>
+                                                            <span data-name={cli.id}
+                                                                class="material-icons material-icons-round">
+                                                                edit
+                                                            </span>
+                                                        </div>
+                                                    </button>
+                                                    <button onclick={openmodaldelete} name={cli.id}
+                                                        class="langSwitcher btn secondary">
+                                                        <span data-name={cli.id}
+                                                            class="material-icons material-icons-round">
+                                                            delete
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </template>
+                                        <template if:false={nocard}>
+                                            <template if:false={numbercardstoomuck}>
+                                                <a onclick={gotobankdetail} class="btn stepBtn">
+                                                    <span>{btnnextstep}</span>                                        
+                                                    <span class="material-icons material-icons-round">
+                                                        arrow_forward
+                                                    </span>
+                                                </a>
+                                            </template>
+                                        </template>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </template>                   
+                </div>
+            </div>
+        </section>
+    </div>
+</template>

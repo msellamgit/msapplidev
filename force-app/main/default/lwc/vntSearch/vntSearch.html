@@ -1,0 +1,61 @@
+<template>
+    <div class="slds-grid slds-wrap">   
+        <template if:false={showForm}>     
+        <div class="slds-col slds-size_1-of-4 slds-p-around_medium">
+            <h1> RECHERCHE PROSPECTS </h1>
+            <div class="slds-p-around_medium0 lgc-bg0">
+                <lightning-input type="search" label="Nom" value={valueNom} onchange={handleNameChange}></lightning-input>
+            </div>
+            <lightning-combobox
+                name="progress"
+                label="Status"
+                value={valueStatus}
+                placeholder="Status"
+                options={optionsStatus}
+                onchange={handleStatusChange} >
+            </lightning-combobox>
+            <lightning-radio-group 
+                      name="radioPeriode"
+                      label="Créés depuis"
+                      options={optionsPeriode}
+                      value={valuePeriode}
+                      type="radio" 
+                      onchange={handlePeriodeChange}>
+            </lightning-radio-group>  
+            <lightning-radio-group 
+                      name="radioOffre"
+                      label="Offre"
+                      options={optionsOffre}
+                      value={valueOffre}
+                      type="radio" 
+                      onchange={handleOffreChange}>
+            </lightning-radio-group>  
+        </div>
+        <div class="slds-col slds-size_3-of-4">
+            <div style="height:400px;">
+                <lightning-card  variant="Narrow"  title="Prospects" icon-name="standard:lead">
+                </lightning-card>
+                <lightning-datatable key-field="Id" data={leadList} columns={columnList}
+                hide-checkbox-column="true" onrowaction={handleRowAction}>
+                <!--hide-checkbox-column="true"-->
+                </lightning-datatable>
+            </div>
+        </div>
+        </template>
+        <template if:true={showForm}>
+        <div class="slds-col slds-size_1-of-1">
+            <c-vnt-form-lead lead-id={leadSelectedId} hide-button=true is-modal=false></c-vnt-form-lead>
+            <div style="background-color:#DCDCDC; margin: 0px; padding-left: 12px; padding-right: 12px;">
+                <div style="text-align:right;">
+                    <button class="slds-button btnclass" title="Quitter" onclick={closeForm}>
+                        <p class="left" style="margin-left:10px;margin-right:10px" >Retour Recherche</p>
+                    </button>
+                    <button class="slds-button btnclass" title="Sauvegarder" onclick={handleSubmit}>
+                        <p class="left" style="margin-left:10px;margin-right:10px" >Sauvegarder</p>
+                   </button>     
+                </div>  
+            </div> 
+        </div>
+        </template>
+    </div>
+</template>

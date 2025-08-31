@@ -1,0 +1,89 @@
+@media screen and (max-width: 840px) {
+    .hidesegment { display: none; }
+    .topmenu { margin: 0 !important; } 
+}
+
+.clrred {
+    color: red;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+.headermain {
+    z-index: 100;
+    background-color: white;
+    width: 100%;
+    border: 1px solid #ECECEC;
+    box-shadow: 0px 2px 0px #ECECEC;
+    position: fixed;
+    padding: 20px 20px 20px 20px;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+}
+
+.menudrop {
+    border-radius: 8%;
+}
+
+.ulmenu li a {
+    padding: 4px 12px;
+}  
+
+.rotateexpand {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(-180deg);
+ }
+
+.headermenu {
+    align-items: center;
+    display: flex;
+  }
+
+
+  .iconeearth {
+    margin: 6px;
+    width: 16px;
+    height: 16px;
+  }
+
+.ulmenu {
+    margin-right: 50px;
+}
+
+.my-menu {
+    margin-right: 40px;
+    height: 32px;
+}
+
+.lispace {
+    border-color: transparent;
+}
+
+.imgexpand:hover, .imgexpand:active, .imgexpand:focus, .imgexpand::selection {
+    background: transparent;
+}
+
+.topmenu {
+    margin: 0 30px;
+}
+
+.topmenu li {
+    margin: 0 6px;
+}
+
+.topmenu li a:focus, .topmenu li a:hover{
+    background: transparent;
+}
+
+button span {
+    padding-top: 8px;
+}
+
+.imgexpand {
+    font-size: 32px;
+}

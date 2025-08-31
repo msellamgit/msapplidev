@@ -1,0 +1,50 @@
+<apex:page controller="cfr.CloudFilesSetupController" action="{!checkRemoteSetting}">
+  
+  <apex:stylesheet value="{!URLFOR($Resource.cfr__CloudFiles, "jquery-ui/jquery-ui.min.css")}"/>  
+  <apex:includeScript value="{!URLFOR($Resource.cfr__CloudFiles, "jquery-ui/external/jquery/jquery.js")}"/> 
+  <apex:includeScript value="{!URLFOR($Resource.cfr__CloudFiles, "jquery-ui/jquery-ui.min.js")}"/>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+
+  <apex:stylesheet value="{!URLFOR($Resource.cfr__CloudFilesCustom, "ObjectSetup/style.css")}"/>
+  <script type="text/javascript" src="{!URLFOR($Resource.CloudFilesCustom, "ObjectSetup/app.js")}"></script> 
+
+  <div ng-app="objectSetup">
+    <div ng-controller="objectSetup">  
+      <div class="cf-loading" ng-show="loading"><img src="{!URLFOR($Resource.CloudFiles, "loading.gif")}" /></div>
+      <table class="list" border="0" cellpadding="0" cellspacing="0" ng-if="!loading">          
+         <tr class="headerRow">
+           <th class="headerRow name">Object Name</th>
+           <th class="headerRow type">Object Type</th>
+           <th class="headerRow action">Action</th>
+         </tr>          
+         <tbody>
+           <tr class="dataRow" ng-repeat="object in objects">
+              <td class="dataCell">{{object.label}}</td>
+              <td class="dataCell">{{object.type}}</td>
+              <td class="dataCell actionColumn">
+                  <div ng-show="object.enabled">
+                    <span class="configured">Enabled</span>
+                    <img src="{!URLFOR($Resource.CloudFiles, "check.png")}" class="check" />
+                    <span class="actionLink" ng-click="showConfigure(object)">Configure</span>
+                  </div>
+                  <span ng-show="!object.enabled" ng-click="enableCloudFiles(object)" class="actionLink">{{getActionTextForNonEnabledObject(object)}}</span>
+              </td>
+           </tr> 
+         </tbody>
+      </table>
+      
+      <div class="cf-configure-dialog" title="Configure Cloud Files">
+      
+            Page <span tabindex="-1">{{selectedObject.pageName}}</span> has been created.<br /><br />
+                          
+            You can make it available to other profiles <a class="cf-link" tabindex="-2" target="_blank" 
+              ng-href="/_ui/perms/ui/profile/ApexPageProfilePermissionEdit/e?apex_id={{selectedObject.pageId}}&apex_name={{selectedObject.pageName}}&apex_namespace={{selectedObject.pageNamespace}}&save_button=has_save_button">
+            here</a>.<br /><br />    
+            
+            To use the page in {{selectedObject.label}} details page, Please add it to {{selectedObject.label}} layouts <a class="cf-link" style="color: #015ba7;" tabindex="-3" ng-href="/ui/setup/layout/PageLayouts?type={{selectedObject.id}}" target="_blank">here</a>.<br /><br />
+            
+            <button tabindex="-4" ng-click="closeConfigure()" style="float: right">Close</button>
+      </div>
+    </div>
+  </div>
+</apex:page>

@@ -1,0 +1,62 @@
+<template>
+	<div class="headermain">
+		<div class="hidesegment headericon">
+			<a><img style="height:40px;" src={imagelogo}></a>
+		</div>
+		<div class="headermenu">
+			<ul class="topmenu slds-list_horizontal">
+				<li onclick={gotomenu} data-id="10" class="limenu slds-dropdown__item" role="presentation">
+					<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="Home">Home</span></a>
+				</li>
+				<li onclick={gotomenu} data-id="11" class="limenu slds-dropdown__item" role="presentation">
+					<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="News">News</span></a>
+				</li>
+				<li onclick={gotomenu} data-id="12" class="limenu slds-dropdown__item" role="presentation">
+					<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="Marketing">Marketing</span></a>
+				</li>
+				<li onclick={gotomenu} data-id="13" class="limenu slds-dropdown__item" role="presentation">
+					<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="FAQ">FAQ</span></a>
+				</li>
+			</ul>
+			<span style="width: 24px;" class="matpersonn material-icons">personn</span>
+			<span class="hidesegment lblaccount">Account</span>
+            <div class="slds-dropdown-trigger slds-dropdown-trigger_click my-menu">
+                    <span onclick={showHideMenu} class="imgexpand material-icons material-icons-round">expand_more</span>
+				<div class="menudrop slds-dropdown slds-dropdown_right">
+					<ul class="ulmenu slds-dropdown__list" role="menu" aria-label="Show More">
+						<li onclick={gotomenu} data-id="1" class="limenu slds-dropdown__item" role="presentation">
+							<a role="menuitem" tabindex="0"><span class="slds-truncate" title="My company">My company</span></a>
+						</li>
+						<li onclick={gotomenu} data-id="2" class="limenu slds-dropdown__item" role="presentation">
+							<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="Documents">Documents</span></a>
+						</li>
+						<li onclick={gotomenu} data-id="3" class="limenu slds-dropdown__item" role="presentation">
+							<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="Location">Location</span></a>
+						</li>
+						<li onclick={gotomenu} data-id="4" class="limenu slds-dropdown__item" role="presentation">
+							<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="Marketing Activities">Marketing Activities</span></a>
+						</li>
+						<li onclick={gotomenu} data-id="5" class="limenu slds-dropdown__item" role="presentation">
+							<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="Orders">Orders</span></a>
+						</li>
+						<li style="margin-top: 0px" class="lispace slds-has-divider_top-space" role="separator"></li>
+						<li onclick={gotomenu} data-id="0" class="slds-dropdown__item" role="presentation" >
+							<a role="menuitem" tabindex="-1"><span class="slds-truncate" title="limenu Logout">Logout</span></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<a class="hidesegment" onclick={changelanguage}><img onclick={changelanguage} class="iconeearth" src={imageearth}></a>
+			<span class="hidesegment slds-truncate" title="Logout">EN</span>
+		</div>
+	</div>
+	<!--
+	<div class="clsmaincontent">
+		<template if:true={ismenu10}>
+			<c-lwc_-p-a-r-t_-welcome></c-lwc_-p-a-r-t_-welcome>
+		</template>		
+		<template if:true={ismenu11}>
+			<c-lwc_-p-a-r-t_-notice></c-lwc_-p-a-r-t_-notice>
+		</template>
+	</div>-->
+</template>

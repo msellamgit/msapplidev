@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "224985ba-5a54-41bf-9574-edc18114cd28",
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "configurationTags" : [ ],
+  "devName" : "Subscription__c",
+  "id" : "848d83b6-c2f7-4338-b4b6-a85b1adaa2cc",
+  "label" : "Subscription",
+  "routeType" : "custom-subscription",
+  "type" : "route",
+  "urlPrefix" : "subscription"
+}

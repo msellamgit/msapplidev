@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Type --></label>
+        <name>cfr__Type__c</name>
+        <picklistValues>
+            <masterLabel>Box</masterLabel>
+            <translation><!-- Box --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dropbox</masterLabel>
+            <translation><!-- Dropbox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google</masterLabel>
+            <translation><!-- Google --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OneDrive</masterLabel>
+            <translation><!-- OneDrive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Url --></label>
+        <name>cfr__Url__c</name>
+    </fields>
+</CustomObjectTranslation>

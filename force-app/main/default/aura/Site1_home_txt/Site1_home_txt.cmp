@@ -1,0 +1,8 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <div class="hometxt1">
+        Mikael SELLAM - 18 ans d'expérience - Expert CRM
+    </div>	
+    <div class="hometxt2">        
+        CONSULTANT INDÉPENDANT, JE METS MES COMPÉTENCES CRM ET SALESFORCE AU SE﻿RVICE DE VOS PROJETS. 
+    </div>	    
+</aura:component>

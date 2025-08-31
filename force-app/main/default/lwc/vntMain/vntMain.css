@@ -1,0 +1,60 @@
+titre {
+    color: rgb(194, 57, 52);
+    font-weight: bold;
+}
+
+h1 { font-size: 2em; font-weight: bolder }
+h2 { font-size: 1.5em; font-weight: bolder }
+h3 { font-size: 1.17em; font-weight: bolder }
+h4 { font-size: 1em; font-weight: bolder }
+h5 { font-size: .83em; font-weight: bolder }
+h6 { font-size: .67em; font-weight: bolder }
+
+.boxmenu
+{
+    height:170px;
+    margin: 20px;
+    text-align: center;
+}
+.combomenu
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btnclass
+{
+    color: rgb(194, 57, 52);
+    border-color: rgb(194, 57, 52);;
+    border-width: 1px;
+    margin: 4px;    
+}
+
+.boxchoix
+{
+    background-color: #E5E7E9;
+    margin: 10px;
+}
+.boxchoix10
+{
+    background-color: #E5E7E9;
+    margin: 10px;
+}
+.text5
+{
+    background-color: #E5E7E9;
+    margin: 2px;
+}
+
+.slds-progress-bar__value
+{
+    background-color: rgb(194, 57, 52) !important
+}
+
+.THIS.iconcolor svg {
+    fill: rgb(194, 57, 52);
+}
+
+.iconcolor {
+    color: rgb(194, 57, 52);
+}

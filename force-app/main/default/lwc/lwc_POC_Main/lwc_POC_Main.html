@@ -1,0 +1,278 @@
+<template>
+    <div class="clsall" style="width:80%;margin:auto;position:relative;" >
+        <c-lwc-poc-toast auto-close-time="3000"></c-lwc-poc-toast>
+        <c-lwc-poc-toast-return auto-close-time="3000"></c-lwc-poc-toast-return>
+        <div class="menu-nav">
+            <ul class="ul">			
+                <li id="menu1" class="li"><a style="cursor: none; text-decoration: none; padding-left: 5px; padding-right: 5px;" class="menuchoice" name="menu1">Produktpaket</a></li>			
+                <li id="menu2" class="li"><a style="cursor: none; text-decoration: none; padding-left: 5px; padding-right: 5px;" class="" name="menu2">Firmenangaben</a></li>			
+                <li id="menu3" class="li"><a style="cursor: none; text-decoration: none; padding-left: 5px; padding-right: 5px;" class="" name="menu3">Angaben Ansprechpartner</a></li>
+                <li id="menu4" class="li"><a style="cursor: none; text-decoration: none; padding-left: 5px; padding-right: 5px;" class="" name="menu4">Fuhrparkangaben</a></li>
+                <li id="menu5" class="li"><a style="cursor: none; text-decoration: none; padding-left: 5px; padding-right: 5px;" class="" name="menu5">Bankdaten & Rechtliches</a></li>
+                <li id="menu6" class="li"><a style="cursor: none; text-decoration: none; padding-left: 5px; padding-right: 5px;" class="" name="menu6">Übersicht Ihrer Angaben</a></li>                
+            </ul>
+        </div>        
+        <div style="width:90%;margin: 10px auto;">
+            <lightning-layout class="dspblox" if:true={step1} >
+                <div style="width:100%" class="headline">
+                    <span>Wählen Sie Ihr Produktpaket </span>
+                    <span class="required">*</span>
+                </div>
+                <div style="position:relative; width:60%;margin:10px auto">
+                <ul class="ul">			
+                    <li class="li">
+                        <lightning-input checked={valuePackage_1} label="COMPACT" name="optPackCompact" type="checkbox" onchange={handlePackage}></lightning-input>
+                        <!-- <span class="dotinfo">i</span>                         -->
+                    </li>			
+                    <li class="li">
+                        <lightning-input checked={valuePackage_2} label="COMFORT" name="optPackComfort" type="checkbox" onchange={handlePackage}></lightning-input>
+                    </li>			
+                    <li class="li">                    
+                        <lightning-input checked={valuePackage_3} label="PREMIUM" name="optPackPremium" type="checkbox" onchange={handlePackage}></lightning-input>                    
+                    </li>
+                </ul>
+                <span class={classPack}></span>
+                </div>  
+                <template if:false={brCheck_Pack}>
+                <div class="diverror" style="width:60%; margin:auto; ">
+                    <span style="color: white;">{msgError}</span>
+                </div>
+                </template>
+                <div class="divider"></div>
+                <div style="width:100%" class="headline">
+                    <span>Zusatzleistungen</span>
+                </div>
+                <div class="clsall marginbottom25" style="width:100%">
+                    <span>Sie haben die Möglichkeit, Ihr Produktpaket durch gebührenpflichtige Zusatzleistungen zu ergänzen</span>
+                </div>  
+                <div class="clsall slds-grid slds-wrap  marginbottom25" style="width:100%">
+                    <div class="slds-col slds-size_2-of-6">
+                        <div style="width:100%" class="headline">
+                            <span>Gilt für COMPACT & COMFORT & PREMIUM</span>
+                        </div>
+                    </div>                    
+                    <div class="clsall slds-col slds-size_3-of-6">
+                        <ul>			
+                            <li>
+                                <lightning-input class="clsall chkAvantage" checked={valueAvantage_1} label="Papierabrechnung ohne Einzelpostennachweis" name="optAvantage1" type="checkbox" onchange={handleAvantage}></lightning-input>
+                            </li>			
+                            <li>
+                                <lightning-input class="clsall chkAvantage" checked={valueAvantage_2} label="Elektronische Führerscheinkontrolle" name="optAvantage2" type="checkbox" onchange={handleAvantage}></lightning-input>
+                            </li>			
+                            <li>                    
+                                <lightning-input class="clsall chkAvantage" checked={valueAvantage_3} label="Papierabrechnung mit Einzelpostennachweis" name="optAvantage3" type="checkbox" onchange={handleAvantage}></lightning-input>
+                            </li>
+                            <li>                    
+                                <lightning-input class="clsall chkAvantage" checked={valueAvantage_4} label="Eine (weitere) Stammtankstelle" name="optAvantage4" type="checkbox" onchange={handleAvantage}></lightning-input>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <template if:true={valuePackage_3}>
+                    <div class="clsall slds-grid slds-wrap marginbottom25" style="width:100%">
+                        <div class="slds-col slds-size_2-of-6">
+                            <div style="width:100%" class="headline">
+                                <span>Mautservice ITA und FRA über MautgerätMautservices für Frankreich und Italien über Mautgerät</span>
+                                <span class="required">*</span>
+                            </div>
+                        </div>                    
+                        <div style="position:relative;" class="clsall slds-col slds-size_3-of-6">
+                            <ul class="ul">			
+                                <li class="li">
+                                    <lightning-input checked={valuePeage_1} label="Ja" name="optPeageyes" type="checkbox" onchange={handlePeage}></lightning-input>
+                                </li>			
+                                <li class="li">
+                                    <lightning-input checked={valuePeage_2} label="Nein" name="optPeageno" type="checkbox" onchange={handlePeage}></lightning-input>
+                                </li>			
+                            </ul>
+                        </div>
+                    </div>
+                </template>
+                <div class="divider"></div>
+                <div style="width:100%">
+                    <div class="headline">                
+                        <span>Bedarfsangaben</span>
+                    </div>
+                    <div class="clsall slds-grid slds-wrap" style="width:100%">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="width: 50%; text-align: right;">
+                                        <span>Anzahl benötigter Tankkarten </span>
+                                        <span style="margin-right: 15px;" class="required">*</span>
+                                    </td>
+                                    <td style="width: 50%;">
+                                        <lightning-input class={classNumSpec1} style="border-radius: 0; margin-top: 10px;margin-bottom: 10px; margin-left: 0; margin-right: 0;width: 40%; text-align: right;" name="entryNumSpec1" variant="label-hidden" type="number" value={entryNumSpec1} onchange={entryChange}></lightning-input>
+                                    </td>
+                                    <!-- <td>                                    	
+                                        <span style="color: green;font-weight: bolder;">&#10004;</span>
+                                    </td> -->
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <template if:false={brCheck_NumSpec1}>
+                                        <div class="diverror">
+                                            <span style="color: white;">{msgError}</span>
+                                        </div>
+                                        </template>
+                                    </td>
+                                </tr>
+                                    <tr>
+                                        <td style="text-align: right;">
+                                            <span>Geschätzter Kraftstoffverbrauch pro Monat in Litern </span>
+                                            <span style="margin-right: 15px;" class="required">*</span>
+                                        </td>
+                                        <td>
+                                            <lightning-input class={classNumSpec2} style="border-radius: 0; margin-top: 10px;margin-bottom: 10px; margin-left: 0; margin-right: 0;text-align: right; width: 40%;" name="entryNumSpec2" type="number" variant="label-hidden" value={entryNumSpec2} onchange={entryChange}></lightning-input>
+                                        </td>
+                                        <!-- <td> -->
+                                            <!-- <div class={classNumSpec2}></div> -->
+                                            <!-- <span style="color: red;font-weight: bolder;">&#33;</span> -->
+                                        <!-- </td> -->
+                                    </tr> 
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <template if:false={brCheck_NumSpec2}>
+                                            <div class="diverror">
+                                                <span style="color: white;">{msgError}</span>
+                                            </div>
+                                            </template>
+                                        </td>
+                                    </tr>                               
+                            </tbody>
+                        </table>
+                    </div>                
+                </div>            
+            </lightning-layout>
+            <lightning-layout class="dspblox" if:true={step2} >
+                <c-lwc-poc-info-account account={infoAccount}></c-lwc-poc-info-account>
+            </lightning-layout>
+            <lightning-layout class="dspblox" if:true={step3} >
+                -- ETAPE 3 --
+            </lightning-layout>
+            <lightning-layout class="dspblox" if:true={step4} >
+                -- ETAPE 4 --
+            </lightning-layout>
+            <lightning-layout class="dspblox" if:true={step5} >
+                -- ETAPE 5 --
+            </lightning-layout>
+            <lightning-layout class="dspblox" if:true={step6} > 
+                 <lightning-layout-item size="6"> 
+                    <span style="color: #e10001;">Produktpaket  </span>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <button class="slds-button slds-float_right btnclassgrey" title="Modifiy" onclick={backto1}>
+                        Modifiy
+                    </button>
+                </lightning-layout-item>                    
+                <div class="divider100"></div>
+                <lightning-layout  multiple-rows>
+                    <lightning-layout-item size="6"> <b>Produktpaket : </b> {valuePackageLabel} </lightning-layout-item>
+                    <lightning-layout-item size="6"> <b>Zusatzleistungen : </b> {valueAvantageLabel} </lightning-layout-item>
+                    <lightning-layout-item size="6"> <b>Anzahl benötigter Tankkarten : </b> {entryNumSpec1} </lightning-layout-item>
+                    <lightning-layout-item size="6"> <b>Geschätzter Kraftstoffverbrauch pro Monat in Litern : </b> {entryNumSpec2} </lightning-layout-item>
+                    <template if:true={valuePackage_3}>
+                        <lightning-layout-item size="12"> <b>Mautservice ITA und FRA über MautgerätMautservices für Frankreich und Italien über Mautgerät : </b> <template if:true={valuePeage_1}>Ya</template> <template if:true={valuePeage_2}>Nein</template> </lightning-layout-item>
+                    </template>
+                </lightning-layout>    
+                <div class="divider100notvisible"></div>
+                <lightning-layout-item size="6"> 
+                    <span style="color: #e10001;">Firmenangaben</span>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <button class="slds-button slds-float_right btnclassgrey" title="Modifiy" onclick={backto2}>
+                        Modifiy
+                    </button>
+                </lightning-layout-item >                    
+                <div class="divider100"></div>
+                <lightning-layout  multiple-rows>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">Rechtsform</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">Firma</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;"></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">Umsatzsteuer-ID</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span>{__acc_LegalForm}</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span>{__acc_Company}</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span></span>{__acc_VATNumber}</lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">Straße & Hausnummer</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">PLZ, Ort</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">Land</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;">Steuer-ID</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span>{__acc_Street}</span></lightning-layout-item>
+                    <lightning-layout-item size="1"><span>{__acc_PostalCode}</span></lightning-layout-item>
+                    <lightning-layout-item size="2"><span>{__acc_City}</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span>{__acc_Country}</span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span>{__acc_TaxNumber}</span></lightning-layout-item>
+                    <!-- <lightning-layout-item size="3"><span style="font-weight: bold;"></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;"></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;"></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span style="font-weight: bold;"></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span></span></lightning-layout-item>
+                    <lightning-layout-item size="3"><span></span></lightning-layout-item> -->
+                </lightning-layout>
+                <div class="divider100notvisible"></div>
+                <lightning-layout-item size="6"> 
+                    <span style="color: #e10001;">Angaben Ansprechpartner</span>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <!-- <button class="slds-button slds-float_right btnclassgrey" title="Modifiy" onclick={backto3}>
+                        Modifiy
+                    </button> -->
+                </lightning-layout-item >                    
+                <div class="divider100"></div>
+                <div class="divider100notvisible"></div>
+                <lightning-layout-item size="6"> 
+                    <span style="color: #e10001;">Fuhrparkangaben</span>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <!-- <button class="slds-button slds-float_right btnclassgrey" title="Modifiy" onclick={backto4}>
+                        Modifiy
+                    </button> -->
+                </lightning-layout-item >  
+                <div class="divider100"></div>
+                <div class="divider100notvisible"></div>
+                <lightning-layout-item size="6"> 
+                    <span style="color: #e10001;">Bankdaten & Rechtliches</span>
+                </lightning-layout-item>
+                <lightning-layout-item size="6">
+                    <!-- <button class="slds-button slds-float_right btnclassgrey" title="Modifiy" onclick={backto5}>
+                        Modifiy
+                    </button> -->
+                </lightning-layout-item >  
+                <div class="divider100"></div>  
+                <div class="divider100notvisible"></div>                           
+            </lightning-layout>
+        </div>
+        <div style="width:92%;margin-bottom: 30px;">
+            <lightning-layout>
+                <lightning-layout-item size="4"> 
+                    <lightning-layout-item if:true={precPossible}> 
+                    <button class="slds-button btnclass" title="" onclick={btnPrec}>
+                        <!-- <lightning-icon class="iconcolor" icon-name="utility:chevronleft" style="margin-left:50px;" alternative-text="Etape Précédente" size="xx-small"></lightning-icon> -->
+                        Zurück
+                    </button>
+                    </lightning-layout-item>
+                </lightning-layout-item>
+                <!-- flexibility="grow" -->
+                <lightning-layout-item class="slds-clearfix" size="4" >
+                <button style="display: flex;" class="slds-button slds-align_absolute-center btnclass" title="" onclick={btnRedirect}>
+                    Abbrechen
+                </button>
+                </lightning-layout-item>                
+                <lightning-layout-item size="4"  if:true={suivPossible}>
+                    <button class="slds-button slds-float_right btnclass" title="" onclick={btnSuiv}>
+                        Weiter
+                        <!-- <lightning-icon class="iconcolor" icon-name="utility:chevronright" style="margin-right:50px;" alternative-text="Etape Suivante" size="xx-small"></lightning-icon> -->
+                    </button>
+                </lightning-layout-item>
+                <lightning-layout-item size="4"  if:true={isCreateOk}>
+                    <button class="slds-button slds-float_right btnclass" title="Create Lead" onclick={createLead}>
+                        Proceed
+                    </button>
+                </lightning-layout-item >
+            </lightning-layout>    
+        </div>
+    </div>
+</template>

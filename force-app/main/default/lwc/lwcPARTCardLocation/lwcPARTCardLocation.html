@@ -1,0 +1,36 @@
+<template>
+    <div>
+        <div class="img">
+            <lightning-map 
+                map-markers={mapMarkers} 
+                options={mapOptions}
+                zoom-level=15>
+            </lightning-map>
+        </div>
+        <div class="cardtext">
+            <div class="titlelvl3">
+                {location.name}
+            </div>
+            <div style="margin: 10px 0px; display: flex;">
+                <button class="clsbtnlocation"><span>Motorway Station</span></button>
+                <button class="clsbtnlocation"><span>Draft</span></button>
+            </div> 
+            <div class="txt">
+                <p>
+                    {location.address} <br />
+                    {location.zip} {location.city} <br />
+                    {location.services}
+                </p>
+            </div>
+            <div style="margin-top: 20px; display: flex;justify-content: space-between;">
+                <div>
+                    <button class="btntransparent"><span class="material-symbols-outlined">edit_square</span></button>
+                    <button class="btntransparent"><span class="material-symbols-outlined">delete</span></button>
+                </div>
+                <div>
+                    <button class="btntransparent" style="text-align: right;"><span class="material-symbols-outlined">visibility</span></button>
+                </div>
+            </div>
+        </div>    
+    </div>    
+</template>

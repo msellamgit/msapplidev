@@ -1,0 +1,39 @@
+.feedContainer{
+    background-color: #daf0ff;
+    border-radius: 5px;
+    box-shadow: 0 0 11px rgb(0 0 0 / 21%);
+    width: 100%;
+    height: 431px;
+    overflow: auto;
+    margin: 0.75rem 0;
+    padding: 1.5rem;
+}
+.feedHeader{
+    text-align: center;
+    color: #129ff7;
+    font-size: large;
+}
+.feedItem{
+    margin-top: 1em;
+    color: #005FB2;
+}
+.feedTitle{
+    font-size: .75rem;
+    font-weight: 700;
+}
+.feedImage{
+    width: 100%;
+    object-fit: cover;
+    height: 4em;
+    margin-top: 0.5rem;
+}
+.feedText{
+    font-size: .75rem;
+    font-weight: light;
+    margin-top: 0.5rem;
+}
+.feedDate{
+    font-size: .5rem;
+    font-weight: light;
+    margin-top: 0.5rem;
+}

@@ -1,0 +1,19 @@
+<template>
+    <div class="headnews">
+        <div class="titlelvl1">
+            <span>UTA Edenred News</span>
+        </div>
+        <div class="titlelvl4">
+            <span>Stay up to date with UTA</span>
+        </div>
+    </div>
+
+    <div class="cardnews grid">
+        <template for:each={lstvisiblenews} for:item="nw">
+            <c-lwc-p-a-r-t-card-news class="news colspan4 betweenFW mobFW" key={nw.id} news={nw}></c-lwc-p-a-r-t-card-news>
+        </template>
+    </div>
+    <div slot="footer" class="slds-var-m-vertical_medium">
+        <c-lwc-p-a-r-t-pagination class="clspagination" records={lstnews} onupdate={updateHandler}></c-lwc-p-a-r-t-pagination>
+    </div>
+</template>

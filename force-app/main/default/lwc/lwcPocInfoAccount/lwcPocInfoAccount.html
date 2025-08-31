@@ -1,0 +1,120 @@
+<template>
+    <div style="width:100%; margin-bottom: 20px;margin-top: 25px;">
+        <template if:false={brValid}>
+            <span class="dot"></span>
+            <span class="errortitre1">Fehler!</span><br/>
+            <span class="errortitre2">Es ist min. ein Pflichtfeld nicht ausgefüllt - bitte überprüfen Sie Ihre Angaben</span>
+        </template>    
+    </div>
+    <div style="width:100%; margin-bottom: 20px;margin-top: 25px; margin-left: 20px;" class="headline">
+        <span>Firmenangaben/ Rechnungsadresse</span>
+    </div>
+    <div class="slds-grid slds-wrap">
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>Rechtsform </span>
+            <span class="required">*</span>    
+        </div>        
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-combobox 
+                variant="label-hidden"
+                name="entryLegalStatut"
+                class={classLegalStatut}
+                value={entryLegalStatut}
+                style="width: 40%; margin-bottom: 15px; margin-left: 10px;" 
+                placeholder="--"
+                options={lstLegalForm}
+                onchange={entryChange} >
+            </lightning-combobox> <!-- label="Type de Document" -->
+            <!-- <lightning-input class={classLegalStatut} style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryLegalStatut" variant="label-hidden" type="text" value={entryLegalStatut} onchange={entryChange}></lightning-input> -->
+        </div>
+        <div class="rightbold slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_2-of-3">               
+            <template if:false={brCheckLegalStatut}>            
+                <span class="diverror">{msgErrorList}</span>            
+            </template>
+        </div> 
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>Firma </span>
+            <span class="required">*</span>    
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input class={className} style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryName" variant="label-hidden" type="text" value={entryName} onchange={entryChange}></lightning-input>
+        </div>      
+        <div class="rightbold slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_2-of-3">               
+            <template if:false={brCheckName}>            
+                <span class="diverror">{msgError}</span>            
+            </template>
+        </div>          
+        <div class="slds-col slds-size_1-of-3">   
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryName2" variant="label-hidden" type="text" value={entryName2} onchange={entryChange}></lightning-input>
+        </div> 
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>Straße & Hausnummer </span>
+            <span class="required">*</span>    
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input class={classAdresse} style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryAdresse" variant="label-hidden" type="text" value={entryAdresse} onchange={entryChange}></lightning-input>
+        </div>
+        <div class="rightbold slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_2-of-3">               
+            <template if:false={brCheckAdresse}>            
+                <span class="diverror">{msgError}</span>            
+            </template>
+        </div> 
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>PLZ, Ort </span>
+            <span class="required">*</span>    
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <div style="width: 40%;" class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_2-of-6">
+                    <lightning-input style="margin-bottom: 15px; margin-left: 10px;" name="entryCP" variant="label-hidden" type="text" value={entryCP} onchange={entryChange}></lightning-input>
+                </div>
+                <div class="slds-col slds-size_4-of-6">
+                    <lightning-input class={classCity} style="margin-bottom: 15px; margin-left: 10px;" name="entryCity" variant="label-hidden" type="text" value={entryCity} onchange={entryChange}></lightning-input>
+                </div>
+            </div>
+        </div>
+        <div class="rightbold slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_2-of-3">               
+            <template if:false={brCheckCity}>            
+                <span class="diverror">{msgError}</span>            
+            </template>
+        </div>  
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>Land </span>
+            <span class="required">*</span>    
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input class={classCountry} style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryCountry" variant="label-hidden" type="text" disabled value={entryCountry} onchange={entryChange}></lightning-input>
+        </div>
+        <div class="rightbold slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_2-of-3">               
+            <template if:false={brCheckCity}>            
+                <span class="diverror">{msgError}</span>            
+            </template>
+        </div> 
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>Umsatzsteuer-ID</span>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryNumFiscal1" variant="label-hidden" type="text" value={entryNumFiscal1} onchange={entryChange}></lightning-input>
+        </div> 
+        <div class="rightbold slds-col slds-size_1-of-3">
+            <span>Steuer-ID</span>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-input style="width: 40%; margin-bottom: 15px; margin-left: 10px;" name="entryNumFiscal2" variant="label-hidden" type="text" value={entryNumFiscal2} onchange={entryChange}></lightning-input>
+        </div>                
+    </div>
+
+
+</template>

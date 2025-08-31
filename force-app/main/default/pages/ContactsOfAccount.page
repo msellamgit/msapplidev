@@ -1,0 +1,35 @@
+<apex:page standardController="Account" extensions="sampleDetailPageAccount">
+<style>
+.fewerMore { display: none;}
+</style>
+ <apex:form >
+ <apex:pageMessages />
+ <apex:detail relatedList="true"></apex:detail>
+
+ <apex:pageblock id="CustomList" title="Related Contacts">
+ <apex:pageblocktable value="{!ctc}" var="c" rendered="{!NOT(ISNULL(ctc))}">
+  <apex:column >
+             <apex:facet name="header">Action</apex:facet>
+                        
+  <apex:commandLink action="{!editCtc}" value="Edit">
+  <apex:param name="ctcid" value="{!c.id}"/>
+ </apex:commandLink> &nbsp; | &nbsp;   <apex:commandLink action="{!deleteCtc}" value="Delete">
+  <apex:param name="ctcid" value="{!c.id}"/>
+ </apex:commandLink>
+ </apex:column>
+ <!-- 
+ <apex:column >
+   <apex:commandLink action="{!deleteCtc}" value="Delete">
+  <apex:param name="ctcid" value="{!c.id}"/>
+ </apex:commandLink>
+ </apex:column>
+ -->
+ <apex:column value="{!c.FirstName}"/>
+ <apex:column value="{!c.LastName}"/>
+ <apex:column value="{!c.Title}"/>
+ <apex:column value="{!c.Phone}"/>    
+ </apex:pageblocktable>
+ </apex:pageblock>
+ </apex:form>
+  <apex:relatedList list="Contacts" />
+</apex:page>

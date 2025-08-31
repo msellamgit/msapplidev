@@ -1,0 +1,145 @@
+<template>
+    <c-lwc-poc2-language></c-lwc-poc2-language>
+    <div class="inner">
+        <div >
+           <img class="ostheadimg imgleft" src={image_formular} alt="">
+           <p class="osttitlepage">{lbl_confirm_title}
+            <br/>
+           <span class="creditstatus">{statuscam}</span>
+            </p>
+        </div>
+        <form class="formStep1" action="">
+            <div class="divinfoyellow">
+                <!-- <span class=""> ! </span> -->
+                <div>
+                    <span class="roundinfoyellow">
+                        <span style="color: rgb(246,234,200); font-size: 10px;" class="material-icons material-icons-round iconalignbottom">priority_high</span>
+                    </span>                    
+                </div>
+                <div class="infolabel">
+                    <span>{lbl_confirm_info_review}</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="subcard titre1">
+                    <span class="">{lbl_confirm_title_personal}</span>
+                    <button class="slds-button buttonedit" title="Edit Personal & company" onclick={editcompany}>
+                        <span class="lblbtnedit">{lbl_confirm_btn_edit}</span> 
+                        <span class="material-icons material-icons-round imgbtnedit">edit</span> 
+                    </button>
+                </div>
+                <div class="grid gap10 padding24">
+                    <div class="colH betweenFW mobFW">
+                        <p>
+                            <span class="material-icons material-icons-round iconalignbottom opacity06">person</span>
+                            <label class="marginleft15 labelinfo">{__val_ctc_fullname}</label>
+                        </p>
+                        <p><label class="marginleft40">{__val_ctc_email}</label></p>
+                        <p><label class="marginleft40">{__val_ctc_phone}</label></p>
+                    </div>
+                    <div class="colH betweenFW mobFW">
+                        <p>
+                            <span class="material-icons material-icons-round iconalignbottom opacity06">work</span>
+                            <label class="marginleft15 labelinfo">{__val_acc_name}</label>
+                        </p>
+                        <p><label class="marginleft40">{__val_acc_adr1}</label></p>
+                        <p><label class="marginleft40">{__val_acc_Adr2}</label></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="subcard titre1">
+                    <span class="">{lbl_confirm_title_card}</span>
+                    <button class="slds-button buttonedit" title="Edit Cards" onclick={editcard}>
+                        <span class="lblbtnedit">{lbl_confirm_btn_edit}</span>
+                        <span class="material-icons material-icons-round imgbtnedit">edit</span>                   
+                    </button>
+                </div>
+                <div class="grid gap10 padding24">
+                    <div class="colH betweenFW mobFW">
+                        <p>
+                            <span class="material-icons material-icons-round iconalignbottom opacity06">credit_card</span>
+                            <label class="marginleft15 labelinfo">{__val_crd_nbcards}</label>
+                        </p>
+                        <p><label class="marginleft40">{__val_crd_details}</label></p>
+                    </div>
+                    <div class="colH betweenFW mobFW">
+                        <p>
+                            <span class="roundeuro">
+                                <span style="font-size: 12px" class="material-icons material-icons-round iconalignbottom">euro_symbol</span>
+                            </span>
+                            <label class="marginleft15 labelinfo">{__val_crd_amount}</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid gap30">
+                <div class="colH betweenFW mobFW">
+                    <div class="card">
+                        <div class="subcard titre1">
+                            <label class="">{lbl_confirm_title_package}</label>
+                            <button class="slds-button buttonedit" title="Edit Package" onclick={editpackage}>
+                                <span class="lblbtnedit">{lbl_confirm_btn_edit}</span>
+                                <span class="material-icons material-icons-round imgbtnedit">edit</span> 
+                            </button>
+                        </div>
+                        <div class="padding24">
+                            <p><label class="fontweightbold">{__val_pck_name}</label></p>
+                            <p><label class="">{__val_pck_lbl1}</label></p>
+                            <p><label class="fontsize14">{__val_pck_lbl2}</label></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colH betweenFW mobFW">
+                    <div class="card">
+                        <div class="subcard titre1">
+                            <label class="">{lbl_confirm_title_bank}</label>
+                            <button class="slds-button buttonedit" title="Edit Bank details" onclick={editbank}>
+                                <span class="lblbtnedit">{lbl_confirm_btn_edit}</span>
+                                <span class="material-icons material-icons-round imgbtnedit">edit</span>
+                            </button>
+                        </div>
+                        <div class="padding24">
+                            <p><label class="fontweightbold">{__val_bnk_name}</label></p>
+                            <p><label class="">{__val_bnk_iban}</label></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card padding3020">
+                <div>
+                    <div class="divpos">
+                        <input class="inpckb" checked={ckcagreeterm} type="checkbox" id="checkagree" name="checkagree" onchange={entrychange}/>
+                        <label class="lblckb" for="checkagree"><span class="clsconfirmckcagreeterm lblspanckb"></span></label>
+                      </div>
+                    <div class="divpos">
+                        <input class="inpckb" checked={ckccontactemail} type="checkbox" id="checkcontact" name="checkcontact" onchange={entrychange}/>
+                        <label class="lblckb" for="checkcontact"><span class="lblspanckb">{lbl_confirm_ckc_contactemail}</span></label>
+                    </div>
+                    <div style="margin-left: 35px;">
+                        <div class="divpos">
+                            <input class="inpckb" checked={ckcmktcampaign} type="checkbox" id="checkmktcampaign" name="checkmktcampaign" onchange={entrychange}/>
+                            <label class="lblckb" for="checkmktcampaign"><p class="lblspanckb">{lbl_confirm_ckc_keepoffers}</p></label>
+                        </div>
+                        <div class="divpos">
+                            <input class="inpckb" checked={ckcmktnewsletter} type="checkbox" id="checkmktnewsletter" name="checkmktnewsletter" onchange={entrychange}/>
+                            <label class="lblckb" for="checkmktnewsletter"><p class="lblspanckb">{lbl_confirm_ckc_sendnews}</p></label>
+                        </div>
+                        <div class="divpos">
+                            <input class="inpckb" checked={ckcmktsurvey} type="checkbox" id="checkmktsurvey" name="checkmktsurvey" onchange={entrychange}/>
+                            <label class="lblckb" for="checkmktsurvey"><p class="lblspanckb">{lbl_confirm_ckc_sendsurveys}</p></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: inline-flex; width: 100%;">
+                <div>
+                    <span class="material-icons material-icons-round iconalignbottom colorinfo">info</span>
+                </div>
+                <div class="infolabelinfo">
+                    <span class="clsconfirminfo"></span>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>

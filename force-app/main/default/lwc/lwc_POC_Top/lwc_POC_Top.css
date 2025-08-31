@@ -1,0 +1,12 @@
+.titre {
+    text-align: center;
+    font-size: 2.25em;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.margintop80 {
+    margin-top: 80px;
+}

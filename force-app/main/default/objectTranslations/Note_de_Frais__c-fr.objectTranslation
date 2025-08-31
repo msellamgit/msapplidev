@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Note de Frais</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Note_de_Frais</value>
+    </caseValues>
+    <fields>
+        <label><!-- Commentaire --></label>
+        <name>Commentaire__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Id --></label>
+        <name>Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Montant HT --></label>
+        <name>MontantHT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Montant TTC --></label>
+        <name>MontantTTC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ticket --></label>
+        <name>Ticket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tx TVA --></label>
+        <name>TxTVA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>100% Cotisation RETRAITE</masterLabel>
+            <translation><!-- 100% Cotisation RETRAITE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100% Mutuelle</masterLabel>
+            <translation><!-- 100% Mutuelle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comptable</masterLabel>
+            <translation><!-- Comptable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EDF</masterLabel>
+            <translation><!-- EDF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eau</masterLabel>
+            <translation><!-- Eau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fournitures bureau</masterLabel>
+            <translation><!-- Fournitures bureau --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frais divers</masterLabel>
+            <translation><!-- Frais divers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frais kilométrique (selon bareme)</masterLabel>
+            <translation><!-- Frais kilométrique (selon bareme) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frais parking/péage</masterLabel>
+            <translation><!-- Frais parking/péage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet</masterLabel>
+            <translation><!-- Internet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LOYER/CREDIT-Ass. credit</masterLabel>
+            <translation><!-- LOYER/CREDIT-Ass. credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RER / Metro</masterLabel>
+            <translation><!-- RER / Metro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repas</masterLabel>
+            <translation><!-- Repas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxe Foncière</masterLabel>
+            <translation><!-- Taxe Foncière --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxe d&apos;habitation</masterLabel>
+            <translation><!-- Taxe d&apos;habitation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone Portable</masterLabel>
+            <translation><!-- Telephone Portable --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Note de Frais Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

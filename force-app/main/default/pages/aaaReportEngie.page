@@ -1,0 +1,224 @@
+<apex:page docType="html-5.0" standardStylesheets="false" showHeader="{! renderingService != 'PDF' }" applyHtmlTag="{! renderingService != 'PDF' }" Controller="ReportEngieController"  renderAs="{! renderingService }">
+<html>
+    <head>
+        <style type="text/css">
+            @page { size: 29.2cm 21.0cm; margin-top: 0.5cm; margin-bottom: 0.5cm; margin-right: 0.25cm; margin-left: 0.25cm; }
+            body { font-size: 2.8mm; font-family: helvetica, arial, sans-serif; }
+            .clearfix {clear: both;}
+            .space-height {height: 0.2cm;}
+            .floatleft {float: left;overflow: auto;}
+            .floatright {float: right;overflow: auto;}
+            .table-header {text-align: left;}
+            .label {font-size: 2mm;}
+            .titlerapport {font-style: italic;font-size: 19.0pt !important;color: #6F3198;border: 0;text-align: center; vertical-align: bottom;}
+            .subtitlerapport {    font-style: italic;font-size: 12.0pt !important;color: #6F3198;border: 0;text-align: center; vertical-align: top;}
+            .head-table {font-size: 2.4mm;}
+            .table-header tr td {font-size: 3mm;}
+            .table-head {background-color: #d8d8d8;padding-top: 0.2cm;padding-bottom: 0.2cm;}
+            .txt-center {text-align: center;}
+            .header {margin-bottom: 0.3cm;}
+            table tr td {padding-top: 0.1cm; font-size: 2.8mm ; padding-bottom: 0.1cm;padding-left: 0.1cm;padding-right: 0.1cm;}
+            .block-two-collomns .block-left {width: 12.6cm; float: left;margin-right: 0.4cm;}
+            .block-two-collomns .block-right {width: 7cm; float: left;}
+            table.no-border tr td {border: none;}
+            .bbnn {border-left: 0;border-bottom: 0;}
+            .bbbn {border-left: 0;}
+            .nbbb {border-top: 0;}
+            .nbbn {border-top: 0;border-left: 0;}
+            .nbnn {border-left: 0;border-bottom: 0;border-top: 0;}
+            .nnbn {border-left: 0;border-right: 0;border-top: 0;}
+            .nnnb {border-right: 0;border-top: 0; border-bottom: 0;}
+            .bnbb {border-right: 0;}
+            .nnnb {border-right: 0;}            
+            .noborder {border: 0;}
+            .blockcomment {min-height: 2cm;}
+            .firstline {height: 1.5cm;}
+            .contacts .headerRow .headerRow {background-color: #d8d8d8;padding-top: 0.2cm;padding-bottom: 0.2cm;text-align: center;border-left: 0;border-bottom: 0;border-top: 0;border-right: 1px solid black;font-weight: 100;}
+            .dataRow .dataCell {border-left: 0; border-bottom: 0;}
+        </style>
+    </head>
+    <body>  
+<!--            table tr td {border-width: 1px; border-collapse: 0; border-color: #000; border-style: solid;} -->   
+        <apex:outputPanel styleClass="header" layout="block">
+            <table class="table-header floatleft" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr class="firstline">                                     
+                    <td width="20%" class="noborder" rowspan="2">
+                        <apex:image url="{!$Resource.Engie_1}" width="180px" />
+                    </td>                    
+                    <td class="titlerapport" width="50%"> Tableau de bord CEE
+                    </td>
+                    <td width="30%" class="noborder" rowspan="2">
+                    </td>                                        
+                </tr>   
+                <tr class="firstline">                                     
+                    <td class="subtitlerapport" width="50%">
+                        Portefeuille {!if($CurrentPage.parameters.Vision=null, 'National', $CurrentPage.parameters.Vision)}
+                        {!if($CurrentPage.parameters.Perimetre=null, '', ' : ' + $CurrentPage.parameters.Perimetre)}
+                    </td>
+                </tr>   
+            </table>
+        </apex:outputPanel>
+        
+        <apex:outputPanel styleClass="main" layout="block">
+            <apex:outputText >{!UserProfileName}</apex:outputText><br />
+            <apex:outputText >{!UserRoleName}</apex:outputText>            
+        	<apex:form rendered="{! renderingService != 'PDF' }" style="text-align: left; margin: 10px;">
+                <apex:commandLink action="{! saveToPdf }" value="Export PDF">
+                </apex:commandLink>
+    		</apex:form>
+            <table class="floatleft" style="min-height: 0.5cm; border=0" width="100%" border="0" layout="block">
+                    <tr class="noborder">
+                        <td class="noborder"> 
+                            Date d'édition :
+                            <apex:outputText value="{0, date, d MMMM yyyy}">
+                                <apex:param value="{!NOW()}" />
+                            </apex:outputText>
+                        </td>
+                    </tr>
+                    <tr class="noborder">
+                        <td class="noborder"> 
+                        </td>
+                    </tr>
+            </table>
+            <apex:outputPanel rendered="{! $CurrentPage.parameters.Vision != 'Nego' }">       
+            <table class="floatleft" style="margin-left:15%; margin-right:15%;" width="70%" border="0" layout="block">
+               <tr style="font-weight: bold;">
+                    <td class="nnnb" width="25%"></td>
+                    <td class="noborder" width="5%"></td>
+                    <td class="noborder" style="text-align: center; background: pink" width="30%" colspan="6">CLASSIQUE en Mwhc</td>
+                    <td class="noborder" style="text-align: center; background: #DA81F5" width="30%" colspan="6">Précaire en Mwhc</td>
+                 </tr> 
+                <tr style="text-align: center;font-weight: bold;">
+                    <td class="noborder" width="25%">
+                        {!if($CurrentPage.parameters.Vision='Regional', 'Negociateur', 'Région')}
+                    </td>
+                    <td class="noborder" width="5%">Nb RA Signées</td>
+                    <td class="noborder" width="5%">Nb OS Réalisée</td>
+                    <td class="noborder" width="5%">Objectif OS</td>
+                    <td class="noborder" width="5%">% atteint</td>
+                    <td class="noborder" width="5%">Résultat</td>
+                    <td class="noborder" width="10%">Objectifs</td>
+                    <td class="noborder" width="5%">% atteint</td>
+                    <td class="noborder" width="5%">Nb OS Réalisée</td>
+                    <td class="noborder" width="5%">Objectif OS</td>
+                    <td class="noborder" width="5%">% atteint</td>
+                    <td class="noborder" width="5%">Résultat en Mwhc</td>
+                    <td class="noborder" width="10%">Objectifs en Mwhc</td>
+                    <td class="noborder" width="5%">% atteint</td>
+                 </tr> 
+              <apex:repeat value="{!SumOpportunies}"  var="ra">
+                  <tr style="text-align: center;">   
+                    <td class="noborder" width="25%">                        
+		                  <apex:outputLink value="/apex/aaaReportEngie?Vision={!if($CurrentPage.parameters.Vision='' || $CurrentPage.parameters.Vision='National', 'Regional', 'Nego')}&Perimetre={!ra.Region}">{!ra.Region}</apex:outputLink>  						
+                    </td>
+                    <td class="noborder" width="5%">{!ra.NbRASignees}</td>
+                    <td class="noborder" width="5%">{!ra.NbOSRealisee}</td>
+                    <td class="noborder" width="5%">{!ra.ObjectifOS}</td>
+                    <td class="noborder" width="5%">
+                        <apex:outputText value="{0, number, 0.0}">
+                            <apex:param value="{!ra.NbOSRealisee / ra.ObjectifOS*100}"/>
+                        </apex:outputText>                                                      
+                    </td>
+                    <td class="noborder" width="5%">{!ra.Resultat}</td>
+                    <td class="noborder" width="10%">{!ra.Objectifs}</td>
+                    <td class="noborder" width="5%">
+                        <apex:outputText value="{0, number, 0.0}">
+                            <apex:param value="{!ra.Resultat / ra.Objectifs*10000}"/>
+                        </apex:outputText>                                                      
+                    </td>
+                      <td class="noborder" width="5%">{!ra.NbOSRealiseePrec}</td>
+                    <td class="noborder" width="5%">{!ra.ObjectifOSPrec}</td>
+                    <td class="noborder" width="5%">
+                        <apex:outputText rendered="{!ra.ObjectifOSPrec > 0}" value="{0, number, 0.0}">
+                            <apex:param value="{!ra.NbOSRealiseePrec / ra.ObjectifOSPrec*100}"/>
+                        </apex:outputText>                                                      
+                    </td>
+                    <td class="noborder" width="5%">{!ra.ResultatMwhc}</td>
+                    <td class="noborder" width="10%">{!ra.ObjectifsMwhc}</td>
+                    <td class="noborder" width="5%">
+                        <apex:outputText rendered="{!ra.ObjectifsMwhc > 0}" value="{0, number, 0.0}">
+                            <apex:param value="{!ra.ResultatMwhc / ra.ObjectifsMwhc*100}"/>
+                        </apex:outputText>                                                      
+                    </td>
+                </tr>   
+               </apex:repeat> 
+            </table>
+            </apex:outputPanel>
+			<apex:outputPanel rendered="{! $CurrentPage.parameters.Vision == 'Nego' }">                        
+                <table class="floatleft" style="min-height: 1cm; border=0" width="100%" border="0" layout="block">
+                        <tr class="noborder">
+                            <td class="noborder" style="text-align: center; font-size: 21px; color:red"> 
+                                LISTE DES RELATIONS D'AFFAIRES / PARTENAIRES
+                            </td>
+                        </tr>
+                </table>
+            </apex:outputPanel>
+				<table class="floatleft" style="min-height: 1cm; border=0" width="100%" border="0" layout="block">
+                        <tr class="noborder">
+                            <td class="noborder"> 
+                            </td>
+                        </tr>
+                </table>
+
+			<apex:outputPanel rendered="{! renderingService != 'PDF' && $CurrentPage.parameters.Vision != 'Nego' }">            
+            <table class="floatleft" style="margin-left:15%; margin-right:0%;" width="35%" border="1" layout="block">
+               <tr style="font-weight: bold; text-align: center;">
+                    <td class="noborder" rowspan="3">
+                    </td>
+                   <td class="noborder" colspan="4" width="100%">Bilan activité</td>                    
+               </tr> 
+               <tr>
+                    <td class="noborder" colspan="5" width="100%"></td>                    
+               </tr> 
+               <tr>
+                    <td class="noborder" width="30%">Nb Total RA Signés</td>                    
+                    <td class="noborder" width="20%">{!TotalOpportunies.NbRASignees}</td>                    
+                    <td class="noborder" colspan="3" width="40%"></td>                                    
+                </tr> 
+               <tr>
+                    <td class="noborder" width="20%"></td>                    
+                    <td class="noborder" width="30%">Nb OS Réalisées</td>                    
+                    <td class="noborder" width="20%">{!TotalOpportunies.NbOSRealisee + TotalOpportunies.NbOSRealiseePrec}</td>                    
+                    <td class="noborder" width="40%">Objectif OS : {!TotalOpportunies.ObjectifOS + TotalOpportunies.ObjectifOSPrec}</td>                    
+               </tr>                 
+            </table>
+            <table class="floatleft" style="margin-left:5%; margin-right:5%;" width="30%" border="0" layout="block">
+               <tr style="text-align: center;font-weight: bold;">
+                   <td class="noborder"> CLASSIQUE - Nb OS Réalisée </td>
+               </tr> 
+                <tr>
+                   <td class="noborder" style="text-align: center">
+                        <apex:chart height="180px" width="250px" data="{!graphPie}" theme="Category1" background="#F9EBEA"  resizable="true">
+                            <apex:pieSeries dataField="data" labelField="name"/>
+                        </apex:chart>
+                   </td>
+               </tr> 
+            </table>
+          </apex:outputPanel>      
+		<apex:outputPanel rendered="{! renderingService == 'PDF' &&  $CurrentPage.parameters.Vision != 'Nego' }">            
+            <table class="floatleft" style="margin-left:15%; margin-right:0%;" width="70%" border="1" layout="block">
+               <tr style="font-weight: bold; text-align: center;">
+                    <td class="noborder" rowspan="3">
+                    </td>
+                   <td class="noborder" colspan="4" width="100%">Bilan activité</td>                    
+               </tr> 
+               <tr>
+                    <td class="noborder" colspan="5" width="100%"></td>                    
+               </tr> 
+               <tr>
+                    <td class="noborder" width="30%">Nb Total RA Signés</td>                    
+                    <td class="noborder" width="20%">{!TotalOpportunies.NbRASignees}</td>                    
+                    <td class="noborder" colspan="3" width="40%"></td>                                    
+                </tr> 
+               <tr>
+                    <td class="noborder" width="20%"></td>                    
+                    <td class="noborder" width="30%">Nb OS Réalisées</td>                    
+                    <td class="noborder" width="20%">{!TotalOpportunies.NbOSRealisee + TotalOpportunies.NbOSRealiseePrec}</td>                    
+                    <td class="noborder" width="40%">Objectif OS : {!TotalOpportunies.ObjectifOS + TotalOpportunies.ObjectifOSPrec}</td>                    
+               </tr>                 
+            </table>
+        </apex:outputPanel>            
+        </apex:outputPanel>            
+    </body>
+</html>
+</apex:page>

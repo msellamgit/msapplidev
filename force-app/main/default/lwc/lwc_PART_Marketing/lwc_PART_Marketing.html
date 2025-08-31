@@ -1,0 +1,19 @@
+<template>
+    <div class="headnews">
+        <div class="titlelvl1">
+            <span>Marketing Activity</span>
+        </div>
+        <div class="titlelvl4">
+            <span>Participate in UTA Edenred marketing activities</span>
+        </div>
+    </div>
+
+    <div class="cardnews grid">
+        <template for:each={lstvisiblemarketing} for:item="mkt">
+            <c-lwc-p-a-r-t-card-mkt-activity class="news colspan4 betweenFW mobFW" key={mkt.id} activity={mkt}></c-lwc-p-a-r-t-card-mkt-activity>
+        </template>
+    </div>
+    <div slot="footer" class="slds-var-m-vertical_medium">
+        <c-lwc-p-a-r-t-pagination class="clspagination" records={lstmarketing} onupdate={updateHandler}></c-lwc-p-a-r-t-pagination>
+    </div>
+</template>

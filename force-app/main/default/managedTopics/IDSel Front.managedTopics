@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>IDSel Front.Content:Problème Technique</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Problème Technique</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Front.Content:Problèmes Comptable</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Problèmes Comptable</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Front.Featured:Problème Technique</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Problème Technique</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Front.Featured:Problèmes Comptable</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Problèmes Comptable</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Front.Navigational:Comptables</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Comptables</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Front.Navigational:Techniques</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Techniques</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

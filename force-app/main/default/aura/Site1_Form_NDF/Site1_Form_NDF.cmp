@@ -1,0 +1,55 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+
+    <aura:attribute name="newrecordNDF" type="Object"/>
+    <aura:attribute name="simpleRecordNDF" type="Object"/>
+    <aura:attribute name="newrecordNDFError" type="String"/>
+
+<!--          recordId="{!v.recordId}"
+      layoutType="FULL"
+      mode="EDIT"
+      recordUpdated="{!c.handleRecordUpdated}"
+       <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+-->
+ 
+    
+    <force:recordData aura:id="ndfRecordCreator"
+    layoutType="FULL"                      
+      targetRecord="{!v.newrecordNDF}"
+      targetFields="{!v.simpleRecordNDF}"
+      targetError="{!v.newrecordNDFError}"
+      />
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- Display a header with details about the record -->
+    <div class="slds-page-header" role="banner">
+        <p class="slds-text-heading_label">Create NDF</p>
+    </div>
+
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.newrecordNDFError))}">
+        <div class="recordError">
+            <ui:message title="Error" severity="error" closable="true">
+                {!v.recordError}
+            </ui:message>
+        </div>
+    </aura:if>
+
+    <!-- Display an editing form -->
+    <lightning:input aura:id="recordName" name="recordName" label="Name"
+                  value="{!v.simpleRecordNDF.Name}" required="true"/>
+    
+	<lightning:input aura:id="recordType" name="recordType" label="Type"
+                  value="{!v.simpleRecordNDF.project_mse__Type__c}" required="true"/>
+    
+	<lightning:input aura:id="recordDate" name="recordDate" label="Date" type="Date"
+                  value="{!v.simpleRecordNDF.project_mse__Date__c}" required="true"/>
+
+    <lightning:input aura:id="recordMontantTTC__c" name="recordMontantTTC" label="Montant TTC"
+                  value="{!v.simpleRecordNDF.project_mse__MontantTTC__c}" required="true"/>
+    
+	<lightning:input aura:id="recordMontantHT__c" name="recordMontantHT" label="Montant HT"
+                  value="{!v.simpleRecordNDF.project_mse__MontantHT__c}" required="true"/>
+
+     <lightning:button label="Save Record" onclick="{!c.handleSaveRecord}"
+               variant="brand" class="slds-m-top_medium"/>
+</aura:component>

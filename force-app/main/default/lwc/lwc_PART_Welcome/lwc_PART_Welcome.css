@@ -1,0 +1,64 @@
+body {
+    background-color: transparent;
+}
+
+.clsmaincontent {
+    padding-top: 60px; 
+    text-align: center; 
+    width: 90%;
+    margin: auto; 
+}
+
+.titlelvl2 {
+    text-align: left;
+    font-family: Edenred;
+    font-size: 40px;
+    margin: 16px;
+}
+
+.clsnews {
+    margin: 24px 0px;
+}
+
+.cardnews .news {
+    padding: 10px; 
+}
+
+.main {
+    padding-top: 16px;
+    background-color: #F7F8F9;
+}
+
+.topics {
+    padding: 50px 0px 40px 0px;
+}
+
+.smallbutton {
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    border-radius: 12px;
+    padding: 6px 12px;
+    margin: 12px 0px;
+}
+
+.smallbutton:hover {
+    color: #F72717;
+    background-color: #FFFFFF;
+}
+
+.bigbutton {
+    font-size: 16px;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: none;
+    border-radius: 18px;
+    padding: 12px 88px;
+    margin: 12px 0px;
+}
+
+.bigbutton:hover {
+    color: #F72717;
+    background-color: #FFFFFF;
+}

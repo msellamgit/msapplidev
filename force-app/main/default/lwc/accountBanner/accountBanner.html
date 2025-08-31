@@ -1,0 +1,28 @@
+<template>
+    <lightning-layout vertical-align="center">
+        <lightning-layout-item padding="around-small">
+                <lightning-button 
+                    variant="brand" 
+                    label="Console.log" 
+                    title="Console.log" 
+                    onclick={handleConsoleLogClick} 
+                ></lightning-button>
+        </lightning-layout-item>        
+        <template if:true={record}>
+            <lightning-layout-item>
+                <!--img src={photo} alt="Client photo" /-->
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <p>{accountName}</p>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <p>{accountName}</p>
+            </lightning-layout-item>   
+        </template>     
+        <template if:true={error}>
+            <h1>Inside error</h1>
+            <div>{record.error}></div>
+        </template>
+</lightning-layout>
+
+</template>

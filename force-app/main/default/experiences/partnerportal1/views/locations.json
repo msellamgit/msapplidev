@@ -1,0 +1,60 @@
+{
+  "appPageId" : "f5386a29-743c-4449-849f-4bff63d37c71",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "f18a5e5d-a4e4-46b2-a123-4c286a4c7fa4",
+  "label" : "locations",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"94dd9b1a-97f4-42a1-955c-3d0d90d881cc\",\"columns\":[{\"UUID\":\"71ebd335-2bf2-460a-9de1-da8c531405ce\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "94dd9b1a-97f4-42a1-955c-3d0d90d881cc",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwc_PART_Locations",
+          "id" : "6dc7eb9f-fba5-40eb-872e-e3b95b44463a",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "71ebd335-2bf2-460a-9de1-da8c531405ce",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "b86e1cbd-c38b-4804-86ce-093a421b1a3c",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Locations",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "2bda71c1-bb78-49c8-874b-e4c168b48570",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "f71037e6-bf77-4c22-9161-d128d2ccb411",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "q2HYSj0DFHq8xcL1Tq9PBEymMpKfJv",
+  "type" : "view",
+  "viewType" : "custom-locations"
+}

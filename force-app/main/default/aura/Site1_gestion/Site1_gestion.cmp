@@ -1,0 +1,18 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="getmenu" type="String" />
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- <aura:handler name="evt1" event="c:Site1_evt_menu" action="{!c.getmenufromevent}" /> -->
+    <aura:if isTrue="{!'index' == v.getmenu}">
+        <c:Site1_g_index ></c:Site1_g_index>
+        <!--<aura:set attribute="else">
+            <c:Site1_home_detail ></c:Site1_home_detail>
+        </aura:set>-->
+    </aura:if>
+    <aura:if isTrue="{!'NDF' == v.getmenu}">
+            <iframe src="https://ms-appli-dev-ed--project-mse.eu5.visual.force.com/apex/Site1_NoteDeFrais" width="100%" height="500px;" frameBorder="false"/>
+    </aura:if>
+    <aura:if isTrue="{!'MAP' == v.getmenu}">
+            <c:Site1_AccountMap ></c:Site1_AccountMap>
+    </aura:if>
+    
+</aura:component>

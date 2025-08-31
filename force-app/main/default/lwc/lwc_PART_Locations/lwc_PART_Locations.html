@@ -1,0 +1,40 @@
+<template>
+    <div class="headlocation">
+        <div class="titlelvl4">
+            <span>Locations</span>
+        </div>
+        <div class="grid">
+            <div class="news colspan8 betweenFW mobFW">
+                <fieldset class='fieldsetpart'>
+                    <button class="iconsearchpart material-symbols-outlined">search</button>
+                    <input class='inputpartsearch' placeholder="Search in location ..." type="text" name="entrySearch" value={entrySearch} onchange={handleentrySearch} />
+                    <button class="iconsearchpart material-symbols-outlined">tune</button>
+                </fieldset>
+                <!-- <input class='inputpart' placeholder="Search in location ..." type="text" name="entrySearch" value={entrySearch} onchange={handleentrySearch} /> -->
+            </div>
+            <div class="news colspan2 betweenFW mobMD">            
+                <button class="btnleftright btnbegin material-symbols-outlined" onclick={showlist} disabled={disablePrevious}>
+                    format_list_bulleted
+                </button>          
+                <button class="btnleftright btnend material-symbols-outlined" onclick={showgrid} disabled={disableNext}>
+                    grid_view
+                </button>
+            </div>
+            <div class="news colspan2 betweenFW mobMD">        
+                <button class="smallbutton" onclick={addlocation} disabled={disableNext}>
+                    <span style="float: left; padding: 2px 10px" class="material-symbols-outlined">add_circle</span>
+                    <span style="float: right; padding: 4px 12px">ADD NEW</span>
+                </button>                    
+            </div>
+        </div>
+    </div>
+
+    <div class="cardnews grid">
+        <template for:each={lstvisiblelocation} for:item="loc">
+            <c-lwc-p-a-r-t-card-location class="news colspan4 betweenFW mobFW" key={loc.id} location={loc}></c-lwc-p-a-r-t-card-location>
+        </template>
+    </div>
+    <div slot="footer" class="slds-var-m-vertical_medium">
+        <c-lwc-p-a-r-t-pagination class="clspagination" records={lstlocation} onupdate={updateHandler}></c-lwc-p-a-r-t-pagination>
+    </div>
+</template>

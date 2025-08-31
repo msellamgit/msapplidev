@@ -1,0 +1,66 @@
+.slogan {  
+    width: 30%;
+    color: #1f252e;
+    font-family: Edenred,Helvetica,sans-serif;
+    display: flex;
+    justify-content: end;
+    padding-right: 5px;
+}
+
+.slogan:after {
+    content: "";
+    width: 5px;
+    height: 50px;
+    background-color: #f72717;
+    position: absolute;
+    border-radius: 8px 8px 0 0;
+    right: 16px;
+}
+
+.slogantxt {
+    text-align: right;
+    font-size: 24px;
+}
+
+.clsmenufooterdiv {
+    width: 95%; 
+    margin-left: 3%; 
+    display: flex; 
+    position: relative;
+    padding: 10px 20px;
+}
+
+.clsmenufooterul {
+    display: flex;
+}
+
+.clsmenufooterli {
+    line-height: 1.5;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    padding: 12px;
+}
+
+.clsmenufooterspan {
+    padding-top: 12px; 
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 840px) {
+    .slogantxt {
+        font-size: 12px;
+    }
+    .slogan:after {
+        content: "";
+        width: 5px;
+        height: 20px;
+    }
+    .clsmenufooterul {
+        display: block;
+    }
+    .clsmenufooterli {
+        line-height: 0.75;
+        padding: 4px;
+    }   
+}

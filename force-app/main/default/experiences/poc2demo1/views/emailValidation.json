@@ -1,0 +1,60 @@
+{
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "a8113b78-0f96-4894-a8a2-3bd6db4ee942",
+  "label" : "Email Validation",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"58776508-0665-4bf6-a483-b705d4a1ca06\",\"columns\":[{\"UUID\":\"18929cbd-b468-46c3-9b38-0ef4e888e9bd\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "58776508-0665-4bf6-a483-b705d4a1ca06",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwcPoc2EmailValidator",
+          "id" : "124884e9-5851-4846-a91a-753faa86d99f",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "18929cbd-b468-46c3-9b38-0ef4e888e9bd",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "88bef983-6a72-485b-b4d2-5e0a2a482cc9",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Email Validation",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "fe29decf-4b58-49b5-9316-bec8a9f4ec5b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "bf329e82-8ead-49d9-9714-41b11d27b67c",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-emailvalidation"
+}

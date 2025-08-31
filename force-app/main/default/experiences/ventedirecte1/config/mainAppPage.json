@@ -1,0 +1,12 @@
+{
+  "cmsSettings" : { },
+  "currentThemeId" : "86555cf1-4768-44ae-af11-f9f298963992",
+  "favIconAssetRef" : null,
+  "headMarkup" : "<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n<title>Welcome to LWC Communities!</title>\n\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/styles.css?{ versionKey }\" />\n\n\n<!-- webruntime-branding-shared stylesheets -->\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/salesforce-lightning-design-system.min.css?{ versionKey }\" />\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/dxp-site-spacing-styling-hooks.min.css?{ versionKey }\" />\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/dxp-styling-hooks.min.css?{ versionKey }\" />\n<link rel=\"stylesheet\" href=\"{ basePath }/assets/styles/dxp-slds-extensions.min.css?{ versionKey }\" />\n\n<link rel=\"icon\" type=\"image/png\" href=\"{ basePath }/sfsites/c/resource/res_poc/favicon_poc.png\">\n\n<style>\n    :root {--dxp-g-spacing-medium: 0rem; --dxp-s-form-element-radius-border: 0%;}\n    header {\n      height: 85px !important;\n      width: 100% !important;\n      position: fixed !important;\n      top: 0 !important;\n      left: 0 !important;\n      background: #fff !important;\n      z-index: 9999 !important;\n    }\n    .slds-input { border-radius: O !important; }\n    .section-content.community_layout-section_section { padding-top: 5px !important; padding-bottom: 0px !important; padding-left: 0px !important; padding-right: 0px !important }\n\n</style> \n\n\n<!-- webruntime-branding-shared stylesheets -->",
+  "id" : "e3243084-3847-439b-88dd-e8c971ad3918",
+  "isLockerServiceEnabled" : true,
+  "isRelaxedCSPLevel" : false,
+  "label" : "main",
+  "templateName" : "talon-template-byo",
+  "type" : "appPage"
+}

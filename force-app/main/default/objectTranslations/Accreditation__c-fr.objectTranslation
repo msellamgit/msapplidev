@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Accreditation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Accreditations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date de Début --></label>
+        <name>DateDeb__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date de Fin --></label>
+        <name>DateFin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Statut --></label>
+        <name>Statut__c</name>
+        <picklistValues>
+            <masterLabel>Activé</masterLabel>
+            <translation><!-- Activé --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expiré</masterLabel>
+            <translation><!-- Expiré --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspendu</masterLabel>
+            <translation><!-- Suspendu --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>01 - Certification</masterLabel>
+            <translation><!-- 01 - Certification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>02 - Qualification</masterLabel>
+            <translation><!-- 02 - Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>03 - Accréditation Assurance</masterLabel>
+            <translation><!-- 03 - Accréditation Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>04 - Accréditation</masterLabel>
+            <translation><!-- 04 - Accréditation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendeur --></label>
+        <name>Vendeur__c</name>
+        <relationshipLabel><!-- Accreditations --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Accreditation Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

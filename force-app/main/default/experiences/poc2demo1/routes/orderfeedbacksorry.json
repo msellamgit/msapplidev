@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "45d64577-baef-46ae-adc2-0a531c9d845f",
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "configurationTags" : [ ],
+  "devName" : "orderfeedbacksorry__c",
+  "id" : "07eca13d-5867-4b53-8d1e-9be3052d9f47",
+  "label" : "orderfeedbacksorry",
+  "routeType" : "custom-orderfeedbacksorry",
+  "type" : "route",
+  "urlPrefix" : "orderfeedbacksorry"
+}

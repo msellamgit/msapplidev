@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-p-bottom_large slds-p-left_large" style="width:500px">
+
+
+        <lightning-input type="text" variant="standard" value={phone} name="name" onchange={handlePhone} label="Phone" placeholder="type here..."></lightning-input>
+        <template if:true={isValidPhone}>
+            <span style="color: green">OK</span> 
+        </template>
+        <template if:false={isValidPhone}>
+            <span style="color: red">KO</span> 
+        </template>
+        <!-- <lightning-button
+                variant="Brand"
+                label="Check Phone Valid"
+                icon-name="utility:check"
+                icon-position="right"
+                onclick={checkPhoneValid}
+            ></lightning-button> -->
+
+       
+    </div>
+</template>

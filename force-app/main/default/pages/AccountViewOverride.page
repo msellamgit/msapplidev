@@ -1,0 +1,23 @@
+<apex:page renderAs="pdf"  standardController="Account" showHeader="true" 
+tabStyle="Account">
+<head>
+  <style> 
+    .activeTab {background-color: #236FBD; color:white; background-image:none} 
+    .inactiveTab { background-color: white; color:black; background-image:none}
+  </style> 
+</head>
+   <apex:tabPanel switchType="client" selectedTab="tabdetails" id="AccountTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">   
+      <apex:tab label="Details" name="AccDetails" id="tabdetails">
+        <apex:detail relatedList="false" relatedListHover="false" title="true" inlineEdit="false"/> 
+      </apex:tab>
+    <apex:tab label="Contacts" name="Contacts" id="tabContact">
+        <apex:relatedList subject="{!account}" list="contacts" />
+    </apex:tab>      
+      <apex:tab label="Open Activities" name="OpenActivities" id="tabOpenAct">
+         <apex:relatedList subject="{!account}" list="OpenActivities" />
+      </apex:tab>
+      <apex:tab label="Activity History" name="ActivityHistory" id="tabActHist" >
+         <apex:relatedList subject="{!account}" list="ActivityHistories" pageSize="15" />
+     </apex:tab>
+   </apex:tabPanel>
+</apex:page>

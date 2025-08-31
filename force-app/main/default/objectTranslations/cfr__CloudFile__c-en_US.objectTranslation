@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Description --></label>
+        <name>cfr__Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- FolderId --></label>
+        <name>cfr__FolderId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ObjectName --></label>
+        <name>cfr__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Id --></label>
+        <name>cfr__Object_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- URL --></label>
+        <name>cfr__URL__c</name>
+    </fields>
+    <webLinks>
+        <label><!-- Download --></label>
+        <name>cfr__Download</name>
+    </webLinks>
+</CustomObjectTranslation>

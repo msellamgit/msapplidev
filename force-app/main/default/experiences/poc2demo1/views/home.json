@@ -1,0 +1,60 @@
+{
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "40c5fc39-0981-40de-aafe-69f0fcfdef95",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"0a06d1ab-a315-479f-8252-2bb50ac7ca57\",\"columns\":[{\"UUID\":\"1fd42c3b-fb73-4d04-99e3-e7e1f8779d54\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "0a06d1ab-a315-479f-8252-2bb50ac7ca57",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwc_POC2_Presentation",
+          "id" : "fb5348b3-b791-4de2-845f-4c9fade890d2",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "1fd42c3b-fb73-4d04-99e3-e7e1f8779d54",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "bf6c9191-a402-4c09-9dcf-a886fc0bf98f",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Subscription",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "c19de1ad-3803-4838-b77e-edbd793f381e",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "3ef167a6-c4e2-42d7-ba4b-bf32d436b584",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "EWOUHLzzE6S00dzolITZF36XvhY5QH",
+  "type" : "view",
+  "viewType" : "home"
+}

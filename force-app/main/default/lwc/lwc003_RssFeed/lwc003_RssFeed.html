@@ -1,0 +1,16 @@
+<template>
+    <div class="feedContainer">
+        <h3 class="feedHeader">L'actualité Mooncard du moment</h3>
+        <template for:each={mooncardRssFeeds} for:item="mooncardRssFeed">
+            <div key={mooncardRssFeed.title} class="feedItem">
+                <a target="_blank" rel="noopener noreferrer" href={mooncardRssFeed.link}>
+                    <h4 class="feedTitle">{mooncardRssFeed.title}</h4>
+                    <img class="feedImage" alt={mooncardRssFeed.title} src={mooncardRssFeed.image}>
+                    <br>
+                    <p class="feedText">{mooncardRssFeed.text}</p>
+                    <i class="feedDate">{mooncardRssFeed.pubDate}</i>
+                </a>
+            </div>
+        </template>
+    </div>
+</template>

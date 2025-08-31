@@ -1,0 +1,89 @@
+<apex:page standardController="Note_de_Frais__c" recordSetVar="NDF" lightningStylesheets="true" sidebar="false" showHeader="false" applyBodyTag="false">
+    <apex:slds />
+    <div class="slds-scope"> 
+        <apex:pageBlock id="ndf_list">        
+            <apex:form >
+                <apex:outputPanel >
+                    <div class="slds-page-header">
+                        <div class="slds-grid">
+                            <div class="slds-icon forceEntityIcon" style="background-color: #df6184" >
+                                <span class="uiImage" data-aura-class="uiImage">
+                                    <img src="/img/icon/t4v35/custom/custom13_120.png" class="icon " alt="Note_de_Frais" title="Note_de_Frais" />
+                                </span>
+                            </div>
+                            <apex:outputLabel >    </apex:outputLabel> 
+                            <apex:selectList value="{! filterId }" size="1">
+                                <apex:selectOptions value="{! listViewOptions }"/>
+                                <apex:actionSupport event="onchange" reRender="ndf_list"/>
+                            </apex:selectList>
+                            
+                            <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                                <apex:commandButton action="{!URLFOR($Action.project_mse__Note_de_Frais__c.New)}" value="New" styleClass="slds-button slds-button_neutral"/>
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputPanel>
+                <div>
+                </div>
+                <apex:pageBlockTable value="{! NDF }" styleClass="slds-table slds-table--bordered slds-table--cell-buffer" var="n" id="ndf_list">
+                    <apex:column headerValue="Name" headerClass="slds-text-title_caps">
+                        <apex:outputLink value="/{! n.Id}">{! n.Name }</apex:outputLink>
+                    </apex:column>
+                    <apex:column value="{! n.project_mse__Date__c }" headerClass="slds-text-title_caps" />
+                    <apex:column value="{! n.project_mse__Type__c }" headerClass="slds-text-title_caps" />
+                    <apex:column value="{! n.project_mse__MontantTTC__c }" headerClass="slds-text-title_caps" />
+                </apex:pageBlockTable>              
+            </apex:form>
+        </apex:pageBlock>
+    </div> 
+</apex:page>
+
+<!--<apex:slds rendered="{! !isClassic}" />
+<apex:outputPanel rendered="{!isClassic}">
+<apex:sectionHeader title="Note De Frais" subtitle="Home"/>
+<div style="text-align:center;">
+<apex:commandButton action="{!URLFOR($Action.project_mse__Note_de_Frais__c.New)}" value="New"/>
+</div>
+
+<apex:outputLabel value="Sort: " for="sortList" />
+<apex:selectList value="{! sortOrder}" size="1" id="sortList">
+<apex:selectOption itemvalue="LastName" />
+<apex:selectOption itemvalue="FirstName" />
+</apex:selectList>
+<apex:commandButton value="Sort Table" action="{!sortList}" reRender="leads_list"/>
+
+</apex:outputPanel>
+-->
+
+
+
+<!--<div class="slds-col slds-has-flexi-truncate" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<div class="slds-media slds-no-space slds-grow">
+<div class="slds-media__figure">
+<svg class="slds-icon slds-icon-standard-user .slds-icon_small" aria-hidden="true">
+<use xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/standard-sprite/svg/symbols.svg#lead')}"></use>
+</svg>
+</div>
+<div class="slds-media__body">
+<p class="slds-text-title_caps slds-line-height_reset">Note De Frais</p>
+<h1 class="slds-page-header__title slds-m-right_small slds-align-middle slds-truncate"
+title="this should match the Record Title">Home</h1>
+</div>
+</div>
+
+<div class="slds-grid slds-grid_vertical-align-end slds-m-vertical_small">
+<div class="slds-size_1-of-6 ">
+<apex:outputLabel value="Sort: " for="sortListLightning" styleClass="slds-form-element__label" />
+<div class="slds-select_container">
+<apex:selectList value="{! sortOrder}" size="1" id="sortListLightning" styleClass="slds-select">
+<apex:selectOption itemvalue="LastName" />
+<apex:selectOption itemvalue="FirstName" />
+</apex:selectList>
+</div>
+</div>
+<div class="slds-no-flex slds-m-left_x-large">
+<apex:commandButton value="Sort" action="{!sortList}" reRender="leads_list" styleClass="slds-button slds-button_neutral"/>
+</div>
+</div>
+
+</div>-->

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Basket Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Basket Items</value>
+    </caseValues>
+    <fields>
+        <help><!-- Account will be populated upon Lead conversion. --></help>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Basket Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Generate a PIN for Me --></label>
+        <name>Auto_Generate_Pin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Basket Item Reference --></label>
+        <name>Basket_Item_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card PIN --></label>
+        <name>Card_PIN__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Basket Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name on the card --></label>
+        <name>Name_on_the_card__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vehicle registration number --></label>
+        <name>Vehicle_registration_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- cost_centre --></label>
+        <name>cost_centre__c</name>
+    </fields>
+    <fields>
+        <label><!-- driver_email --></label>
+        <name>driver_email__c</name>
+    </fields>
+    <fields>
+        <label><!-- driver_phone_number --></label>
+        <name>driver_phone_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- issuer_program_code --></label>
+        <name>issuer_program_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- media_holder_type --></label>
+        <name>media_holder_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- media_nickname --></label>
+        <name>media_nickname__c</name>
+    </fields>
+    <fields>
+        <label><!-- media_profile_code --></label>
+        <name>media_profile_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- ost_application_number --></label>
+        <name>ost_application_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- plan_code --></label>
+        <name>plan_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- vehicle_manufacturer --></label>
+        <name>vehicle_manufacturer__c</name>
+    </fields>
+    <fields>
+        <label><!-- vehicle_plate_country --></label>
+        <name>vehicle_plate_country__c</name>
+    </fields>
+    <layouts>
+        <layout>Basket Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Driver Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Driver Card --></label>
+        <name>Driver_Card</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Vehicle Card --></label>
+        <name>Vehicle_Card</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,19 @@
+.headnews {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #F7F8F9;
+    margin-bottom: 30px;
+}
+
+.cardnews .news {
+    padding: 10px; 
+}
+
+.cardnews  {
+    padding: 10px 60px 10px 10px; 
+}
+
+.clspagination {
+    float: right;
+    margin-right: 60px;
+}

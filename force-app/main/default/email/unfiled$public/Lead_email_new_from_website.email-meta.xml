@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Simple_Letterhead</letterhead>
+    <name>Lead : e-mail new from website</name>
+    <style>freeForm</style>
+    <subject>Welcome UTA</subject>
+    <textOnly>Soon you will receive an email. Please confirm the accuracy of your data with the link shown in the email. Then we will send you an overview of your order and your personal SEPA mandate as well as further information to the procedure by mail. If you have questions about what to do next please contact our support team: 
+
+business hours
+
+email
+
+phone number
+
+
+In the meanwhile, we recommend you to download the free UTA station findera App.
+
+
+Either via the links below or you scan the QR codes with your smartphone or tablet and will be redirected directly to download.
+
+Also on the way we are your companion. With us you will always find the nearest and cheapest gas station.
+
+Get to your destination quickly with the UTA-App!</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

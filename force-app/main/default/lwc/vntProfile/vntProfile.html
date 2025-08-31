@@ -1,0 +1,10 @@
+<template>
+    <div style="height:400px;width:100%;margin:auto;position: relative;" >
+        <div style="text-align: center; display: block;">
+            <img style="border-radius:50%;" src={fullphoto} />
+        </div>
+        <lightning-record-form record-id={getuserId} object-api-name="User" 
+        layout-type="Full" columns="3" mode="readonly">
+        </lightning-record-form>
+     </div>
+</template>

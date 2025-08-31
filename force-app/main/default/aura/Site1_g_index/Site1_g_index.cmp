@@ -1,0 +1,29 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!--https://www.lightningdesignsystem.com/components/cards/#content
+href="javascript:void(0);"-->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="menu" type="List"/>
+    <article class="slds-card">        
+        <div class="slds-card__body">
+            <ul class="slds-card__body_inner slds-grid slds-wrap slds-grid_pull-padded">
+                <aura:iteration items="{!v.menu}" var="item">                    
+                    <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                            <div class="slds-media__body">
+                                <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                    <h3 class="css1 slds-tile__title slds-truncate" title="" >{!item.titre}</h3>
+                                </div>
+                                <div class="slds-media__figure">
+                                    <!--<lightning:buttonIcon class="icon" iconName="{!item.icon}" size="large" alternativeText="Contact"/> -->
+                                    <lightning:button class="icon" label="{!item.titre}" name="{!item.name}" onclick="{! c.onClick}">                                        
+                                        <img src="{!item.img}"/>
+                                    </lightning:button>
+                                </div>                                
+                            </div>
+                        </article>
+                    </li>
+                </aura:iteration>                
+            </ul>
+        </div>
+    </article>    
+</aura:component>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vente</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ventes</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accreditation --></label>
+        <name>Accreditation__c</name>
+        <relationshipLabel><!-- Ventes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Champs 1 --></label>
+        <name>Champs1_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Ventes (Client) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date Validation --></label>
+        <name>DateValidation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Vente --></label>
+        <name>DateVente__c</name>
+    </fields>
+    <fields>
+        <label><!-- Login Vendeur --></label>
+        <name>LoginVendeur__c</name>
+    </fields>
+    <fields>
+        <label><!-- Montant --></label>
+        <name>Montant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Ventes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partenaire --></label>
+        <name>Partenaire__c</name>
+        <relationshipLabel><!-- Ventes --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantité --></label>
+        <name>Qtt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>En Attente</masterLabel>
+            <translation><!-- En Attente --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refusé</masterLabel>
+            <translation><!-- Refusé --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validé</masterLabel>
+            <translation><!-- Validé --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vendeur --></label>
+        <name>Vendeur__c</name>
+        <relationshipLabel><!-- Ventes --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Vente Page</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

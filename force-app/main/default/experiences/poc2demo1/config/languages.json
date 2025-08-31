@@ -1,0 +1,79 @@
+{
+  "defaultCode" : "en_US",
+  "defaultLabel" : "English (US)",
+  "id" : "95669968-4741-49f3-86e4-90c08b829138",
+  "languages" : [ {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "4aabe3b7-cb5e-4805-ae1c-8b7be1120249",
+    "isActive" : true,
+    "label" : "Amharic",
+    "languageCode" : "am",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "5a59d8c0-857a-4847-a4b7-5c81d3b2687e",
+    "isActive" : true,
+    "label" : "Luxembourgish",
+    "languageCode" : "lb",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "1b1e8470-7678-463f-a6cc-ea685a9e2261",
+    "isActive" : true,
+    "label" : "Malay",
+    "languageCode" : "ms",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "33b6db07-204f-4c50-8e9a-4504c6fae572",
+    "isActive" : true,
+    "label" : "Malayalam",
+    "languageCode" : "ml",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "4f0b9a0c-650b-4680-b0c4-ad02c11f9460",
+    "isActive" : true,
+    "label" : "Maltese",
+    "languageCode" : "mt",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "57a9fa39-aaa1-478e-ab9d-5f8bd7dd2424",
+    "isActive" : true,
+    "label" : "Norwegian",
+    "languageCode" : "no",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "e08ec048-6159-4893-b44b-5ca01affe911",
+    "isActive" : true,
+    "label" : "Telugu",
+    "languageCode" : "te",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "241cc62e-b2e0-41c1-a745-0516cc99c9b0",
+    "isActive" : true,
+    "label" : "Te reo",
+    "languageCode" : "mi",
+    "type" : "language"
+  }, {
+    "countryCode" : "",
+    "fallbackLanguageId" : null,
+    "id" : "2ae8d130-365f-410a-b765-5a7f22795508",
+    "isActive" : true,
+    "label" : "Tamil",
+    "languageCode" : "ta",
+    "type" : "language"
+  } ],
+  "type" : "languageContainer"
+}

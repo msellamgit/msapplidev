@@ -1,0 +1,60 @@
+{
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "45d64577-baef-46ae-adc2-0a531c9d845f",
+  "label" : "orderfeedbacksorry",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"18321ee1-2757-4264-9e30-1e26fe1d7cc7\",\"columns\":[{\"UUID\":\"3a8c7038-4071-40ed-85c9-1faa306df1d0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "18321ee1-2757-4264-9e30-1e26fe1d7cc7",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwc_POC2_FeedbackSorry",
+          "id" : "8b09ca2c-9632-4c33-b40a-d0ed806a8754",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "3a8c7038-4071-40ed-85c9-1faa306df1d0",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "4cc88a48-18f7-4621-887c-6f0bd9b00fb2",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "orderfeedbacksorry",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "fa5cc603-8021-48fb-9763-34559f978d6f",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "faa5b055-d2f6-428e-8fdd-f00c7625c120",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "HgdzrsqEYmEq8dFrYuR7thHNBRHjCV",
+  "type" : "view",
+  "viewType" : "custom-orderfeedbacksorry"
+}

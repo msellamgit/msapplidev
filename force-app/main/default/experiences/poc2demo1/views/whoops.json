@@ -1,0 +1,60 @@
+{
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "e28a0dba-ffd2-4975-820a-bdcc7bd26de3",
+  "label" : "whoops",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"f1540036-fd63-4c7c-b205-c245fe6f7f17\",\"columns\":[{\"UUID\":\"8d0090f3-6ee5-45c5-9955-feaf351e58c5\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "f1540036-fd63-4c7c-b205-c245fe6f7f17",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwc_POC2_Whoops",
+          "id" : "a1cca5de-4065-46fe-a990-b2dfc256ca68",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "8d0090f3-6ee5-45c5-9955-feaf351e58c5",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "9a06ea48-89ce-4404-ab4d-59c5dc4949ad",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "whoops",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "49291b7e-330a-4f00-b5c3-bc0f10f43a94",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "628fce91-05c3-4826-9467-6330e8c92383",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Y8R0KzVE1fGU6CRKpElVk6kFyicWEb",
+  "type" : "view",
+  "viewType" : "custom-whoops"
+}

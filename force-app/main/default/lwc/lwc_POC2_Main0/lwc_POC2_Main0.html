@@ -1,0 +1,105 @@
+<template>
+    <c-lwc-poc2-language></c-lwc-poc2-language>
+    <div class="pageWrapper">
+        <aside> 
+            <div class="leftmenu">
+                <div class="headerlogo">
+                    <a href="#" class="logo">
+                        <img src={imagelogo} alt="">
+                    </a>
+                </div>                
+                <ul class="steps">
+                    <!-- class="done" -->
+                    <li class="mymenu1 menutodo current">
+                        <div class="stepshorizon mymenu1hor"></div>
+                        <span class="spanlabel">{lbl_main_menu_package}</span>
+                        <div class="infos">{__pac_label}</div>
+                    </li>
+                    <!-- class="current" -->
+                    <li class="mymenu2 menutodo">
+                        <div class="stepshorizon mymenu2hor"></div>
+                        <span class="spanlabel">{lbl_main_menu_details}</span>
+                        <div class="infos">{__acc_AccountName}</div>
+                        <div class="infos">{__acc_StreetName}</div>
+                        <div class="infos">{__acc_City}</div>
+                    </li>
+                    <li class="mymenu3 menutodo">
+                        <div class="stepshorizon mymenu3hor"></div>
+                        <span class="spanlabel">{lbl_main_menu_cards}</span>
+                        <div class="infos">{lblnbcard}</div>
+                    </li>
+                    <li class="mymenu4 menutodo">
+                        <div class="stepshorizon mymenu4hor"></div>
+                        <span class="spanlabel">{lbl_main_menu_bank}</span>
+                        <div class="infos">{__bnk_AccountName}</div>
+                        <div class="infos">{__bnk_Iban}</div>
+                    </li>
+                    <li class="mymenu5">
+                        <span class="spanlabel">{lbl_main_menu_confirm}</span>
+                        <div class="infos"></div>
+                    </li>
+                </ul>
+            </div>
+        </aside> 
+        <section class="section">
+            <div class="main">
+                <div if:false={isLoaded} class="spinnermiddle">
+                    <lightning-spinner alternative-text="Loading..." variant="brand">
+                    </lightning-spinner>
+                </div>
+                <lightning-layout style="display:block" if:true={step1} >
+                    <c-lwc-poc2-package package={infoPackage} onparentnext={activatebtnnext}></c-lwc-poc2-package>
+                </lightning-layout>
+                <lightning-layout style="display:block" if:true={step2} >
+                    <c-lwc-poc2-account account={infoAccount} onparentnext={activatebtnnext}></c-lwc-poc2-account>
+                </lightning-layout>
+                <template if:false={modedemo}>
+                <lightning-layout style="display:block" if:true={step3} >
+                    <c-lwc-poc2-card cards={infoCards} hidemainbutton={hidebarbutton} onbacknumbercard={refreshlabelbtnsuiv} ongotobankdetail={gotobankdetail}  onparentnext={activatebtnnext} leadid={leadid}  ></c-lwc-poc2-card>     
+                </lightning-layout>
+                <lightning-layout style="min-height: 400px;display:block;" if:true={step4} >
+                    <c-lwc-poc2-bank bank={infoBank}  onparentnext={activatebtnnext} account={infoAccount}></c-lwc-poc2-bank>
+                </lightning-layout>
+                <lightning-layout style="min-height: 400px;display:block;" if:true={step5} >
+                    <c-lwc-poc2-confirmation onmaingotostep={gotostep} onparentnext={activatebtnnext} account={infoAccount} package={infoPackage} bank={infoBank} cards={infoCards}></c-lwc-poc2-confirmation>
+                </lightning-layout>
+
+                </template>
+                <template if:true={modedemo}>
+                    <template if:true={step3}><span style="color: red">UNDER CONSTRUCTION</span></template>
+                    <template if:true={step4}><span style="color: red">UNDER CONSTRUCTION</span></template>
+                    <template if:true={step5}><span style="color: red">UNDER CONSTRUCTION</span></template>
+                </template>
+                <template if:true={showbarbutton}>
+                    <div class="btnnavig slds-clearfix">
+                        <template if:false={step1}>
+                        <a onclick={btnPrevious} class="btn stepBtnprevious">
+                            <span class="material-icons material-icons-round">
+                                arrow_back
+                            </span>
+                            <span class="labelPrevious">{previousbtnlabel}</span>
+                        </a>
+                        </template>
+                        <div if:false={isLoaded} class="slds-float_right slds-is-relative" style="position: relative;">
+                            <lightning-spinner alternative-text="Loading..." style="margin: 40px 80px 0px 0; left: -100px; top: -5px;" variant="brand">
+                            </lightning-spinner>
+                        </div>
+                        <a onclick={btnNext} class="slds-float_right btn stepBtn nextBtn inactive">
+                            <span>{nextbtnlabel}</span>
+                            <span class="material-icons material-icons-round">
+                                arrow_forward
+                            </span>
+                        </a>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-clearfix footerlink">
+                <ul class="dotted">
+                    <li><a target="_blank" href="https://web.uta.com/agb"> {lbl_main_link_terms} </a></li>
+                    <li><a target="_blank" href="https://web.uta.com/fileadmin/user_upload/pdf-files/avv_uta_mobilitaetsdienstleistungen.pdf"> {lbl_main_link_data} </a></li>
+                    <li><a target="_blank" href="https://web.uta.com/en/-2eu/legal-notice"> {lbl_main_link_imprint} </a></li>
+                 </ul>                 
+            </div>
+        </section>
+    </div>
+</template>

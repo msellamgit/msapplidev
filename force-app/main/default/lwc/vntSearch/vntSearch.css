@@ -1,0 +1,15 @@
+.lgc-bg {
+    background-color: rgb(242, 242, 242);
+}
+
+.lgc-bg-inverse {
+    background-color: rgb(22, 50, 92);
+}
+.btnclass
+{
+    color: rgb(194, 57, 52) !important;
+    border-color: rgb(194, 57, 52);;
+    border-width: 1px;
+    margin: 4px;    
+    background-color: white
+}

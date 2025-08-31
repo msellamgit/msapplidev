@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Chiffre d&apos;Affaire --></label>
+        <name>Chiffre_d_Affaire__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code Sécurité --></label>
+        <name>Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Priority --></label>
+        <name>CustomerPriority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer ID --></label>
+        <name>Customer_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geoloc Latitute --></label>
+        <name>Geoloc_Latitute__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geoloc Longitute --></label>
+        <name>Geoloc_Longitute__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image Id --></label>
+        <name>ImageId__c</name>
+    </fields>
+    <fields>
+        <label><!-- LinkedIn Company Id --></label>
+        <name>LID__LinkedIn_Company_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Logo --></label>
+        <name>Logo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Locations --></label>
+        <name>NumberofLocations__c</name>
+    </fields>
+    <fields>
+        <label><!-- One Value --></label>
+        <name>One_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Photo Client --></label>
+        <name>PhotoClient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Opción para combinar las cantidades de múltiples activos para el mismo producto en una partida cuando se genera el presupuesto de renovación.</help>
+        <label><!-- Combine Asset Quantities --></label>
+        <name>SBQQ__AssetQuantitiesCombined__c</name>
+    </fields>
+    <fields>
+        <help>Active esta opción para combinar activos y suscripciones de múltiples contratos con plazos compartidos. Cada contrato con plazos compartidos genera de forma predeterminada un grupo separado en el presupuesto de renovación.</help>
+        <label><!-- Combine Co-Termed Contracts --></label>
+        <name>SBQQ__CoTermedContractsCombined__c</name>
+    </fields>
+    <fields>
+        <help>Determina el momento en que los contratos terminan de forma compartida</help>
+        <label><!-- Co-Termination Event --></label>
+        <name>SBQQ__CoTerminationEvent__c</name>
+        <picklistValues>
+            <masterLabel>Add-on</masterLabel>
+            <translation>Complemento</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation>Renovación</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Determina el modo en que los contratos de servicios y suscripciones terminan de forma compartida para este cliente.</help>
+        <label><!-- Contract Co-Termination --></label>
+        <name>SBQQ__ContractCoTermination__c</name>
+        <picklistValues>
+            <masterLabel>Always</masterLabel>
+            <translation>Siempre</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Never</masterLabel>
+            <translation>Nunca</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prompt</masterLabel>
+            <translation>Preguntar</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Oportunidad predeterminada para esta cuenta empleada en un módulo de comercio electrónico para obtener la lista de precios del cliente y asociarla con presupuestos de &quot;carrito de la compra&quot;.</help>
+        <label><!-- Default Opportunity --></label>
+        <name>SBQQ__DefaultOpportunity__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Seleccione esta opción si no se deben heredar los precios contratados desde la cuenta principal.</help>
+        <label><!-- Ignore Parent Contracted Prices --></label>
+        <name>SBQQ__IgnoreParentContractedPrices__c</name>
+    </fields>
+    <fields>
+        <help>Seleccione la casilla de verificación para mantener la jerarquía del paquete en presupuestos de renovación y correcciones.</help>
+        <label><!-- Preserve Bundle Structure --></label>
+        <name>SBQQ__PreserveBundle__c</name>
+    </fields>
+    <fields>
+        <help>Ingrese la fecha hasta la que se deben mantener los precios.</help>
+        <label><!-- Price Hold End --></label>
+        <name>SBQQ__PriceHoldEnd__c</name>
+    </fields>
+    <fields>
+        <help>Seleccione Basado en activos para hacer que las renovaciones se basen en los activos de una cuenta o seleccione Basado en contratos para hacer que las renovaciones se basen en los contratos creados desde un presupuesto.</help>
+        <label><!-- Renewal Model --></label>
+        <name>SBQQ__RenewalModel__c</name>
+        <picklistValues>
+            <masterLabel>Asset Based</masterLabel>
+            <translation>Basado en activos</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contract Based</masterLabel>
+            <translation>Basado en contratos</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Utilice &quot;Igual&quot; para mantener el mismo precio pagado la última vez. Utilice &quot;Lista&quot; para utilizar el precio de lista actual. Utilice &quot;Incremento&quot; para utilizar el precio pagado la última vez más un incremento.</help>
+        <label><!-- Renewal Pricing Method --></label>
+        <name>SBQQ__RenewalPricingMethod__c</name>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation>Lista</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Same</masterLabel>
+            <translation>Igual</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uplift</masterLabel>
+            <translation>Incremento</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Se selecciona si esta cuenta tiene certificados activos</help>
+        <label><!-- Tax-Exempt --></label>
+        <name>SBQQ__TaxExempt__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>No</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>Sí</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SLA Expiration Date --></label>
+        <name>SLAExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Serial Number --></label>
+        <name>SLASerialNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA --></label>
+        <name>SLA__c</name>
+        <picklistValues>
+            <masterLabel>Bronze</masterLabel>
+            <translation><!-- Bronze --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gold</masterLabel>
+            <translation><!-- Gold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platinum</masterLabel>
+            <translation><!-- Platinum --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Silver</masterLabel>
+            <translation><!-- Silver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Team Leader --></label>
+        <name>Team_Leader__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Upsell Opportunity --></label>
+        <name>UpsellOpportunity__c</name>
+        <picklistValues>
+            <masterLabel>Maybe</masterLabel>
+            <translation><!-- Maybe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Account Layout</layout>
+        <sections>
+            <label><!-- Cloud Page --></label>
+            <section>Cloud Page</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Google Drive --></label>
+            <section>Google Drive</section>
+        </sections>
+        <sections>
+            <label><!-- LinkedIn Member Profile --></label>
+            <section>LinkedIn Member Profile</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Export Excel --></label>
+        <name>Export_Excel</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Event LGTN --></label>
+        <name>New_Event_LGTN</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Compte --></label>
+        <name>Compte</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Compte Personnel --></label>
+        <name>ComptePersonnel</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- CompanyId should be a numeric value --></errorMessage>
+        <name>LID__Check_CompanyId_Value</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Billing --></label>
+        <name>Billing</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Export_Excel2 --></label>
+        <name>Export_Excel2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Amend_Assets --></label>
+        <name>SBQQ__Amend_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Renew_Assets --></label>
+        <name>SBQQ__Renew_Assets</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Search_Linkedin --></label>
+        <name>Search_Linkedin</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Test_Pdf --></label>
+        <name>Test_Pdf</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Update_to_Customer --></label>
+        <name>Update_to_Customer</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Weather --></label>
+        <name>Weather</name>
+    </webLinks>
+</CustomObjectTranslation>

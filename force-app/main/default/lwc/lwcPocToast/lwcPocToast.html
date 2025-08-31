@@ -1,0 +1,18 @@
+<template>
+    <template if:true={showToastBar}>
+        <div class="notifycontainer">
+            <!-- <div style="background: green" class="notifytoast" role="status"> -->
+            <div class={notifytoastcolor} role="status">
+                <span title={message}> 
+                <span class={getdoccolor}>{signetype}</span> 
+            </span>
+            <div style="margin-left: 0.75rem; color: white;">
+                <h2>{message}</h2>
+            </div>
+               <div class="notifyclose">
+                    <lightning-icon class="whiteicon" icon-name="utility:close" onclick={closeModel} size="xx-small"></lightning-icon>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

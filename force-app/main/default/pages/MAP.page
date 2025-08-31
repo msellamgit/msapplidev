@@ -1,0 +1,172 @@
+<!--
+https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_dynamic_vf_sample_standard.htm
+https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_error_handling.htm
+@Description:visual force page with multiple diffrent colour marker
+         <apex:commandButton action="{!afficherCarte}" value="Afficher Carte"/>         
+    src="https://maps.google.com/maps/api/js?sensor=false"
+-->
+<apex:page Controller="AccountList" id="geolocPage">
+    <apex:includescript value="/soap/ajax/19.0/connection.js">  
+    </apex:includescript> 
+    <script type="text/javascript"
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY-RvFcIDPldz2lWfLBVE_4pL9Ebq4Gow"></script>
+    <style>    
+        #map {
+            font-family: Arial;
+            font-size:12px;
+            line-height:normal !important;
+            height:400px;        
+            padding: 20px;
+        }
+     
+        .roundCornerCss{ 
+            /* outer shadows  (note the rgba is red, green, blue, alpha) */
+            -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4); 
+            -moz-box-shadow: 0px 1px 6px rgba(23, 69, 88, .5);
+            
+            /* rounded corners */
+            -webkit-border-radius: 12px;
+            -moz-border-radius: 7px; 
+            border-radius: 7px;
+            
+            /* gradients */
+            background: -webkit-gradient(linear, left top, left bottom, 
+            color-stop(0%, white), color-stop(15%, white), color-stop(100%, #D7E9F5)); 
+            background: -moz-linear-gradient(top, white 0%, white 55%, #D5E4F3 130%); 
+        }   
+    </style>
+    <script type="text/javascript">                   
+        var geocoder;
+        var map;
+        var infowindow = new google.maps.InfoWindow();
+        var places = [];
+        var title_content = new Array();                    
+        var popup_content = new Array();
+        var position_defined_lat = new Array();         
+        var position_defined_long = new Array();
+        var account_id = new Array(); 
+        var account_ca = new Array();     
+        var address = new Array();
+        var address_position = 0;                    
+        var timeout = 600;
+
+        function initialize(){
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(48.51, 2.20);
+            var myOptions = {
+              zoom: 12,
+              center: {lat: 48.8534100, lng: 2.3488000},
+              mapTypeId: 'roadmap'
+            } 
+
+           <apex:repeat value="{!objAccounts}" var="loc" id="addressesId">
+                address.push("{!loc.BillingStreet}"+","+"{!loc.BillingCity}"+","+"{!loc.BillingPostalCode}"+","+"{!loc.BillingCountry}");                         
+                title_content.push("{!loc.Name}"
+                +"\n"+"{!loc.BillingStreet}"
+                +"\n"+"{!loc.BillingPostalCode}"+" "+"{!loc.BillingCity}"
+                +"\n"+"CA : {!loc.Chiffre_d_Affaire__c}"); 
+                account_id.push("{!loc.Id}");
+                /* popup_content.push("https://eu5.salesforce.com/"+"{!loc.Id}"); */
+                popup_content.push("/"+"{!loc.Id}")
+                position_defined_lat.push("{!loc.Geoloc_Latitute__c}");
+                position_defined_long.push("{!loc.Geoloc_Longitute__c}"); 
+                account_ca.push("{!loc.Chiffre_d_Affaire__c}"); 
+            </apex:repeat>    
+            
+            map = new google.maps.Map(document.getElementById("map"), myOptions);
+            addMarker(address_position);
+            
+            if ("{!objAccounts.size}" == 0 ) {
+            document.getElementById('geolocPage:geolocForm:newPageBlock:nbresult').value = 'AUCUN RESULTAT TROUVE';
+            }            
+            else if ({!objAccounts.size} < 15 ) {
+            document.getElementById('geolocPage:geolocForm:newPageBlock:nbresult').value = "{!objAccounts.size}" + ' RESULTAT(S) TROUVE(S)';
+            }
+            else {
+            document.getElementById('geolocPage:geolocForm:newPageBlock:nbresult').value = 'PLUS DE 14 RESULTATS TROUVES, SEULS LES 15 PREMIERS SONT AFFICHES';
+            }
+                
+            /* alert("{!statut_partner}"); alert('passe1 : \n' + position_defined_lat); */
+            alert('latitude : \n' + position_defined_lat);
+            alert('coordonnees : \n' +Math.max.apply( Math, position_defined_lat ) + '\n' + Math.min.apply( Math, position_defined_lat ) + '\n' + Math.max.apply( Math, position_defined_long ) + '\n' + Math.min.apply( Math, position_defined_long ) )
+            if (Number.isFinite(Math.max.apply( Math, position_defined_lat ))) { 
+            map.setCenter(new google.maps.LatLng(
+                ((Math.max.apply( Math, position_defined_lat ) + Math.min.apply( Math, position_defined_lat )) / 2.0),
+                ((Math.max.apply( Math, position_defined_long ) + Math.min.apply( Math, position_defined_long )) / 2.0)
+            ));
+            map.fitBounds(new google.maps.LatLngBounds(
+                new google.maps.LatLng(Math.min.apply( Math, position_defined_lat ), Math.min.apply( Math, position_defined_long )),
+                new google.maps.LatLng(Math.max.apply( Math, position_defined_lat ), Math.max.apply( Math, position_defined_long ))
+            ));
+            }
+        }
+    
+       function addMarker(position){
+            if (position_defined_lat[position] != "" && position_defined_long[position] != "999") {
+                addMarker_map(position);
+                    }
+                else{                      
+                    geocoder.geocode({'address': address[position]}, function(results, status){
+                     if (status == google.maps.GeocoderStatus.OK) {
+                        places[position] = results[0].geometry.location;  
+                        position_defined_lat[position] = results[0].geometry.location.lat();
+                        position_defined_long[position] = results[0].geometry.location.lng(); 
+                        alert('nouvelle coordonnes : ' +  results[0].geometry.location)
+                        updateGeolocAccount(account_id[position], results[0].geometry.location.lat(), results[0].geometry.location.lng());                         
+                        addMarker_map(position); 
+                         
+                        }
+                        else{
+                            if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT){
+                                setTimeout(function() { addMarker(position); }, (timeout * 3));
+                            }
+                        }                      
+                });
+                    }
+                address_position++;
+                if (address_position < address.length){   
+                      setTimeout(function() { addMarker(address_position); }, (timeout));
+                }
+        }
+       function addMarker_map(position){
+           var marker = new google.maps.Marker({
+               position: {lat: parseFloat(position_defined_lat[position]), lng: parseFloat(position_defined_long[position])},
+               title:title_content[position],
+               icon: getMapIconUrl(1 + ( parseInt( account_ca[position] / 200000 ) ) % 5 ),
+               map: map
+           });
+           google.maps.event.addListener(marker, 'click', function() {
+               /* window.open(popup_content[position],"_parent") */
+               window.open(popup_content[position], "_parent");
+           });
+       }            
+       function getMapIconUrl(markerNumber){
+            var mapIconUrl = "{!URLFOR($Resource.GoogleMarkers, 'GoogleMark/1.png')}";
+            var newIcon = markerNumber +'.png';
+            
+            mapIconUrl = mapIconUrl.replace('1.png',newIcon);
+            return mapIconUrl;
+        }
+       function updateGeolocAccount(id_account, geoloc_lat, geoloc_long) {
+            sforce.connection.sessionId = "{!$Api.Session_ID}";    
+            var update_Account = new sforce.SObject("Account");            
+            update_Account.Id = id_account;  
+            update_Account.project_mse__Geoloc_Latitute__c = geoloc_lat; 
+            update_Account.project_mse__Geoloc_Longitute__c = geoloc_long; 
+            
+            var updateRecords = [];  
+            updateRecords.push(update_Account) ;  
+            var result = sforce.connection.update(updateRecords);  
+        }
+    </script>
+    <apex:form id="geolocForm">
+    
+    <apex:outputPanel id="idToRerender">
+         
+    </apex:outputPanel>
+        <div id="map" class="roundCornerCss"></div>
+    </apex:form>        
+    <script>
+         initialize();
+    </script>
+</apex:page>

@@ -1,0 +1,36 @@
+<apex:page sidebar="false" controller="cfr.CloudFilesSetupController">
+   
+   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+   <apex:stylesheet value="{!URLFOR($Resource.cfr__CloudFiles, "bootforce/css/bootstrap-force.css")}"/>
+
+   <script type="text/javascript">
+     var host = "{!host}"
+     var sessionId = "{!$Api.Session_ID}"
+   </script>
+
+   <apex:stylesheet value="{!URLFOR($Resource.cfr__CloudFilesCustom, "InitialSetup/style.css")}"/>
+   <script type="text/javascript" src="{!URLFOR($Resource.CloudFilesCustom, "InitialSetup/app.js")}"></script> 
+
+   <div ng-app="initialSetup">
+     <div class="bootstrap-force cf-container" ng-controller="initialSetup">
+       <div id="msg" class="alert alert-info ng-hide" ng-show="message">{{message}}</div>
+       
+       <div class="title">Cloud Files</div>
+       <div class="welcome-text">Welcome</div>
+       <div class="content row">
+           <img src="{!URLFOR($Resource.CloudFiles, "logo/280X205.png")}" class="logo"/> 
+           <div class="instructions">
+               <p>
+                   In order to utlize the features of this tool, you need to give access to the Salesforce Metadata API by adding a 
+                   <a target="_new" href="http://na1.salesforce.com/help/doc/en/configuring_remoteproxy.htm">Remote Site Setting</a> 
+                   with this Salesforce Server URL <b>https://{{host}}</b>
+               </p>
+               <p> Click the <b>Create Remote Site Setting</b> button below to have the app perform this step for you.</p>
+               <button ng-click="createRemoteSite()" ng-disabled="creating">Create Remote Site Setting</button><br /><br /><br />
+               <p>After creating Remote Site Setting, please refresh this page to enable CloudFiles for different objects</p>
+           </div>
+       </div>
+      </div>
+   </div>
+
+</apex:page>

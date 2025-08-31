@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Candidate --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Candidate --></value>
+    </caseValues>
+    <fields>
+        <label>Color Favorito</label>
+        <name>Couleur_Pr_f_r__c</name>
+        <picklistValues>
+            <masterLabel>Bleu</masterLabel>
+            <translation>azul</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaune</masterLabel>
+            <translation>amarillo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orange</masterLabel>
+            <translation>naranja</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rouge</masterLabel>
+            <translation>rojo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vert</masterLabel>
+            <translation>verde</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Facturaci�n anual</label>
+        <name>Facturation_Annuelle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geo --></label>
+        <name>Geo__c</name>
+    </fields>
+    <fields>
+        <label>libre</label>
+        <name>Libre__c</name>
+    </fields>
+    <fields>
+        <label>Nbr Jornadas Anuales</label>
+        <name>Nbr_Jours_Annuel__c</name>
+    </fields>
+    <fields>
+        <help>�Qu� tan bien se ajustan a este candidato la descripci�n del trabajo?</help>
+        <label>prospecto Clasificaci�n</label>
+        <name>Prospect_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Cool</masterLabel>
+            <translation>fresco</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation>caliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager Favorite</masterLabel>
+            <translation>Gerente Favorite</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warn</masterLabel>
+            <translation>advertir</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>D�a Precio HT</label>
+        <name>Tarif_Jour_HT__c</name>
+    </fields>
+    <fields>
+        <label>Candidato del usuario</label>
+        <name>User_Candidate__c</name>
+        <relationshipLabel>Los candidatos</relationshipLabel>
+    </fields>
+    <gender><!-- Feminine --></gender>
+    <nameFieldLabel><!-- Nom du Candidates --></nameFieldLabel>
+    <validationRules>
+        <errorMessage>El n�mero anual de d�as no puede exceder de 210 y el diario de facturaci�n � 900 HT.</errorMessage>
+        <name>Nbj_inf_210_Factu_inf_900</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- L_equipe --></label>
+        <name>L_equipe</name>
+    </webLinks>
+</CustomObjectTranslation>

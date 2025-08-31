@@ -1,0 +1,57 @@
+<template>
+    <div class="slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-2">
+            <div class="slds-box">
+                <lightning-carousel>
+                    <lightning-carousel-image
+                        src={resProspect}
+                        header="CREATION" description="Nouveau Prospect"
+                        alternative-text="Nouveau Prospect" href="/vente/s/vente-process">
+                    </lightning-carousel-image>
+                    <lightning-carousel-image
+                        src={resCustomer}
+                        header="NOUVEAUX PROSPECTS" description="10 derniers prospects créés"
+                        alternative-text="10 derniers prospects créés" onclick={findLastCreated}>
+                    </lightning-carousel-image>
+                    <lightning-carousel-image
+                        src={resLequipe} 
+                        header="SPORT" description="L'Equipe"
+                        alternative-text="L'Equipe" onclick={openLequipe}>
+                    </lightning-carousel-image>
+                </lightning-carousel>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <div style="height:400px;width:100%;margin-left: 5px;position: relative;">
+                <lightning-card title="Recherche Prospect" icon-name="standard:lead">
+                    <div class="slds-m-around_medium">
+                        <lightning-input type="search" onchange={findLeadResult} class="slds-m-bottom_small">
+                        </lightning-input>
+                        <div style="height:250px;">
+                            <lightning-datatable key-field="Id" data={leadList} columns={columnList}
+                                hide-checkbox-column="true" onrowaction={handleRowAction}>
+                                <!--hide-checkbox-column="true"-->
+                            </lightning-datatable>
+                        </div>
+                        <template if:true={noRecordsFound}>
+                            --Pas de résultat--
+                        </template>
+                    </div>
+                </lightning-card>
+            </div>
+            <c-vnt-modal-form-lead></c-vnt-modal-form-lead>
+        </div>
+    </div>
+
+    <!--template if:true={bShowModal}>
+        <section role="dialog" tabindex="-1"
+        aria-labelledby="modal-heading-01"
+        aria-modal="true"
+        aria-describedby="modal-content-id-1"
+       class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                
+            </div>        
+        </section>
+    </template-->
+</template>

@@ -1,0 +1,30 @@
+<apex:page sidebar="false" showHeader="false" standardController="cfr__CloudFile__c" extensions="cfr.CloudFilesController">
+    <style>
+        .cf-table {
+            width: 100%;
+            border-spacing: 0px;
+        }        
+        .cf-table td {
+            color: #4a4a56;           
+        }
+        .cf-table td.col-name {
+            width: 36%;
+            padding-right: 15px;
+            text-align: right;
+            font-size: 91%;
+            font-weight: bold;
+        }
+        .cf-table td.col-val {
+            width: 64%;
+            padding-left: 5px;
+            text-align: left;
+            color: #000;
+        }
+    </style>
+    <table class="cf-table">
+        <tr>                
+            <td class="col-name">{!currentRecord.cfr__ObjectName__c}</td>
+            <td class="col-val"><a href="/{!currentRecord.cfr__Object_Id__c}" target="_blank">{!currentRecordParentName}</a></td>
+        </tr>
+    </table>    
+</apex:page>

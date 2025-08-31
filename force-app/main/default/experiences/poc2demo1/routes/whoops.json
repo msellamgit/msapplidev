@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "e28a0dba-ffd2-4975-820a-bdcc7bd26de3",
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "configurationTags" : [ ],
+  "devName" : "whoops__c",
+  "id" : "7bcc4ff8-62b7-476b-9bb6-3340776192df",
+  "label" : "whoops",
+  "routeType" : "custom-whoops",
+  "type" : "route",
+  "urlPrefix" : "whoops"
+}

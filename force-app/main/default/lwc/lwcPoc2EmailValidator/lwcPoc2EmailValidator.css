@@ -1,0 +1,698 @@
+:host {
+    --backgroundColor: #ffffff;
+  }
+  .bodyClass{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+  }
+  
+  .mainPage {
+    height: 100vh;
+  }
+  
+  .headerContainer {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+  }
+  .headerContainerLeftSide {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    margin-left: 128px;
+    margin-top: 18px;
+  }
+  .headerContainerLeftSide img{
+    height: 55px;
+    /* margin-top: 48px; */
+  }
+  .headerContainerRightSide {
+    height: 100vh;
+    width: 20%;
+    border-right: 3px solid red;
+    display: flex;
+    justify-content: right;
+    margin-right: 8%;
+    padding-right: 16px;
+    align-self: flex-end;
+  }
+  .headerContainerRightSide span{
+    align-self: flex-end;
+    font-family: 'Edenred';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #1F252E;
+  }
+  
+  .bodyContainer {
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .bodyContainerLeftSide {
+    height: 100%;
+    width: 40%;
+    padding-top: 5%;
+    padding-left: 128px;
+  }
+  .bodyContainerLeftSideComponents {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 16px;
+  }
+  /*
+  .bodyContainerLeftSideComponentsHidden {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    visibility: hidden;
+  }
+  */
+  .bodyContainerRightSide {
+    width: 60%;
+  }
+  .padding-class {
+    height: 5%;
+    width: 100%;
+  }
+  .img-container {
+    height: 95%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .img-container img {
+    height: 100%;
+    border-radius: 50% 0 0 50%;
+    /* object-fit: contain; */
+  }
+  .redLineImgHeaderRightStyle {
+    max-width: 100%;
+    height: 100%;
+  }
+  .redLineImgHeaderDivStyle {
+    padding-left: 7%;
+  }
+  
+  .rightSideImageStyle {
+    border-radius: 50% 0% 0% 50%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .rightSideImageStyleTopHidden {
+    border-radius: 50% 0% 0% 50%;
+    width: 54%;
+    height: 100%;
+    margin-left: 46%;
+    padding-top: 5%;
+  }
+  .utaEdenredLogoImgHeaderLeftStyle {
+    height: 55px;
+  }
+  .headerMessageRightSideStyle {
+    font-family: "Edenred";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    padding-top: 39%;
+  }
+  .pageTitleMessageStyle {
+    font-family: "Edenred";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 48px;
+    /* identical to box height, or 120% */
+  
+    display: flex;
+    align-items: center;
+  
+    /* NB GREY/NB GR 80 */
+  
+    color: #1f252e;
+  }
+  .infoMessageStyle {
+  
+    /* color: #5c6f8a; */
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: -12px;
+    display: flex;
+    align-items: center;
+    color: #5c6f8a;
+  }
+  .pinExplanationMessageStyle {
+    margin-top: 3%;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+  
+    /* NB GREY/NB GR 70 */
+  
+    color: #333e4d;
+  }
+  .pinValidationMessageStyle1 {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5e8d25;
+    /* identical to box height, or 143% */
+  
+    /* Semantic/Error/150 */
+  }
+  .pinValidationMessageStyle2 {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ab3e08;
+  }
+  .verifyEmailButtonStyle {
+    position: relative;
+    background: #000000;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    width: 235px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 32px;
+    color: white;
+    gap: 10px;
+    margin-top: 3%;
+  }
+  
+  .actionMessageStyle {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #5c6f8a;
+  }
+  .afterActionMessageDivStyle {
+    padding-top: 5%;
+  }
+  
+  .verifyEmailButtonStyle:active {
+    background: #d1d8e0;
+  }
+  .verifyEmailButtonStyle__text {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .verifyEmailButtonStyle__loading .verifyEmailButtonStyle__text {
+    display: none;
+  }
+  
+  .verifyEmailButtonStyle__loading::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: verifyEmailButtonStyle__loading-spinner 1s ease infinite;
+  }
+  
+  @keyframes verifyEmailButtonStyle__loading-spinner {
+    from {
+      transform: rotate(0turn);
+    }
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
+  .formContainer {
+    display: flex;
+    width: 100%;
+  }
+  .validationContainer {
+    border-style: solid;
+    width: 50%;
+  }
+  .pinInputStyle {
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    border: 1px solid #b3bdcc;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    outline: none;
+  }
+  .pinInputStyleCorrect {
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    border: 1px solid #b3bdcc;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-color: #94c459;
+  }
+  .pinInputStyleIncorrect {
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
+    border: 1px solid #b3bdcc;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border-color: #e3733b;
+  }
+  .finalMessageStyle {
+    font-size: 2rem;
+    font-family: "Arial";
+  }
+  .validationMessageStyle {
+    margin-left: 30%;
+    margin-top: 2%;
+  }
+  .pinValidationIconStyle {
+    margin-left: 33%;
+  }
+  .infoMessageStyle {
+    margin-top: 3%;
+  }
+  .displayedEmailStyle {
+    margin-left: 22%;
+    margin-top: 2%;
+  }
+  .buttonStyleDiv {
+    padding-left: 31%;
+    padding-top: 3%;
+  }
+  .expirationMessageStyle {
+    padding-left: 5%;
+  }
+  .approveButtonStyle {
+    margin-right: 10px;
+  }
+  .hideLanguage {
+    display: none;
+  }
+  
+  .title {
+    font-size: 25px;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKcg72j00.woff2)
+      format("woff2");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+      U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKew72j00.woff2)
+      format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKcw72j00.woff2)
+      format("woff2");
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKfA72j00.woff2)
+      format("woff2");
+    unicode-range: U+0370-03FF;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKcQ72j00.woff2)
+      format("woff2");
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+      U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgoKfw72.woff2)
+      format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+      U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jvWyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+      U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jtGyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jvGyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3js2yNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0370-03FF;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jvmyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+      U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3jsGyN.woff2)
+      format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+      U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* cyrillic-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvWyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+      U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjtGyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvGyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+1F00-1FFF;
+  }
+  /* greek */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjs2yNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0370-03FF;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjvmyNL4U.woff2)
+      format("woff2");
+    unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF,
+      U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvjsGyN.woff2)
+      format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
+      U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: "Edenred";
+    src: url(/sfsites/c/resource/Email_Verification_Edenred_Regular_Font)
+      format("woff2");
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .verifyEmailButtonStyle__loading::after {
+      content: "";
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: 4px solid transparent;
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: verifyEmailButtonStyle__loading-spinner 1s ease infinite;
+    }
+    .redLineImgHeaderRightStyle {
+      display: none;
+    }
+    /* .headerContainer{
+      margin: 0;
+      padding: 0;
+    } */
+    .headerMessageRightSideStyle {
+      display: none;
+    }
+    .headerContainerLeftSide {
+      margin-left: 16px;
+      width: 130px;
+      margin-top: 24px;
+    }
+  
+    .headerContainerLeftSide img {
+      height: 40px;
+    }
+    .headerContainerRightSide{
+      display: none;
+    }
+  .img-container{
+    height: 47vh;
+    width: 100%;
+  }
+  .padding-class{
+    width: 0;
+    height: 0;
+  }
+    .img-container img {
+      /* height: 100%; */
+      width: 100%;
+      border-radius: 50% 50% 0 0;
+    }
+    .bodyContainer {
+      flex-direction: column;
+    }
+  
+    .bodyContainerLeftSide {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      padding-left: 16px;
+    }
+  
+    .bodyContainerRightSide {
+      width: 100%;
+      height: 100vh;
+    }
+    .afterActionMessageDivStyle {
+      padding-top: 16px;
+      padding-right: 17%;
+    }
+    .actionMessageStyle {
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #5c6f8a;
+    }
+    .actionMessageStyleHidden {
+      visibility: none;
+    }
+  
+    .rightSideImageStyle {
+      border-radius: 50% 50% 0% 0%;
+      width: fit-content;
+      height: fit-content;
+      width: fit-content;
+      margin-left: 0%;
+      padding-top: 18%;
+      bottom: 0px;
+    }
+    .pageTitleMessageStyle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: #1f252e;
+      font-size: 32px;
+      align-self: stretch;
+    }
+    .rightSideImageStyleTopHidden {
+      padding-top: 45%;
+      border-radius: 50% 50% 0% 0%;
+      width: 100%;
+      height: 100%;
+      margin-left: 0%;
+    }
+    .infoMessageStyle {
+      font-family: "Ubuntu";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      color: #5c6f8a;
+    }
+    .pinInputStyleCorrect {
+      width: 100%;
+    }
+    .pinExplanationMessageStyle {
+      color: #333e4d;
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+    .pinInputStyle {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 8px 12px;
+      width: 100%;
+      height: 36px;
+      background: #ffffff;
+      border: 1px solid #b3bdcc;
+      border-radius: 4px;
+      flex: none;
+      align-self: stretch;
+      flex-grow: 0;
+    }
+    .verifyEmailButtonStyle {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 32px;
+      gap: 8px;
+  
+      background: #000000;
+      /* Level 2 */
+  
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+      border-radius: 100px;
+  
+      /* Inside auto layout */
+  
+      flex: none;
+      order: 2;
+      flex-grow: 0;
+      width: 100%;
+      height: 40px;
+    }
+    .utaEdenredLogoImgHeaderLeftStyle {
+      width: 100%;
+      /* flex: none; */
+      order: 0;
+      flex-grow: 0;
+      margin-top: 43%;
+      margin-left: 62%;
+    }
+  }

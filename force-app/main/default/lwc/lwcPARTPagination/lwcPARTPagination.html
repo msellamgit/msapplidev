@@ -1,0 +1,23 @@
+<template>
+    <template if:true={visiblepagination}>
+        <lightning-layout>
+            <button class="btnleftright btnbegin material-symbols-outlined" onclick={firstHandler} disabled={disablePrevious}>
+                first_page
+            </button>
+            <button class="btnleftright material-symbols-outlined" onclick={previousHandler} disabled={disablePrevious}>
+                keyboard_arrow_left
+            </button>
+            <lightning-layout-item>
+                <template for:each={lstpage} for:item="p">
+                    <button class="pagenumber" onclick={gotopage} data-id={p} key={p}>{p}</button>
+                </template>
+            </lightning-layout-item>
+            <button class="btnleftright material-symbols-outlined" onclick={nextHandler} disabled={disableNext}>
+                keyboard_arrow_right
+            </button>              
+            <button class="btnleftright btnend material-symbols-outlined" onclick={lastHandler} disabled={disableNext}>
+                last_page
+            </button>
+        </lightning-layout>
+    </template>
+</template>

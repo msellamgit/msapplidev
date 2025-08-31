@@ -1,0 +1,19 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <div class="detail1">	
+        Mon expérience CRM me permet d'intervenir sur la globalité des projets.
+        AMOA (Animation atelier de conception, Rédaction CDC et spécifications) - Pilotage de projet MOA/MOE - Développements - 
+        Gestion de Déploiements et Support.
+    </div>
+    <div class="detail2">	    
+        <br />Expertise Salesforce
+    </div>
+    <div class="detail3">	    
+        Administration et paramétrage<br />
+        Développements APEX, Visual Force<br />
+        Report, Dashboard et Wave (Analytics)<br />
+    </div>
+    <div class="detail4">	    
+        Trailhead niveau EXPEDITIONER<br />
+        80 badges , 3 superbadges
+    </div>    
+</aura:component>

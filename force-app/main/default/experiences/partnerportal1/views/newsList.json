@@ -1,0 +1,60 @@
+{
+  "appPageId" : "f5386a29-743c-4449-849f-4bff63d37c71",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "e775c343-a74e-4dd2-9bb9-792384e2338d",
+  "label" : "News List",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"4f86b3e9-abf4-4ef7-8385-f3a24a3a4856\",\"columns\":[{\"UUID\":\"65c5742e-10b9-4b81-a10c-2b8547e6fff3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "4f86b3e9-abf4-4ef7-8385-f3a24a3a4856",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwc_PART_News",
+          "id" : "ec2bf924-381b-4fdb-a54d-2e4b216c5de9",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "65c5742e-10b9-4b81-a10c-2b8547e6fff3",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "0edd47a3-514f-42c6-82c6-f4b9c94eb908",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "News",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "dcbff40f-a389-4931-b80c-bf55f08a34e4",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "78d7f3e4-eef9-4ce4-b961-2ed141d461ed",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "q2HYSj0DFHq8xcL1Tq9PBEymMpKfJv",
+  "type" : "view",
+  "viewType" : "custom-news"
+}

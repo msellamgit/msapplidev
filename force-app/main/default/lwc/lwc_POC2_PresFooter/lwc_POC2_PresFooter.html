@@ -1,0 +1,11 @@
+<template>
+    <c-lwc-poc2-language></c-lwc-poc2-language>
+    <div class="circle-background flex h-[196px] w-full justify-center pt-10 md:h-[292px]">
+        <template if:true={istypeAction0}>
+            <button onclick={gotosubscription} class="btn0 primary z-10 mx-auto mt-6 w-[92vw] focus:ring-0 md:mt-0 md:w-auto"> {btnlabel} </button>
+        </template>
+        <template if:false={istypeAction0}>
+            <button onclick={gotosubscription} class="btn1 primary z-10 mx-auto mt-6 w-[92vw] focus:ring-0 md:mt-0 md:w-auto"> {btnlabel} </button>
+        </template>        
+    </div> 
+</template>

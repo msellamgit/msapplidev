@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Candidate</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Candidates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Couleur Préféré --></label>
+        <name>Couleur_Pr_f_r__c</name>
+        <picklistValues>
+            <masterLabel>Bleu</masterLabel>
+            <translation><!-- Bleu --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaune</masterLabel>
+            <translation><!-- Jaune --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orange</masterLabel>
+            <translation><!-- Orange --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rouge</masterLabel>
+            <translation><!-- Rouge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vert</masterLabel>
+            <translation><!-- Vert --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Facturation Annuelle --></label>
+        <name>Facturation_Annuelle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geo --></label>
+        <name>Geo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Libre --></label>
+        <name>Libre__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nbr Jours Annuel --></label>
+        <name>Nbr_Jours_Annuel__c</name>
+    </fields>
+    <fields>
+        <help>Comment bien ce candidat ne correspondait � la description de l&apos;emploi?</help>
+        <label>Prospect Note</label>
+        <name>Prospect_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Cool</masterLabel>
+            <translation>Frais</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation>Chaud</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager Favorite</masterLabel>
+            <translation>directeur pr�f�r�</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warn</masterLabel>
+            <translation>Pr�venir</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tarif Jour HT --></label>
+        <name>Tarif_Jour_HT__c</name>
+    </fields>
+    <fields>
+        <label>Utilisateur Candidate</label>
+        <name>User_Candidate__c</name>
+        <relationshipLabel><!-- Candidates --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Le nombre de jour annuel ne peut être supérieur à 210 et la facturation journalière à 900 euros HT. --></errorMessage>
+        <name>Nbj_inf_210_Factu_inf_900</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- L_equipe --></label>
+        <name>L_equipe</name>
+    </webLinks>
+</CustomObjectTranslation>

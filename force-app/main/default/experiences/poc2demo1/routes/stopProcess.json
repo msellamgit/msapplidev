@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "87d8699b-5583-4645-8cc8-b57d61846e8d",
+  "appPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "configurationTags" : [ ],
+  "devName" : "stopprocess__c",
+  "id" : "dc6eed5e-b5f9-49e7-ba85-af7ac151bef7",
+  "label" : "Stop Process",
+  "routeType" : "custom-stopprocess",
+  "type" : "route",
+  "urlPrefix" : "stopprocess"
+}

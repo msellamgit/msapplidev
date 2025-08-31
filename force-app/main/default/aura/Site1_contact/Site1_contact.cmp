@@ -1,0 +1,42 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <br />
+    <div>Vous recherchez un consultant / expert CRM indépendant, n’hésitez pas à me laisser vos coordonnées via le formulaire ci-dessous, je vous recontacterai rapidement.</div>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8" />
+    <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">        
+        <input type="hidden" name="oid" value="00D24000000fWVc" />
+        <input type="hidden" name="retURL" value="https://msappli-developer-edition.eu14.force.com/idsel/s/" />
+        <input type="hidden" id="URL" name="URL" value="www.idselconsulting.com" />  
+        <table style="margin-left:10px;width:90%">
+            <tr>                
+                <td style="width:20%"><label class="slds-text-heading_medium" for="company">Société *</label></td>
+                <td style="width:30%"><input class="slds-input" id="company" maxlength="40" name="company" size="20" type="text" required="true" /></td>
+                <td style="width:50%"><label class="slds-text-heading_medium" for="description">Commentaire *</label></td>
+            </tr>
+            <tr>
+                <td><label class="slds-text-heading_medium" for="last_name">Nom *</label></td>
+                <td><input class="slds-input" id="last_name" maxlength="80" name="last_name" size="20" type="text" required="true" /></td>
+    			<td rowspan="4"><textarea  rows="6"  id="description" name="description" class="slds-textarea"  required="true"></textarea></td>
+            </tr>
+            <tr>
+                <td><label class="slds-text-heading_medium" for="first_name">Prénom</label></td>
+                <td><input class="slds-input" id="first_name" maxlength="40" name="first_name" size="20" type="text" /></td>                
+            </tr>
+            <tr>
+                <td><label class="slds-text-heading_medium" for="email">Email *</label></td>
+                <td><input class="slds-input" id="email" maxlength="80" name="email" size="20" type="text" required="true" /></td>
+            </tr>
+            <tr>
+                <td><label class="slds-text-heading_medium" for="city">Ville</label></td>
+                <td><input class="slds-input" id="city" maxlength="40" name="city" size="20" type="text" /></td>
+            </tr>
+            <tr>
+                <td><label class="slds-text-heading_medium" for="phone">Téléphone</label></td>
+                <td><input class="slds-input" id="phone" maxlength="20" name="phone" size="20" type="text" /></td>
+                <td class="btnsubmit"><input class="slds-button slds-button_destructive"  type="submit" name="submit" /></td>
+            </tr>
+        </table>              
+        
+    </form>  
+    <div style="font-weight:bold;">(*) A renseigner.</div>
+    
+</aura:component>

@@ -1,0 +1,23 @@
+<template>
+    <div>
+        <div class="imgnews">
+            <img src={imgnewscard}>
+        </div>
+        <div class="cardtext">
+            <div class="titlelvl3">
+                {news.name}
+            </div>
+            <div class="dt">
+                <span>{news.date}</span>
+            </div>
+            <div class="txt">
+                <p>
+                    {news.description}
+                </p>
+            </div>
+            <div>
+                <button class="clsbntnews"><span>Read more</span><span class="clsarrow material-icons material-icons-round">navigate_next</span></button>
+            </div>
+        </div>    
+    </div>
+</template>

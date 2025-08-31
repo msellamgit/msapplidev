@@ -1,0 +1,243 @@
+<template>
+    <div style="width:100%;margin:auto;position: relative;" >
+        <template class="slds-p-around_medium slds-align_absolute-center" if:true={brVisible}>
+                <p style="color: red; font-weight: bold;text-align:center" >{brMessage}</p>
+        </template>        
+        <lightning-progress-bar size="medium" value={valPourc} variant="base"></lightning-progress-bar>
+        <div class="slds-card__body slds-card__body_inner" style="margin-bottom:0px">
+            {progressValue}
+        </div>
+
+        <div style="height:320px">
+            <lightning-layout if:true={step1} >
+                <div class="slds-grid slds-wrap" style="width:100%">
+                    <div class="slds-col slds-size_1-of-1">
+                        <titre class="slds-align_absolute-center slds-text-heading_medium">CHOIX DE L'OFFRE</titre>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="slds-box boxmenu">
+                        <lightning-icon icon-name="standard:household" size="large"
+                        alternative-text="Assurance Habitation"></lightning-icon>
+                        <p>A partir de 23€/mois</p>
+                        <br/>
+                        <lightning-input label="Assurance Habitation" name="optOffAss" type="checkbox" checked={valueOffre_1} onchange={handleOffre}></lightning-input>
+                        </div>
+                    </div>
+                
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="slds-box boxmenu">
+                            <lightning-icon icon-name="utility:lock" size="large"
+                            alternative-text="Alarme Securité"></lightning-icon>
+                            <p>A partir de 10€/mois</p>
+                            <br/>
+                            <lightning-input label="Alarme Securité" name="optOffSecu" type="checkbox" checked={valueOffre_2} onchange={handleOffre}></lightning-input>
+                        </div>
+		            </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <div class="slds-box boxmenu">
+                            <lightning-icon icon-name="standard:household" size="large"
+                            alternative-text="Assurance & Alarme"></lightning-icon>                            
+                            <lightning-icon icon-name="utility:lock" size="large"
+                            alternative-text="Alarme Securité"></lightning-icon>
+                            <p>40€/mois</p>
+                            <br/>
+                            <lightning-input label="Assurance Habitation & Alarme Securité" name="optOffAssurSecu" checked={valueOffre_3}  type="checkbox" onchange={handleOffre}></lightning-input>
+                        </div>
+                    </div> 
+                    <div class="slds-col slds-size_1-of-3">                    
+                        <lightning-combobox
+                        class="combomenu"
+                        disabled={disableListAss}
+                        name="choixAssurance"
+                        label="Choix Assurance"
+                        value={valueChoiceAssurance}                        
+                        placeholder=""
+                        options={optionChoiceAssurance}
+                        onchange={handleChoixAssurance} >
+                        </lightning-combobox>  
+                    </div>  
+                    <div class="slds-col slds-size_1-of-3">                    
+                        <lightning-combobox
+                        class="combomenu"
+                        disabled={disableListSec}
+                        name="choixSecu"
+                        label="Choix Sécurité"
+                        value={valueChoiceSecurite}
+                        placeholder=""
+                        options={optionChoiceSecurite}
+                        onchange={handleChoixSecurite} >
+                        </lightning-combobox>  
+                    </div>                        
+                    <!--lightning-input class="text5" type="text" name="entrytest" label="Test" value={testValue} onchange={entryChange} required></lightning-input>
+                    <lightning-button label="Show Toast" onclick={showToast}></lightning-button-->       
+                </div>      
+            </lightning-layout>
+            <lightning-layout  if:true={step2} >
+                <div class="slds-grid slds-wrap" style="width:100%">
+                    <div class="slds-col slds-size_1-of-1">
+                        <titre class="slds-align_absolute-center slds-text-heading_medium">VOTRE LOGEMENT</titre>
+                        <br/>
+                        <p style="font-size: 18px;"><lightning-formatted-text value="Quel est votre type d'habitation ?" ></lightning-formatted-text></p>
+                    </div>                    
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input class="slds-box boxchoix" label="Un Appartement" checked={valueHabType_1} name="optHabTypeApp" type="checkbox" onchange={handleTypeHab}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">     
+                        <lightning-input class="slds-box boxchoix" label="Une Maison" checked={valueHabType_2} name="optHabTypeMais" type="checkbox" onchange={handleTypeHab}></lightning-input>               
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1">
+                        <p style="font-size: 18px;"><lightning-formatted-text value="Résidence Principal ou Secondaire ?" ></lightning-formatted-text></p>
+                    </div>                    
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input class="slds-box boxchoix" checked={valueResid_1} label="Résidence Principal" name="optResidPrinc" type="checkbox" onchange={handleResidence}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input class="slds-box boxchoix" checked={valueResid_2} label="Résidence Secondaire" name="optResidSec" type="checkbox" onchange={handleResidence}></lightning-input>
+                    </div>
+                </div>
+            </lightning-layout>
+            <lightning-layout  if:true={step3} >
+                <div class="slds-grid slds-wrap" style="width:100%">
+                    <div class="slds-col slds-size_1-of-1">
+                        <titre class="slds-align_absolute-center slds-text-heading_medium">VOTRE FOYER</titre>
+                        <br/>
+                        <p style="font-size: 18px;"><lightning-formatted-text value="Quel est votre Situation Familiale ?" ></lightning-formatted-text></p>
+                    </div>                    
+                    <div class="slds-col slds-size_1-of-6">
+                        <lightning-input class="slds-box boxchoix10" checked={valueSituation_1} label="Célibataire" name="optSitCel" type="checkbox" onchange={handleSituation}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <lightning-input class="slds-box boxchoix10" checked={valueSituation_2} label="Marié" name="optSitMar" type="checkbox" onchange={handleSituation}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">                    
+                        <lightning-input class="slds-box boxchoix10" checked={valueSituation_3} label="Divorcé" name="optSitDiv" type="checkbox" onchange={handleSituation}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">                    
+                        <lightning-input class="slds-box boxchoix10" checked={valueSituation_4} label="Séparé" name="optSitSep" type="checkbox" onchange={handleSituation}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">                    
+                        <lightning-input class="slds-box boxchoix10" checked={valueSituation_5} label="Concubinage" name="optSitConc" type="checkbox" onchange={handleSituation}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-6">
+                        <lightning-input class="slds-box boxchoix10" checked={valueSituation_6} label="Veuf" name="optSitVeuf" type="checkbox" onchange={handleSituation}></lightning-input>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-1">
+                        <p style="font-size: 18px;"><lightning-formatted-text value="Quelle est la composition de votre foyer ?" ></lightning-formatted-text></p>
+                    </div>                    
+                    <div class="slds-col slds-size_1-of-4">
+                        <lightning-input class="slds-box boxchoix" checked={valuePersonne_1}  label="1 Personne" name="optPers1" type="checkbox" onchange={handlePersonne}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">                    
+                        <lightning-input class="slds-box boxchoix" checked={valuePersonne_2}  label="2 Personnes" name="optPers2" type="checkbox" onchange={handlePersonne}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">     
+                        <lightning-input class="slds-box boxchoix" checked={valuePersonne_3}  label="3 Personnes" name="optPers3" type="checkbox" onchange={handlePersonne}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">        
+                        <lightning-input class="slds-box boxchoix" checked={valuePersonne_4}  label="4 Personnes et +" name="optPers4" type="checkbox" onchange={handlePersonne}></lightning-input>
+                    </div>
+                </div>                                
+            </lightning-layout>
+            <lightning-layout  if:true={step4} >                
+                <div  class="slds-grid slds-wrap" style="width:100%">
+                <titre class="slds-align_absolute-center slds-text-heading_medium" style="width:100%;"> VOS COORDONNEES</titre>            
+                <div  class="slds-grid slds-wrap" style="background-color: #E5E7E9;">
+                    <div class="bkwhite slds-col slds-size_1-of-7">
+                        <lightning-combobox class="text5" name="entryCivilite" value={entryCivilite} label="Civilité"  placeholder=""
+                        options={getCivilite} onchange={entryChange} ></lightning-combobox>
+                    </div>
+                    <div class="bkwhite slds-col slds-size_3-of-7">
+                        <lightning-input class="text5" message-when-value-missing="Le nom est obligatoire !" type="text" name="entryLastName" value={entryLastName} onchange={entryChange} label="Nom" required></lightning-input>
+                    </div>
+                    <div class="bkwhite slds-col slds-size_3-of-7">
+                        <lightning-input class="text5" message-when-value-missing="Le prénom est obligatoire !" type="text" name="entryFirstName"  value={entryFirstName} onchange={entryChange}  label="Prénom" required></lightning-input>
+                    </div>
+                    <div class="bkwhite slds-col slds-size_1-of-2">
+                        <lightning-input class="text5" message-when-value-missing="L'adresse est obligatoire !" type="text" name="entryAddress" value={entryAddress} onchange={entryChange} label="Adresse" required></lightning-input>
+                    </div>
+                    <div class="bkwhite slds-col slds-size_1-of-2">
+                        <lightning-input class="text5" type="text"  name="entryCompAddress" onchange={entryChange} value={entryCompAddress}  label="Complément Adresse (optionnel)"></lightning-input>
+                    </div>
+
+                    <div class="bkwhite slds-col slds-size_1-of-2">
+                        <lightning-input class="text5" message-when-value-missing="Le téléphone est obligatoire !" type="text" name="entryPhone" value={entryPhone} onchange={entryChange} label="Téléphone" required></lightning-input>
+                    </div>
+                    <div class="bkwhite slds-col slds-size_1-of-2">
+                        <lightning-input class="text5" message-when-value-missing="Le mail est obligatoire !" type="text" name="entryEmail" value={entryEmail} onchange={entryChange} label="Email" required></lightning-input>
+                    </div>
+
+                    <div class="bkwhite slds-col slds-size_1-of-4">
+                        <lightning-input class="text5" message-when-value-missing="Le Code Postam est obligatoire !" type="text" name="entryZip" value={entryZip}  onchange={entryChange} label="CP" required></lightning-input>
+                    </div>
+                    <div class="bkwhite slds-col slds-size_3-of-4">
+                        <lightning-input class="text5" message-when-value-missing="La ville est obligatoire !" type="text"  name="entryCity" value={entryCity}  onchange={entryChange} label="Ville" required></lightning-input>
+                    </div>    
+                    </div>
+                </div>
+        </lightning-layout>
+        <lightning-layout  if:true={step5} >
+            <div  class="slds-grid slds-wrap" style="width:100%">
+                <div style="margin-bottom: 10px;margin-top: 10px;" class="slds-col slds-size_1-of-1">
+                    <titre class="slds-align_absolute-center slds-text-heading_medium">RECAPITULATIF</titre>
+                </div>                
+                <div class="slds-col slds-size_1-of-2">    
+                    <div> <p></p> </div>
+                    <H2><b>Choix de l'offre</b> </H2>
+                    <h3 style="padding:0 0 0 40px;"> {valueOffreLabel} </H3>
+                    <p style="padding:0 0 0 40px;"> Assurance : {valueChoiceAssuranceLabel} </p>
+                    <p style="padding:0 0 0 40px;"> Sécurité : {valueChoiceSecuriteLabel} </p>
+                    <p><b>VOTRE LOGEMENT </b></p>
+                    <p style="padding:0 0 0 40px;"><b>Type d'habitation : </b> {valueHabTypeLabel} </p>
+                    <p style="padding:0 0 0 40px;"><b>Résidence Principal ou Secondaire: </b> {valueResidLabel} </p>
+                    <p><b>VOTRE FOYER </b> </p>
+                    <p style="padding:0 0 0 40px;"><b>Situation Familiale : </b> {valueSituationLabel} </p>
+                    <p style="padding:0 0 0 40px;"><b>Composition de votre foyer : </b> {valuePersonneLabel} </p>
+                </div>
+                <div class="slds-col slds-size_1-of-2">  
+                    <div> <p></p> </div>
+                    <H2>VOS COORDONNEES</H2>
+                    <p style="padding:0 0 0 40px;"><b>Civilité : </b> {entryCivilite} </p>
+                    <p style="padding:0 0 0 40px;"><b>Nom : </b> {entryLastName} </p>
+                    <p style="padding:0 0 0 40px;"><b>Prénom : </b> {entryFirstName} </p>
+                    <p style="padding:0 0 0 40px;"><b>Adresse : </b> {entryAddress} </p>
+                    <p style="padding:0 0 0 40px;"><b>Complément : </b> {entryCompAddress} </p>
+                    <p style="padding:0 0 0 40px;"><b>Code Postal : </b> {entryZip} </p>
+                    <p style="padding:0 0 0 40px;"><b>Ville : </b> {entryCity} </p>
+                    <p style="padding:0 0 0 40px;"><b>Téléphone : </b> {entryPhone} </p>
+                    <p style="padding:0 0 0 40px;"><b>Mail : </b> {entryEmail} </p>
+                    <p></p>
+                </div> 
+                <div style="text-align: center;margin-bottom: 10px;margin-top: 10px;" class="slds-col slds-size_1-of-1">
+                    <button class="slds-button float_right btnclass" title="Valider" onclick={createLead}>
+                        <p style="margin-right:20px;margin-left:20px">Valider L'offre</p>
+                    </button>
+                </div>                
+            </div>               
+        </lightning-layout>    
+    </div>                       
+        <lightning-layout>
+            <lightning-layout-item if:true={precPossible}> 
+                <!--lightning-button  class="btnclass" label="Etape Precedente" icon-name="utility:chevronleft" onclick={btnPrec}></lightning-button-->
+                <button class="slds-button btnclass" title="" onclick={btnPrec}>
+                    <lightning-icon class="iconcolor" icon-name="utility:chevronleft" style="margin-left:20px;" alternative-text="Etape Précédente" size="xx-small"></lightning-icon>
+                    <p class="left" style="margin-right:20px;margin-left:10px" >  Etape Précédente</p>
+                </button>
+
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="grow"></lightning-layout-item>
+            <lightning-layout-item if:true={suivPossible}>
+                <!--lightning-button  class="btnclass" label="Etape Suivante" icon-position="right" icon-name="utility:chevronright" onclick={btnSuiv}></lightning-button-->
+                <!--button class="slds-button btnclass" title="Etape Suivante" onclick={btnSuiv}> 
+                    <p class="left">Etape Suivante</p>
+                    <lightning-icon icon-position="right" style="fill: green;vertical-align: center;" icon-name="utility:chevronright" size="x-medium"></lightning-icon>
+                </button--> <!--if:true={suivPossible}   -->
+                <button class="slds-button btnclass" title="" onclick={btnSuiv}>
+                    <p class="left" style="margin-left:20px;margin-right:10px" >Etape Suivante  </p>
+                    <lightning-icon class="iconcolor" icon-name="utility:chevronright" style="margin-right:20px;" alternative-text="Etape Suivante" size="xx-small"></lightning-icon>
+                </button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

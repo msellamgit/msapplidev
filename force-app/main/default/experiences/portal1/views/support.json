@@ -1,0 +1,171 @@
+{
+  "appPageId" : "624174b0-2c69-4a74-b1f3-d61d746cb799",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "06c660c8-4a76-4b66-99ae-721109a4b91b",
+  "label" : "support",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"d53e0451-b644-4fda-8c7d-3dfd4e1d06b0\",\"columns\":[{\"UUID\":\"e10b6159-ec55-4b00-a82a-49e5617ef492\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "d53e0451-b644-4fda-8c7d-3dfd4e1d06b0",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "backgroundColor" : "",
+            "borderColor" : "",
+            "borderWidth" : 0,
+            "buttonDirection" : "vertical",
+            "buttonGroupAlignment" : "left",
+            "buttonGroupHeight" : 50,
+            "buttonGroupSpacingHorizontal" : "space-evenly",
+            "buttonGroupSpacingVertical" : "space-evenly",
+            "buttonGroupWidth" : 50,
+            "contentBackgroundColor" : "rgb(255, 255, 255)",
+            "contentHeight" : 50,
+            "contentPadding" : "x-large",
+            "contentWidth" : 50,
+            "height" : 450,
+            "imageFit" : "cover",
+            "imageInfo" : "",
+            "imageLocation" : "left",
+            "imagePosition" : "center center",
+            "isLink" : false,
+            "linkAssistiveText" : "",
+            "overlapSize" : 75,
+            "overlayColor" : "",
+            "showButtons" : true,
+            "showSecondaryButton" : false,
+            "singleButtonAlignment" : "left",
+            "width" : 100
+          },
+          "componentName" : "dxp_content_layout:overlap",
+          "id" : "729d7139-c5d6-41b9-9cbc-ab39169e3069",
+          "regions" : [ {
+            "components" : [ {
+              "componentAttributes" : {
+                "backgroundColor" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "Your headline goes here",
+                "textAlign" : "left",
+                "textDecoration" : "{}",
+                "textDisplayInfo" : "{\"headingTag\": \"h1\", \"textStyle\": \"heading-large\"}"
+              },
+              "componentName" : "dxp_base:textBlock",
+              "id" : "f63825c5-53ef-42a5-8a46-38168524478b",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            }, {
+              "componentAttributes" : {
+                "backgroundColor" : "",
+                "paddingHorizontal" : "none",
+                "paddingVertical" : "none",
+                "text" : "Your subheader goes here",
+                "textAlign" : "left",
+                "textDecoration" : "{}",
+                "textDisplayInfo" : "{\"headingTag\": \"h3\", \"textStyle\": \"heading-medium\"}"
+              },
+              "componentName" : "dxp_base:textBlock",
+              "id" : "49b19916-7292-47b1-adf8-54c38240b5cc",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "0bd0a180-4210-4fbf-b545-129b33158ba1",
+            "regionName" : "contentRegion",
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "alignment" : "center",
+                "size" : "standard",
+                "stretch" : "standard",
+                "text" : "Learn More",
+                "type" : "primary"
+              },
+              "componentName" : "dxp_base:button",
+              "id" : "23d60947-1bd1-4ed5-bee4-3f8b9fdb68d3",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "6eba0ef7-fccd-4e9f-88bb-123c9dc7f7bf",
+            "regionName" : "primaryButton",
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : {
+                "alignment" : "center",
+                "size" : "standard",
+                "stretch" : "standard",
+                "text" : "Contact Us",
+                "type" : "secondary"
+              },
+              "componentName" : "dxp_base:button",
+              "id" : "2986432e-43b9-4a5f-acd7-cf99f24e5840",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "6f08c793-950f-4985-8f39-a9d2f422ab47",
+            "regionName" : "secondaryButton",
+            "type" : "region"
+          }, {
+            "components" : [ {
+              "componentAttributes" : { },
+              "componentName" : "dxp_page_layout:placeHolder",
+              "id" : "c70b0603-5744-463d-be6d-213c8359949e",
+              "renderPriority" : "NEUTRAL",
+              "renditionMap" : { },
+              "type" : "component"
+            } ],
+            "id" : "1407d56c-5d68-472e-aad6-560a9618976f",
+            "regionName" : "placeholder",
+            "type" : "region"
+          } ],
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "e10b6159-ec55-4b00-a82a-49e5617ef492",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "10ea0a0b-ccae-4c8a-94ea-fcf072264792",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "support",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "e74607fc-0c91-4b3c-8867-592dc06e695e",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "4b5259f7-c2ae-46c2-a233-b3e875085711",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "uFcBFNY1xZDyyfvE7G55k5BBDiGy38",
+  "type" : "view",
+  "viewType" : "custom-support"
+}

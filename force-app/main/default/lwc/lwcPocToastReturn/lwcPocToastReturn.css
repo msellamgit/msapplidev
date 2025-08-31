@@ -1,0 +1,120 @@
+.bgcolorgreen { background-color: green; }
+.bgcolorred { background-color: red; }
+.bgcolorother { background-color: orange; }
+.colorgreen { color: green; }
+.colorred { color: red; }
+.colorother { color: orange; }
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    /* color: green; */
+    text-align: center;
+    padding-top: 2px;
+    font-weight: bold;
+  }
+
+.notifyclose {
+    float: right;
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    margin-left: .25rem;
+}
+
+.modalcontainer {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    background-color: #fff;
+    position: absolute;
+    width: 40%;
+    left: calc(50% - 250px);
+    bottom: 90px;
+    z-index: 10000;
+}
+.modalmain {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.modalheader {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btnYes {
+    background-color: #e10001 !important;
+    color: #fff !important;
+    border: 0px !important;
+    outline: none !important;    
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    margin: 8px 4px;
+    float: right;
+}
+
+.btnNo {
+    background-color: #313131 !important;
+    color: #fff !important;
+    border: 0px !important;
+    outline: none !important;    
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    margin: 8px 4px;
+    float: right;
+}
+
+.notifycontainer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    text-align: center;
+}
+
+.modaldialog {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    right: 5%;
+}
+.modalcontent {
+    width: 40%;
+    border-right: 30%;
+    position: relative;
+    background-color: #fff;
+    border-radius: 6px;
+    background-clip: padding-box;
+    outline: 0;
+}
+
+.whiteicon {
+    --sds-c-icon-color-foreground-default: white;
+    /* --sds-c-icon-color-background: white; */
+}
+
+
+.notifytoast {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    margin: 2.5rem 0.5em;
+    padding-top: .75rem;
+    padding-right: 3rem;
+    padding-bottom: .75rem;
+    padding-left: 1.5rem;
+    min-width: 20rem;
+    max-width: 25rem;
+    text-align: left;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}

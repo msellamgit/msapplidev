@@ -1,0 +1,39 @@
+.THIS  {
+}
+
+.THIS.namesoc {
+    display:inline;
+    color:rgb(194, 57, 52);
+    font-weight: bold;
+    font-size: 400%;
+    margin-right:40px;
+	margin-left:20px;
+}
+.THIS.logo  {
+	height: 75px;
+    width: 150px;
+    margin-right: 20px;
+}
+
+.THIS.button_menu {
+    margin-left:10px;
+    margin-right:10px;
+    height: 40px;
+    width: 130px;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.THIS.button_connect {
+    margin-left:10px;
+    margin-right:10px;
+    height: 40px;
+    width: 130px;
+    font-weight: bold;
+    font-size: 120%;
+}
+.THIS.button_disconnect {
+    margin-left:10px;
+    background-color:rgb(194, 57, 52);
+    color:white;
+}

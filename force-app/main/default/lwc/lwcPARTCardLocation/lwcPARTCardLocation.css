@@ -1,0 +1,14 @@
+.btntransparent {
+    border: none;
+    background: transparent;
+}
+
+.clsbtnlocation {
+    border: #94A3B8 solid 1px;
+    border-radius: 14px;
+    background-color: transparent;
+    color: #94A3B8;
+    padding: 6px 8px;
+    font-size: 12px;
+    margin: 0px 8px 0px 0px;
+}

@@ -1,0 +1,129 @@
+<apex:page standardController="Account" showHeader="false" sidebar="false" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="false">
+    <html>
+    <head>
+        <style>
+            @page {
+                size: letter;
+                margin: 10mm;
+                @top-center {
+                    content: "Sample";
+                }
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always;
+            }
+            body {
+                font-family: Arial Unicode MS;
+            }
+  table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    font-weight:bold;
+
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+        </style>
+    </head>
+    <body>
+    <apex:form >
+    <apex:commandButton action="{!save}" value="Save"/>
+    </apex:form>
+
+
+     <table  Id="header" style="width: 100%; "> 
+       <tr>
+        <td style="width: 50%;">
+        <table Class = "gridtable" >
+            <tr>
+                <th>Nom</th>
+                <th>Adresse</th>
+            </tr>
+            <tr>
+               <!-- <td> <apex:outputText value="{0,date,MM/dd/yyyy}" >
+                 <apex:param value="{!DATEVALUE(text(theInvoice.Actual_Date__c))}"/>    
+            </apex:outputText></td> 
+                --> 
+                <apex:form >              
+                <td><apex:inputText value="{!Account.name}" /></td>
+                <td><apex:outputText value="{!Account.name}" /></td>
+                </apex:form> 
+             </tr>
+          </table>        
+        <br/>
+        </td>
+       </tr> 
+       <tr>
+        <td style="width: 50%;">
+        <table Class = "gridtable" >
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>                
+            </tr>
+      <apex:repeat value="{!Account.Contacts}" var="cont">
+         <tr>
+             <td> <apex:outputText value="{!cont.Name}" /> </td>
+             <td> <apex:outputText value="{!cont.Email}" /> </td>
+             <td> <apex:outputText value="{!cont.Phone}" /> </td>             
+         </tr>
+      </apex:repeat>
+          </table>        
+        <br/>
+        </td>
+       </tr> 
+       <tr>
+        <td style="width: 100%;">
+       <table Class = "gridtable" >
+            <tr>
+                <th>Case</th>
+                <th>Contact</th>
+                <th>Subject</th>
+                <th>Type</th>
+                <th>Date Open</th>
+                <th>Status</th>
+            </tr>
+      <apex:repeat value="{!Account.Cases}" var="cases">
+         <tr>
+             <td> <apex:outputText value="{!cases.CaseNumber}" /> </td>
+             <td> <apex:outputText value="{!cases.Contact}" /> </td>
+             <td> <apex:outputText value="{!cases.Subject}" /> </td>             
+             <td> <apex:outputText value="{!cases.Type}" /> </td>
+             <td>
+                 <apex:outputText value="{0,date,MM'/'dd'/'yyyy}">
+                    <apex:param value="{!cases.CreatedDate}" /> 
+                </apex:outputText>
+             </td>
+             <td> <apex:outputText value="{!cases.Status}" /> </td>                          
+         </tr>
+      </apex:repeat>
+
+          </table>  
+        <br/>
+        </td>
+       </tr> 
+     </table>   
+    <div class="page-break">Page A</div>
+    <div class="page-break">Page B</div>
+    <div>Page C</div>
+    </body>
+   </html>
+</apex:page>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>IDSel Test.Content:Economie</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Economie</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Content:Mode</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Mode</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Content:Sport</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Sport</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Content:Technologie</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Technologie</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Featured:Economie</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Economie</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Featured:Mode</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Mode</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Featured:Sport</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Sport</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Featured:Technologie</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Technologie</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Navigational:Economie</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Economie</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Navigational:Mode</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Mode</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Navigational:Sport</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Sport</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Test.Navigational:Technologie</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Technologie</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

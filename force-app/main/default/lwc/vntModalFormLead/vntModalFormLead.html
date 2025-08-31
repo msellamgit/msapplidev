@@ -1,0 +1,29 @@
+<template>
+    <template if:true={bShowModal}>
+        <section role="dialog" tabindex="-1"
+        aria-labelledby="modal-heading-01"
+        aria-modal="true"
+        aria-describedby="modal-content-id-1"
+        class="slds-modal slds-fade-in-open"> 
+            <div class="slds-modal__container">
+                <div style="display: inline-block; background-color:#DCDCDC; margin: 0px; padding-left: 12px; padding-right: 12px;">
+                    <span  id="modal-heading-01" style="width: 30%; margin: 10px; font-size: 2em;">Prospect</span>
+                    <button style="float: right;" class="slds-button btnclass" title="Quitter" onclick={closeModal}>
+                        <p style="margin-left:10px;margin-right:10px" >X</p>
+                    </button>
+                </div>
+                <c-vnt-form-lead lead-id={leadId} hide-button=true is-modal=true></c-vnt-form-lead>
+                <div style="background-color:#DCDCDC; margin: 0px; padding-left: 12px; padding-right: 12px;">
+                    <div style="text-align:right;">
+                        <button class="slds-button btnclass" title="Quitter" onclick={closeModal}>
+                            <p class="left" style="margin-left:10px;margin-right:10px" >Quitter Modal</p>
+                        </button>
+                        <button class="slds-button btnclass" title="Sauvegarder" onclick={handleSubmit}>
+                            <p class="left" style="margin-left:10px;margin-right:10px" >Sauvegarder Modal</p>
+                       </button>     
+                    </div>  
+                </div> 
+            </div>
+        </section>
+    </template>
+</template>

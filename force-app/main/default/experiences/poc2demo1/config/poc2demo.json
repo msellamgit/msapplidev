@@ -1,0 +1,23 @@
+{
+  "authenticationType" : "AUTHENTICATED_WITH_PUBLIC_ACCESS_ENABLED",
+  "forgotPasswordRouteId" : null,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "mainAppPageId" : "df5fe418-37f1-4c2d-a7f9-89f12f91b25b",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : null,
+  "trustedSitesForScript" : [ {
+    "id" : "0158848d-10a1-4aba-8d07-b3b621c83436",
+    "isActive" : true,
+    "trustedSiteName" : "ajaxgoogleapis",
+    "trustedSiteUrl" : "https://ajax.googleapis.com/",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "6b0b151c-dbea-4f0a-b101-1070e1b0e954",
+    "isActive" : true,
+    "trustedSiteName" : "cdn.jsdelivr.net",
+    "trustedSiteUrl" : "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

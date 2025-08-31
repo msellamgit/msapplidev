@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>PREVGROUPVAL(EMPLOYEES:SUM, Account.CustomerPriority__c,1)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>Account.CustomerPriority__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Employee_Cumul</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <calculatedFormula>( EMPLOYEES:SUM - PREVGROUPVAL(EMPLOYEES:SUM, Account.CustomerPriority__c) )  /  PREVGROUPVAL(EMPLOYEES:SUM, Account.CustomerPriority__c)</calculatedFormula>
+        <datatype>number</datatype>
+        <description>Employee Pourc</description>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Account.CustomerPriority__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Employee Pourc</masterLabel>
+        <scale>1</scale>
+    </aggregates>
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_36780939</developerName>
+        <masterLabel>Categorie</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <otherBucketLabel>Other</otherBucketLabel>
+        <sourceColumnName>TYPE</sourceColumnName>
+        <useOther>true</useOther>
+        <values>
+            <sourceValues>
+                <sourceValue>Prospect</sourceValue>
+            </sourceValues>
+            <value>Prospect</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Customer - Direct</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Customer - Channel</sourceValue>
+            </sourceValues>
+            <value>Customer</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Channel Partner / Reseller</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Installation Partner</sourceValue>
+            </sourceValues>
+            <sourceValues>
+                <sourceValue>Technology Partner</sourceValue>
+            </sourceValues>
+            <value>Partner</value>
+        </values>
+        <values>
+            <sourceValues>
+                <sourceValue>Other</sourceValue>
+            </sourceValues>
+            <value>To Define</value>
+        </values>
+    </buckets>
+    <buckets>
+        <bucketType>number</bucketType>
+        <developerName>BucketField_47719534</developerName>
+        <masterLabel>Employee Range</masterLabel>
+        <nullTreatment>z</nullTreatment>
+        <sourceColumnName>EMPLOYEES</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <sourceValues>
+                <to>0</to>
+            </sourceValues>
+            <value>NR</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>0</from>
+                <to>7,500</to>
+            </sourceValues>
+            <value>Less Than 7,5 K</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>7,500</from>
+                <to>50,000</to>
+            </sourceValues>
+            <value>Between 7,5 K and 50 K</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>50,000</from>
+                <to>150,000</to>
+            </sourceValues>
+            <value>Between 50 K and 150K</value>
+        </values>
+        <values>
+            <sourceValues>
+                <from>150,000</from>
+            </sourceValues>
+            <value>More Than 150K</value>
+        </values>
+    </buckets>
+    <colorRanges>
+        <columnName>FORMULA2</columnName>
+        <highBreakpoint>100.0</highBreakpoint>
+        <highColor>#54C254</highColor>
+        <lowBreakpoint>0.0</lowBreakpoint>
+        <lowColor>#C25454</lowColor>
+        <midColor>#C2C254</midColor>
+    </colorRanges>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>BucketField_36780939</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>RATING</field>
+    </columns>
+    <columns>
+        <field>ADDRESS1_STATE</field>
+    </columns>
+    <columns>
+        <field>BucketField_47719534</field>
+    </columns>
+    <columns>
+        <field>EMPLOYEES</field>
+    </columns>
+    <description>Accounts by priority</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Account.CustomerPriority__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>All Accounts By Priority</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <sortColumn>TYPE</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

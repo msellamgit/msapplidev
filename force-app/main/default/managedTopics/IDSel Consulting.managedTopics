@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>IDSel Consulting.Featured:Test 1</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Test 1</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription>Test 1 Topic</topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Consulting.Featured:Test 2</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Test 2</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription>Test 2 topic</topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Consulting.Navigational:Subject 1</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Subject 1</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Consulting.Navigational:Subject 1 - 1</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Subject 1 - 1</name>
+        <parentName>Subject 1</parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Consulting.Navigational:Subject 1 - 2</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Subject 1 - 2</name>
+        <parentName>Subject 1</parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Consulting.Navigational:Subject 2</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Subject 2</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>IDSel Consulting.Navigational:Subject 3</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Subject 3</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

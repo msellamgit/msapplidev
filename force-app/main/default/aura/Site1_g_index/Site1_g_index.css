@@ -1,0 +1,13 @@
+.THIS {
+}
+
+.THIS .icon{
+	width:200px;
+    height:200px;
+}
+
+.THIS .ulcenter{
+    text-align:center;
+    display:inline-block;
+}
+.THIS li {display:inline-block;}

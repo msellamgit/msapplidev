@@ -1,0 +1,51 @@
+<apex:page standardController="Account" renderAs="pdf">
+    <head>
+        <apex:pageBlock title="Hello {!$User.FirstName}!">
+            You are viewing the {!Account.name} account.
+        </apex:pageBlock>
+        <apex:includescript value="//code.jquery.com/jquery-1.11.1.min.js" / >
+        <apex:includescript value="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" />
+        <apex:stylesheet value="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css" />
+        <script>
+            j$ = jQuery.noConflict();
+            j$(document).ready( function () {
+                var contactTable = j$('[id$="contacttable"]').DataTable({
+                    
+                });
+            });
+        </script>
+    </head>
+<!--    -->
+ <apex:pageBlock title="Contacts">
+<apex:pageBlockTable value="{!account.Contacts}" var="contact">
+<apex:column value="{!contact.Name}"/>
+<apex:column value="{!contact.Email}"/>
+<apex:column value="{!contact.Phone}"/>
+</apex:pageBlockTable>
+</apex:pageBlock>
+
+
+    <body>
+        <table id="contacttable" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <apex:repeat value="{!account.Contacts}" var="contact">
+                    <tr>
+                        <td>{!contact.Name}</td>
+                        <td>{!contact.Email}</td>
+                        <td>{!contact.Phone}</td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </body>
+
+
+
+</apex:page>

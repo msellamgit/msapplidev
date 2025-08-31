@@ -1,0 +1,32 @@
+.pagenumber {
+    background-color: transparent;
+    height: 42px;
+    padding: 8px 16px;
+    border: 0.25px solid #F7F8F9;
+    font-size: 14px;
+    font-weight: 300;
+    color: #94A3B8;
+}
+
+.btnleftright {
+    height: 42px;
+    padding: 8px;
+    border: 0.25px solid #F7F8F9;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 100;
+    color: #94A3B8;
+}
+
+.btnbegin {
+    background: rgb(148, 163, 184, 0.1);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+
+.btnend {
+    background: rgb(148, 163, 184, 0.1);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}

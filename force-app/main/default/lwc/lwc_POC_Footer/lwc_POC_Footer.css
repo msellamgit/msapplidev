@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+}
+
+.footer-nav {
+    position: absolute;
+    right: 50px;
+    margin: 0px auto;
+    top: 50px;
+}
+
+.ul {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.li {
+    display: inline-block;
+    list-style: none;
+    padding-right: 50px;
+}
+
+a:link, a:visited {
+    color: #fff !important;
+    text-decoration: none;
+    padding-bottom: 3px;
+}
+
+
+
+.divlogo {
+    position: relative;
+    /* top: 10px; */
+    left: 50px;
+    height: 60px;
+    /* width: 80px; */
+    float: left;
+}

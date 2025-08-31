@@ -1,0 +1,115 @@
+<apex:page controller="cfr.CloudFilesApiController">
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
+
+  <apex:stylesheet value="{!URLFOR($Resource.cfr__CloudFiles, "bootforce/css/bootstrap-force.css")}"/> 
+
+  <script type="text/javascript" src="{!URLFOR($Resource.CloudFilesCustom, "ApiSetup/app.js")}"></script>   
+  <apex:stylesheet value="{!URLFOR($Resource.cfr__CloudFilesCustom, "ApiSetup/style.css")}"/> 
+
+  <div ng-app="apiSetup">
+    <div class="bootstrap-force cf-container" ng-controller="apiSetup">
+      <div id="msg" class="alert alert-info hide"></div>
+
+      <div class="logo-container">
+        <img src="{!URLFOR($Resource.CloudFiles, "logo/280X205.png")}" class="logo"/> 
+      </div>
+
+      <div class="enabled-apps cf-section">
+        <div class="welcome-text help-link-setup-label">Enabled Apps</div>
+        <div class="cf-app-container">
+          <div ng-repeat="app in apps" class="cf-app">
+            <input type="checkbox" ng-model="app.enabled"/>
+            <div class="app-label">{{app.label}}</div>
+          </div>
+          <button class="app-save-button" ng-click="updateEnabledApps()">{{updatingEnabledApps ? "Saving..." : "Save"}}</button>
+        </div>
+      </div>
+
+      <div class="api-setup cf-section ng-hide" ng-show="settings.enableSalesforceApi">
+        <div class="welcome-text">API Setup</div>
+
+        <div class="content row">
+          <div class="instructions">
+            <p>
+              You can setup cloud folders here and upload files to them from Apex. Instructions to upload files from Apex are given later on this page.
+            </p>
+            <button id="setupFolder" ng-click="setupFolder();">Setup Cloud Folder</button><br /><br />
+          </div>
+        </div>
+
+        <div>
+          You have following cloud folders configured - <br />
+          <table class="table">
+            <thead>
+              <td>Id</td>
+              <td>Name</td>
+              <!-- <td>URL</td> -->
+              <td>Type</td>
+            </thead>
+            <tbody>
+              <tr ng-repeat="folder in folders">
+               <td>{{folder.Id}}</td>
+               <td>{{folder.Name}}</td>
+               <!-- <td>{{folder.cfr__Url__c}}</td> -->
+               <td>{{folder.cfr__Type__c}}</td>
+             </tr>
+           </tbody>
+          </table>
+        </div>
+
+        <div>
+          To upload a file to a cloud folder, please use the code below - <br /><br />
+
+          <code>cfr__CloudFile__c file = cfr.CloudFiles.upload(folderId, fileName, fileBlob);</code><br /><br />
+
+          Where - 
+          <ol>
+            <li>folderId - (String) - Id of the cloud folder.</li>
+            <li>fileName - (String) - Name of the file to be uploaded.</li>
+            <li>fileBlob - (Blob) - File content. Maximum size of fileBlob can be 5.8 MB.</li>
+          </ol>
+
+          You can also specify a objectId and objectName to associate a cfr__CloudFile__c to a Salesforce object. For example, after the code above, you can associate the uploaded file to a lead with id "00Q280000019mVM" by using following code - <br /><br />        
+          <code>file.objectName__c = 'Lead';</code><br/><br/>
+          <code>file.objectId__c = '00Q280000019mVM';</code><br/><br/>
+          <code>update file;</code>
+
+          <br/><br/>
+
+          CloudFile__c object can be queried on any of the following fields - 
+          <ul>
+            <li>cfr__objectId__c</li>
+            <li>cfr__objectName__c</li>
+            <li>cfr__folderId__c</li>
+          </ul>
+
+          All Cloud Files uploaded to a folder using Apex have their folderId set and can be queried on it.
+        </div>
+
+        <!-- Test Code -->
+
+        <!-- <apex:form >
+          <apex:inputFile value="{!fileBlob}" fileName="{!fileName}"/>
+          <apex:commandbutton action="{!upload}" value="Upload" />
+        </apex:form>  -->
+        
+        <!-- Test Code ends -->
+
+      </div>
+
+      <div class="help-link-setup cf-section ng-hide" ng-show="settings.enableSalesforceHelpLink">
+        <div class="welcome-text help-link-setup-label">Help Link Setup</div>
+        <input type="text" placeholder="Help link" class="help-link-input" ng-model="helpLink"></input>
+        <button class="help-link-save-button" ng-click="saveHelpLink()">{{savingHelpLink ? "Saving..." : "Save"}}</button>
+      </div>
+
+    </div> 
+  </div>
+
+  <script type="text/javascript" src="https://app.filesutra.com/dist/filesutra.js"></script>
+    
+  <script>
+    var accountId = "{!apiToken}"
+  </script>
+</apex:page>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Candidate --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Candidate --></value>
+    </caseValues>
+    <fields>
+        <label>Colore preferito</label>
+        <name>Couleur_Pr_f_r__c</name>
+        <picklistValues>
+            <masterLabel>Bleu</masterLabel>
+            <translation>blu</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jaune</masterLabel>
+            <translation>giallo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orange</masterLabel>
+            <translation>arancione</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rouge</masterLabel>
+            <translation>rosso</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vert</masterLabel>
+            <translation>verde</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>fatturazione annuale</label>
+        <name>Facturation_Annuelle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geo --></label>
+        <name>Geo__c</name>
+    </fields>
+    <fields>
+        <label>gratis</label>
+        <name>Libre__c</name>
+    </fields>
+    <fields>
+        <label>Nbr annuali Giorni</label>
+        <name>Nbr_Jours_Annuel__c</name>
+    </fields>
+    <fields>
+        <help>Quanto bene Questo candidato corrispondono alla descrizione del lavoro?</help>
+        <label>Prospect Valutazione</label>
+        <name>Prospect_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Cool</masterLabel>
+            <translation>fresco</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation>caldo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manager Favorite</masterLabel>
+            <translation>Direttore preferito</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warn</masterLabel>
+            <translation>avvertire</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Giorno Prezzo HT</label>
+        <name>Tarif_Jour_HT__c</name>
+    </fields>
+    <fields>
+        <label>Candidato utente</label>
+        <name>User_Candidate__c</name>
+        <relationshipLabel>candidati</relationshipLabel>
+    </fields>
+    <gender><!-- Masculine --></gender>
+    <nameFieldLabel><!-- Nom du Candidates --></nameFieldLabel>
+    <startsWith><!-- Consonant --></startsWith>
+    <validationRules>
+        <errorMessage>Il numero annuo di giorni non pu� superare il 210 e il quotidiano fatturazione 900 � HT.</errorMessage>
+        <name>Nbj_inf_210_Factu_inf_900</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- L_equipe --></label>
+        <name>L_equipe</name>
+    </webLinks>
+</CustomObjectTranslation>

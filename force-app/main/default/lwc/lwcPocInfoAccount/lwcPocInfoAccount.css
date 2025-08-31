@@ -1,0 +1,83 @@
+.headline {
+    text-align: left;
+    font-size: 12pt !important;
+    font-weight: bold;
+    /* margin-bottom: 15px; */
+    /* white-space: nowrap; */
+}
+
+.required {
+    color: #e10001;
+}
+
+.rightbold {
+    padding-top: 5px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.diverror {
+    background-color: red;
+    padding: 12px;
+    color: white;
+    width: 40%;
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.classerrordataabs:after {
+    content: '!';
+    top: 2px;
+    /* left: 2px; */
+    bottom: 2px;
+    right: -20px;
+    border-radius: 4px;
+    color: red;
+    font-weight: bolder;
+    POSITION: ABSOLUTE;
+    font-size: 20px;
+}
+
+.classvaliddataabs:after {
+    content: '\2714'; 
+    /* '&#10004'; */
+    top:2px;
+    /* left:2px; */
+    bottom:2px;
+    right: -25px;
+    border-radius: 4px;
+    color: green;
+    font-weight: bolder;
+    position: absolute;
+    font-size: 20px;
+} 
+
+.errortitre1 {
+    font-weight: 700;
+    color: #e10001;
+    font-size: 14pt;
+    line-height: 24pt;
+    font-style: italic;
+}
+.errortitre2 {
+    color: #e10001;
+}
+
+.dot {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;    
+}
+.dot:before {
+    content:'\0021';
+    position: absolute;
+    left: 12px;
+}

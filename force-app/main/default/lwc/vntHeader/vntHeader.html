@@ -1,0 +1,63 @@
+<template>
+    <!--div style="width:80%;margin:auto;position: relative;">
+            <ul class="slds-list_horizontal">
+                <li><img style="height:75px; width:150px;" src={idselLogoUrl}></li>
+                <li style="margin-left: 30px;"><h1>PORTAIL VENTE PARTENAIRES</h1> <h4> Assurance / Sécurité </h4> </li>
+            </ul>
+    </div-->    
+    <div style="width:100%;margin:auto;position: relative;" class="slds-grid slds-wrap">
+
+        <div class="slds-col slds-size_1-of-6">   
+            <a href="/vente/s/"> 
+            <img style="height:75px; width:150px;" src={idselLogoUrl} href="">
+            </a>
+        </div>
+        <div class="slds-col slds-size_3-of-6">    
+            <h1>PORTAIL VENTE PARTENAIRES</h1> <h4> Assurance / Sécurité </h4>
+        </div>
+        <div class="slds-col slds-size_2-of-6 slds-align_absolute-center">
+            <div style="position: relative;">
+            <ul class="slds-list_horizontal">
+            <img style="border-radius:50%;" src={smallphoto} />
+            <h3 style="margin-top:20px;margin-left:7px;margin-right:7px;">{infouserName}</h3>    
+
+            <div class="slds-dropdown-trigger slds-dropdown-trigger_click my-menu" style="margin-top: 20px">
+                <lightning-button-icon icon-name ="utility:down" variant="border-filled" alternative-text="Show More" onclick={showHideMenu} >
+                </lightning-button-icon>
+                <div class="slds-dropdown slds-dropdown_right">
+                  <ul class="slds-dropdown__list" role="menu" aria-label="Show More">
+                    <li class="profile slds-dropdown__item" role="presentation">
+                      <a href="/vente/s/" role="menuitem" tabindex="0">
+                        <span class="slds-truncate" title="Accueil">Accueil</span>
+                      </a>
+                    </li>                    
+                    <li class="profile slds-dropdown__item" role="presentation">
+                      <a href="/vente/s/profil" role="menuitem" tabindex="-1">
+                        <span class="slds-truncate" title="Mon Profil">Mon Profil</span>
+                      </a>
+                    </li>
+                    <li class="vente-process slds-dropdown__item" role="presentation">
+                        <a href="/vente/s/vente-process" role="menuitem" tabindex="-1">
+                          <span class="slds-truncate" title="Process Nv Prospect">Creation Prospect</span>
+                        </a>
+                    </li>                    
+                    <li class="slds-dropdown__item" role="presentation">
+                      <a href="/vente/s/vente-search" role="menuitem" tabindex="-1">
+                        <span class="slds-truncate" title="Recherche Prospect">Rech. Prospect</span>
+                      </a>
+                    </li>
+                    <li class="slds-has-divider_top-space" role="separator"></li>
+                    <li class="slds-dropdown__item" role="presentation" >
+                      <a onclick={onLogout} role="menuitem" tabindex="-1">
+                        <span class="slds-truncate" title="Se Déconnecter">Se Déconnecter</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </ul>
+            </div>
+        </div> 
+    </div>
+
+</template>

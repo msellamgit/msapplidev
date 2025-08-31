@@ -1,0 +1,144 @@
+<template>
+    <c-lwc-poc2-language></c-lwc-poc2-language>
+    <div class="inner">
+        <p class="osttitlepage">
+           <img class="ostheadimg" src={image_formular} alt="">
+           {lbl_bank_title}
+        </p>
+        <form class="formStep1" action="">
+            <template if:false={issepamandate}>
+                <div class="card">
+                    <div class="padding16">
+                        <p class="stylelblsepa">{lbl_bank_msg_sepa}</p>
+                        <div class="grid gap10">
+                            <div class="colH betweenFW mobFW">
+                                <fieldset>
+                                <label class="lblinputbank">{lbl_bank_fld_accountname}</label>
+                                <lightning-input class="lgtinputclass" name="entryAccountName" label="Account name" variant="label-hidden" type="text" value={entryAccountName} onchange={entryChange}></lightning-input>
+                                </fieldset>
+                            </div>
+                            <div class="colH betweenFW mobFW">
+                                <fieldset>
+                                <label class="lblinputbank">{lbl_bank_fld_iban}</label>
+                                <lightning-input class="inputIban lgtinputclass" name="entryIban" label="IBAN" variant="label-hidden" type="text" value={entryIban} onchange={entryChange}></lightning-input>
+                                </fieldset>
+                            </div>
+                            <div class="colH betweenFW mobFW">
+                                <fieldset>
+                                <label class="lblinputbank">{lbl_bank_fld_bankname}</label>
+                                <lightning-input class="lgtinputclass" max="50" disabled name="entryBankName" label="Bank Name" variant="label-hidden" type="text" value={entryBankName}></lightning-input>
+                                </fieldset>
+                            </div>
+                            <div class="colH betweenFW mobFW">
+                                <fieldset>
+                                <label class="lblinputbank">{lbl_bank_fld_bic}</label>                      
+                                <lightning-input  class="lgtinputclass" disabled name="entryBic" label="BIC" variant="label-hidden" type="text" value={entryBic}></lightning-input>
+                                </fieldset>
+                            </div>       
+                        </div>                        
+                    </div>
+
+                </div>
+                <div>
+                    <span class="roundinfo"> i </span>
+                    <span class="infolabel">{lbl_bank_info_invoice}</span>
+                </div>
+            </template>
+            <template if:true={issepamandate}>
+                <div class="card cardpadding0">
+                    <div class="subcard titre1">
+                        {lbl_bank_title_sepa}
+                    </div>
+                    <div class="subcard">
+                        <span class="stylemsg">{lbl_bank_msg_sepa1}<br/></span><br />
+                        <span class="stylemsg">{lbl_bank_msg_sepa2}</span>
+                    </div>       
+                    <div class="grid gap10 subcard">
+                        <div class="colFW betweenFW mobFW subtitlered">
+                            {lbl_bank_subtitle_company}
+                        </div>                    
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_lbl_busname}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valcompanyname}</label>
+                        </div>
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_lbl_busaddress}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valcompanyad1}</label> <br />
+                            <label for="">{valcompanyad2}</label>                     
+                        </div>
+                    </div>                          
+                    <div class="grid gap10 subcard">
+                        <div class="colFW betweenFW mobFW subtitlered">
+                            {lbl_bank_subtitle_bank}
+                        </div>                                        
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_accountname}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{entryAccountName}</label>
+                        </div>
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_accountiban}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{entryIban}</label> 
+                        </div>
+                    </div>                          
+                    <div class="grid gap10 subcard">
+                        <div class="colFW betweenFW mobFW subtitlered">
+                            {lbl_bank_subtitle_creditor}
+                        </div>                    
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_creditname}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valcreditorname}</label>
+                        </div>
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_creditidentifier}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valcreditoridentifier}</label> 
+                        </div>
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_creditaddress}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valcreditorad1}</label> <br />
+                            <label for="">{valcreditorad2}</label>                        
+                        </div>
+                    </div>    
+                    <div class="grid gap10 padding20">
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_typepayement}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valtypepayement}</label>
+                        </div>
+                        <div class="col1T betweenFW mobFW">
+                            <label class="fldlblbank">{lbl_bank_fld_mandatref}</label>
+                        </div>
+                        <div class="col2T betweenFW mobFW stylefldval">
+                            <label for="">{valmandatref}</label> 
+                        </div>              
+                    </div>              
+                    <div class="padding20" style="background-color: rgb(247, 248, 249); color: rgb(92, 111, 138); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+                        <!-- <lightning-input checked={autdebit} label={lbl_bank_ckc_authorisepayement} type="checkbox" onchange={selectAthpayement}></lightning-input> -->
+                        <!-- <span>{lbl_bank_ckc_authorisepayement}</span> -->
+                        <input type="checkbox" class="checkautodebit" onchange={selectautodebit} checked={checkautoedit}>
+                        <label style="color: rgb(92, 111, 138); margin-bottom: 0px; padding-top: 0px; vertical-align: top;">{lbl_bank_ckc_authorisepayement}</label>
+                        <div style="text-align: right; font-family: Ubuntu, sans-serif; font-weight: 600; color: rgb(31, 37, 46); margin-top: 22px;">
+                            <template if:true={checkautoedit}>
+                                {confirmationdatelabel}
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </form>
+    </div>    
+</template>

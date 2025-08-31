@@ -1,0 +1,293 @@
+<template>
+   <c-lwc-poc2-language></c-lwc-poc2-language>
+   <div class="inner">
+      <p class="osttitlepage">
+         <img class="ostheadimg" src={imagedetail} alt="">
+         {lbl_account_title}
+      </p>
+      <form class="formStep1" action="">
+         <div class="card">
+            <p class="ostsubtitle">{lbl_account_title_contactdetails}</p>
+            <p class="osttxt">{lbl_account_contact}</p>
+            <button onclick={filltestdata} class="btn blacked">
+               FILL TEST DATA
+            </button>
+            <div class="grid gap10">
+               <div class="col1S betweenFW mobFW">
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_salutation}</label>
+                     <div class="selectWrapper">
+                        <select name="entrySalutation" id="" onchange={entryChange}>
+                           <option value={label_salutation_mr}>{label_salutation_mr}</option>
+                           <option value={label_salutation_mrs}>{label_salutation_mrs}</option>
+                        </select>
+                        <span class="material-icons material-icons-round">
+                           expand_more
+                        </span>
+                     </div>
+                  </fieldset>
+               </div>
+               <div class="col5D betweenFW mobFW">
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_firstname}</label>
+                     <!-- <input type="text"> -->
+                     <lightning-input class="lgtinputclass inputfirstname" max-length="40" name="entryFirstName" label="First name"
+                        variant="label-hidden" type="text" value={entryFirstName}
+                        onchange={entryChange}></lightning-input>
+                  </fieldset>
+               </div>
+               <div class="col5D betweenFW mobFW">
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_lastname}</label>
+                     <lightning-input class="inputlastname" max-length="40" name="entryLastName" label="Last name"
+                        variant="label-hidden" type="text" value={entryLastName}
+                        onchange={entryChange}></lightning-input>
+                  </fieldset>
+               </div>
+               <div class="col7D betweenFW mobFW">
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_email}</label>
+                     <!-- <lightning-input class="validregex inputemail" 
+                        pattern="*[A-Za-z0-9._-]+@[a-z0-9-]+.[a-z]{2,}$"
+                        message-when-pattern-mismatch="Please enter a valid email"
+                        max-length="80" name="entryEmail"
+                        label="Email" variant="label-hidden" type="text" value={entryEmail}
+                        onchange={entryChange}></lightning-input> -->
+                     <lightning-input class="inputemail" 
+                        max-length="80" name="entryEmail"
+                        label="Email" variant="label-hidden" type="text" value={entryEmail}
+                        onchange={entryChange}></lightning-input>
+                  </fieldset>
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_emailconfirm}</label>
+                     <lightning-input class="inputconfirm" name="entryEmailconfirm" label="Email Confirmation"
+                        onpaste={clearconfirm} variant="label-hidden" type="text" value={entryEmailconfirm}
+                        onchange={entryChange}></lightning-input>
+                  </fieldset>
+               </div>
+               <div style="display:block" class="col5D betweenFW mobFW">
+                  <label class="ostfldlblbold stlphonelabel">{lbl_account_fld_phone}</label>
+                  <fieldset class="stlphoneext">
+                     <a style="position: relative; text-decoration: none; color: black;" class="labelcountry" onclick={openlist}>
+                     <template if:true={valtrue}>
+                        <a style="margin: 3px 0px; padding: 3px 5px;" class="flagicon flag-icon flag-icon-de flag-icon-squared"></a>
+                        <a style="text-decoration: none;color: black;margin: 3px 0px; padding: 3px 5px;" >+49
+                           <span style= "position: absolute; left: 80px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); font-size: 24px; color: black;" class="material-icons material-icons-round">expand_more</span>
+                        </a>
+                     <!--    </a>-->
+                     </template> 
+                        <!-- Ext.
+                        <span class="expandflag material-icons material-icons-round">expand_more</span> -->
+                     </a>
+                     <ul class="lstflag hidelist">
+                        <li onclick={choiceext} data-id="DE" data-value="49"><a class="flagicon flagstyle flag-icon flag-icon-de flag-icon-squared"></a><a class="flagstyle">+49</a></li>
+                        <li onclick={choiceext} data-id="FR" data-value="33"><a class="flagicon flagstyle flag-icon flag-icon-fr flag-icon-squared"></a><a class="flagstyle">+33</a></li>
+                        <li onclick={choiceext} data-id="GB" data-value="44"><a class="flagicon flagstyle flag-icon flag-icon-gb flag-icon-squared"></a><a class="flagstyle">+44</a></li>
+                        <li onclick={choiceext} data-id="BE" data-value="32"><a class="flagicon flagstyle flag-icon flag-icon-be flag-icon-squared"></a><a class="flagstyle">+32</a></li>
+                        <li onclick={choiceext} data-id="CZ" data-value="420"><a class="flagicon flagstyle flag-icon flag-icon-cz flag-icon-squared"></a><a class="flagstyle">+420</a></li>
+                        <li onclick={choiceext} data-id="DK" data-value="45"><a class="flagicon flagstyle flag-icon flag-icon-dk flag-icon-squared"></a><a class="flagstyle">+45</a></li>
+                        <li onclick={choiceext} data-id="GR" data-value="30"><a class="flagicon flagstyle flag-icon flag-icon-gr flag-icon-squared"></a><a class="flagstyle">+30</a></li>
+                        <li onclick={choiceext} data-id="IS" data-value="354"><a class="flagicon flagstyle flag-icon flag-icon-is flag-icon-squared"></a><a class="flagstyle">+354</a></li>
+                        <li onclick={choiceext} data-id="IE" data-value="353"><a class="flagicon flagstyle flag-icon flag-icon-ie flag-icon-squared"></a><a class="flagstyle">+353</a></li>
+                        <li onclick={choiceext} data-id="IT" data-value="39"><a class="flagicon flagstyle flag-icon flag-icon-it flag-icon-squared"></a><a class="flagstyle">+39</a></li>
+                        <li onclick={choiceext} data-id="LV" data-value="371"><a class="flagicon flagstyle flag-icon flag-icon-lv flag-icon-squared"></a><a class="flagstyle">+371</a></li>
+                        <li onclick={choiceext} data-id="LI" data-value="423"><a class="flagicon flagstyle flag-icon flag-icon-li flag-icon-squared"></a><a class="flagstyle">+423</a></li>
+                        <li onclick={choiceext} data-id="LT" data-value="370"><a class="flagicon flagstyle flag-icon flag-icon-lt flag-icon-squared"></a><a class="flagstyle">+370</a></li>
+                        <li onclick={choiceext} data-id="ME" data-value="382"><a class="flagicon flagstyle flag-icon flag-icon-me flag-icon-squared"></a><a class="flagstyle">+382</a></li>
+                        <li onclick={choiceext} data-id="NL" data-value="31"><a class="flagicon flagstyle flag-icon flag-icon-nl flag-icon-squared"></a><a class="flagstyle">+31</a></li>
+                        <li onclick={choiceext} data-id="PT" data-value="351"><a class="flagicon flagstyle flag-icon flag-icon-pt flag-icon-squared"></a><a class="flagstyle">+351</a></li>
+                        <li onclick={choiceext} data-id="RO" data-value="40"><a class="flagicon flagstyle flag-icon flag-icon-ro flag-icon-squared"></a><a class="flagstyle">+40</a></li>
+                        <li onclick={choiceext} data-id="RS" data-value="381"><a class="flagicon flagstyle flag-icon flag-icon-rs flag-icon-squared"></a><a class="flagstyle">+381</a></li>
+                        <li onclick={choiceext} data-id="ES" data-value="34"><a class="flagicon flagstyle flag-icon flag-icon-es flag-icon-squared"></a><a class="flagstyle">+34</a></li>
+                        <li onclick={choiceext} data-id="CH" data-value="41"><a class="flagicon flagstyle flag-icon flag-icon-ch flag-icon-squared"></a><a class="flagstyle">+41</a></li>
+                        <li onclick={choiceext} data-id="UA" data-value="380"><a class="flagicon flagstyle flag-icon flag-icon-ua flag-icon-squared"></a><a class="flagstyle">+380</a></li>                        
+                     </ul>
+                  </fieldset>
+                  <fieldset class="stlphonefield">
+                     <lightning-input name="entryPhone" class="inputphone" label="Phone"
+                        variant="label-hidden" type="text" value={entryPhone}
+                        onchange={entryChange} onfocus={hidelist}></lightning-input>
+                  </fieldset>
+               </div>
+            </div>
+         </div>
+         <template if:false={showinfovat}>
+         <div class="card">
+            <p style="margin-bottom: 12px;" class="ostsubtitle">{lbl_account_title_businessdetails}</p>
+            <p class="osttxt">{lbl_account_business}</p>
+               <div class="grid gap20">
+                  <div class="colH betweenFW mobFW">
+                     <fieldset>
+                        <label class="ostfldlblbold">{lbl_account_fld_companyname}</label>
+                        <!-- <lightning-helptext content="VAT Help Text - VAT Help Text - VAT Help Text - VAT Help Text - VAT Help Text - VAT Help Text - VAT Help Text - VAT Help Text"></lightning-helptext> -->
+                        <lightning-input class="lgtinputclass inputname" name="entryAccountName" label=""
+                           variant="label-hidden" type="text" value={entryAccountName} onchange={entryChange}>
+                        </lightning-input>
+                        <!-- <input type="text"> -->
+                     </fieldset>
+                  </div>
+                  <div class="col1S betweenFW mobFW">
+                     <fieldset>
+                        <label class="ostfldlblbold">{lbl_account_fld_postalcode}</label>
+                        <lightning-input class="lgtinputclass inputcp" name="entryCP" label="" 
+                           variant="label-hidden" type="text" max-length="5" value={entryCP} onchange={entryChange}>
+                        </lightning-input>
+                     </fieldset>
+                  </div>
+                  <div class="col1T betweenFW mobFW">
+                     <fieldset>
+                        <label class="ostfldlblbold">{lbl_account_fld_country}<span class="ostroundcomment"> i <span
+                                 class="tooltiptext">{lbl_account_info_country}</span></span></label>
+                        <input disabled value="Germany" type="text">
+                     </fieldset>
+                  </div>
+               </div>
+            <template if:true={showbuttonfind}>
+               <!-- <button onclick={clicknoresult}> pas de resultat </button> -->
+               <div class="btnsearch slds-clearfix">
+                  <a onclick={searchcompany} class="slds-float_right btn stepBtn back searchBtn inactive">
+                     <span>{lbl_account_btn_find}</span>
+                  </a>
+               </div>
+            </template>
+            <template if:true={noresult}>
+               <div class="infonotfind">
+                  <span class="roundnotfind"> i </span>
+                  <span style="padding-top: 1px;"> {lbl_account_info_notfoundcompany}</span>
+               </div>
+               <div class="btnsearch slds-clearfix">
+                  <div>
+                     <a onclick={trynewsearch} class="labeltry"> <span> {lbl_account_btn_newsearch} </span> </a>
+                     <a onclick={enterdetails} class="slds-float_right btn stepBtn back">
+                        <span>{lbl_account_btn_filledbusiness}</span>
+                     </a>
+                  </div>
+               </div>
+            </template>
+            <template if:true={showenterdetail}>
+               <div>
+                  <span class="roundinfo"> i </span>
+                  <span class="infolabel"> {lbl_account_info_enterdetails} </span>
+               </div>
+               <div class="colFW betweenFW mobFW">
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_street}</label>
+                     <lightning-input class="" name="entryAddress" label="Street Name and Number" variant="label-hidden"
+                        type="text" value={entryStreetName} onchange={entryChange}></lightning-input>
+                  </fieldset>
+               </div>
+               <div class="colFW betweenFW mobFW">
+                  <fieldset>
+                     <label class="ostfldlblbold">{lbl_account_fld_city}</label>
+                     <lightning-input class="" name="entryCity" label="City" variant="label-hidden" type="text"
+                        value={entryCity} onchange={entryChange}></lightning-input>
+                  </fieldset>
+               </div>
+               <div>
+                  <span class="roundinfo"> i </span>
+                  <span class="infolabel">{lbl_account_info_revieworder}</span>
+               </div>
+               <div class="btnsearch slds-clearfix">
+                  <a onclick={trynewsearch} class="labeltry"><span> {lbl_account_btn_newsearch} </span></a>
+                  <a onclick={confirmdetails} class="slds-float_right btn stepBtn back confirmBtn inactive">
+                     <span>{lbl_account_btn_confirm}</span>
+                  </a>
+               </div>
+            </template>
+            <template if:true={showlistaccount}>
+               <div class="btnsearch slds-clearfix">
+                  <span style="font-weight: bold;"> {lbl_account_results} </span>
+                  <a onclick={enterdetails} class="nomatch slds-float_right">
+                     <span>{lbl_account_btn_nonecompany}</span>
+                  </a>
+               </div>
+               <div class="scrollContainer">
+                  <div class="scrollArea" >               
+                     <template for:each={lstAddress} for:item="add">
+                        <div class="grid line gap30 boxaddress" key={add.name} data-item={add}>
+                           <div class="col5S address">
+                              <h6>{add.name}</h6>
+                              <p>{add.address}</p>
+                           </div>
+                           <div class="col1S ctaBox">
+                              <!-- <lightning-input class="lgtcheckbox"   checked={selectedAd} name={add.id} type="checkbox" onchange={selectAddress}></lightning-input> -->
+                              <input type="checkbox" data-item={add} class="lgtcheckbox" name={add.id}
+                                 onchange={selectAddress}>
+                              <!-- <input type="checkbox" name={add.} -->
+                              <!--<button class="btn secondary">
+                                 <input type="radio" name="choice" >
+                                    </button> -->
+                           </div>
+                        </div>
+                     </template>
+                  </div>
+               </div>  
+               <div class="btnsearch slds-clearfix btnSelection selectBtnHide">
+                  <a onclick={validAddress} class="slds-float_right btn stepBtn back">
+                     <span>{lbl_account_btn_choiceaccount}</span>
+                  </a>
+               </div>             
+            </template>
+            <div if:false={isLoaded} class="slds-is-relative">
+               <lightning-spinner alternative-text="Loading..." variant="brand">
+               </lightning-spinner>
+            </div>
+         </div>
+         </template>
+         <template if:true={showinfovat}>
+            <div class="card">
+               <p class="ostsubtitle">{lbl_account_title_businessdetails}</p>
+               <p class="osttxt">{lbl_account_business}</p>
+               <div class="innerGrey">
+                  <div>
+                     <h3>{entryAccountName}
+                        <button onclick={modifyaccount} class="btn secondary blacked">
+                           <span class="material-icons material-icons-round">
+                              edit
+                           </span>
+                        </button>
+                     </h3>
+                     <p>{fulladdress}</p>
+                  </div>
+                  <div>
+                     <div class="grid gap20">
+                        <div class="colFW">
+                           <h3>{lbl_account_title_businessid}</h3>
+                        </div>
+                        <div class="colT betweenFW mobFW">
+                           <fieldset>
+                              <label class="ostfldlblbold">{lbl_account_fld_vat}<span class="ostroundcomment"> i <span
+                                       class="tooltiptext">{lbl_account_info_vat}</span> </span> </label>
+                              <lightning-input class="inputvat" name="entryVat" label="VAT" variant="label-hidden" type="text"
+                                 value={entryVat} onchange={entryChange} onblur={entryOnexit}></lightning-input>
+                           </fieldset>
+                        </div>
+                        <div class="colT betweenFW mobFW">
+                           <fieldset>
+                              <label class="ostfldlblbold">{lbl_account_fld_registration}<span class="ostroundcomment">
+                                    i <span class="tooltiptext">{lbl_account_info_registration}</span> </span> </label>
+                              <lightning-input class="" name="entryRegistration" label="Registration"
+                                 variant="label-hidden" type="text" value={entryRegistration}
+                                 onchange={entryChange}></lightning-input>
+                           </fieldset>
+                        </div>
+                        <div class="colT betweenFW mobFW">
+                           <fieldset>
+                              <label class="ostfldlblbold">{lbl_account_fld_tax} <span class="ostroundcomment"> i <span
+                                       class="tooltiptext">{lbl_account_info_tax}</span> </span></label>
+                              <lightning-input class="" name="entryTax" label="Tax" variant="label-hidden" type="text"
+                                 value={entryTax} onchange={entryChange}></lightning-input>
+                           </fieldset>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </template>
+         <p class="under">
+            {lbl_account_msg_dataprocess1} <a href="https://web.uta.com/datenschutzerklaerung" target="_blank">{lbl_account_msg_dataprocess2}</a>.
+            {lbl_account_msg_dataprocess3}
+         </p>
+      </form>
+   </div>
+</template>

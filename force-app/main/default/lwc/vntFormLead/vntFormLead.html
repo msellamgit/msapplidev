@@ -1,0 +1,74 @@
+<template>
+    <!--div class="slds-modal__container0"-->
+
+        <header class="slds-modal__header" style="background-color:#DCDCDC; padding: 0.1em;">
+            <!-- <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Prospect</h2> -->
+            <!-- <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Fermer"
+                onclick={closeModal}>
+                <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small">
+                </lightning-icon>
+            </button> -->
+        </header>
+        <lightning-record-edit-form record-id={leadId} object-api-name='Lead' onsubmit={handleSubmit}
+            onsuccess={handleSuccess} onerror={handleFormError} onload={formLoadHandler}>
+            <div class="slds-grid slds-wrap" style="background-color:#DCDCDC; padding-left: 12px; padding-right: 12px;">
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="FirstName"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="Status"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" onchange ={handleOffre} required field-name="project_mse__AssuOffre__c"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="project_mse__AssuHabitation__c"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="project_mse__AssuSituationFamiliale__c"></lightning-input-field>
+                </div>
+                <!-- style="display:none" -->
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="LastName"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="Email"></lightning-input-field>
+                    <lightning-input-field style="display:none" field-name="project_mse__ProduitAssurance__c"></lightning-input-field>
+                    <lightning-combobox style="margin-bottom: 0px;padding-left: 4px; padding-right: 4px;" name="ProductAssu" label="Produit Assurance" 
+                    variant={comboVariant} value={valueChoiceAssurance} disabled={comboDisableAssurance} placeholder="" options={optionChoiceAssurance}>
+                    </lightning-combobox> 
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="project_mse__AssuFoyer__c"></lightning-input-field>
+                    <lightning-input-field  style="margin-bottom: 0px" disabled field-name="LeadSource"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="Phone"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" field-name="Company"></lightning-input-field>                                  
+                    <lightning-combobox style="margin-bottom: 0px;padding-left: 4px; padding-right: 4px;" name="ProductSecu" label="Produit Sécurité" variant={comboVariant}
+                        value={valueChoiceSecurite} disabled={comboDisableSecurite} placeholder="" options={optionChoiceSecurite}>
+                    </lightning-combobox> 
+                    <lightning-input-field style="margin-bottom: 0px; display:none" field-name="project_mse__ProduitSecurite__c">
+                    </lightning-input-field>                                                                        
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="project_mse__AssuResidence__c"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" field-name="OwnerId"></lightning-input-field>
+                </div>
+                <template if:false={hideButton}>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name="CreatedById"></lightning-input-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-input-field field-name="LastModifiedById"></lightning-input-field>
+                    </div>
+                </template>
+                <div class="slds-col slds-size_2-of-3">
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="Street"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-3">
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="PostalCode"></lightning-input-field>
+                    <lightning-input-field style="margin-bottom: 0px" required field-name="City"></lightning-input-field>
+                </div>
+            </div>
+            <template if:false={hideButton}>
+                <div style="background-color:#DCDCDC; margin: 0px; padding-left: 12px; padding-right: 12px;">
+                    <div style="text-align:right;">
+                        <button class="slds-button btnclass" title="Quitter" onclick={closeModal}>
+                            <p class="left" style="margin-left:10px;margin-right:10px">Quitter</p>
+                        </button>
+                        <button class="slds-button btnclass" title="Sauvegarder" onclick={handleSubmit}>
+                            <p class="left" style="margin-left:10px;margin-right:10px">Sauvegarder</p>
+                        </button>
+                    </div>
+                </div>
+            </template>
+        </lightning-record-edit-form>
+    <!--/div-->
+</template>

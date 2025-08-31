@@ -1,0 +1,60 @@
+{
+  "appPageId" : "f5386a29-743c-4449-849f-4bff63d37c71",
+  "componentName" : "community_layout:sldsFlexibleLayout",
+  "dataProviders" : [ ],
+  "id" : "72a0973c-aa85-438c-ba07-b929b4ff011c",
+  "label" : "Marketing",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "backgroundImageConfig" : "",
+        "backgroundImageOverlay" : "rgba(0,0,0,0)",
+        "sectionConfig" : "{\"UUID\":\"c219df68-2497-42f9-a956-2c170f97a5c8\",\"columns\":[{\"UUID\":\"2675aea6-f46e-4d8e-afda-7212dbd32b2d\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}"
+      },
+      "componentName" : "community_layout:section",
+      "id" : "c219df68-2497-42f9-a956-2c170f97a5c8",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : { },
+          "componentName" : "project_mse:lwc_PART_Marketing",
+          "id" : "5ad09b6b-9a6d-4b38-bc9f-eed43046adee",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "2675aea6-f46e-4d8e-afda-7212dbd32b2d",
+        "regionLabel" : "Column 1",
+        "regionName" : "col1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "scopedBrandingSetId" : null,
+      "type" : "component"
+    } ],
+    "id" : "46d7392a-4f64-4876-8823-044aa91a4e0e",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "pageTitle" : "Marketing",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "community_builder:seoAssistant",
+      "id" : "0eb5e3e7-c334-44e7-89da-3c42ee853d29",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "5640f010-cf7b-42f7-b5b9-336950f884ae",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "q2HYSj0DFHq8xcL1Tq9PBEymMpKfJv",
+  "type" : "view",
+  "viewType" : "custom-marketing"
+}

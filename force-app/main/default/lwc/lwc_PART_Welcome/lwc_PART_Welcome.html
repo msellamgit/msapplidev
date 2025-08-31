@@ -1,0 +1,86 @@
+<template>
+    <div class="clsmaincontent">
+        <div class="main">
+            <div class="titlelvl1">
+                <span>Welcome to UTA Portal.</span>
+            </div>
+            <div class="titlelvl4">
+                <span>Lorem ipsum dolor sa it.</span>
+            </div>
+            <div  class="topics slds-grid slds-wrap">
+                <div class="slds-col slds-size_2-of-6">
+                    <a><img src={imglocations}></a>
+                    <p>
+                        Manage to UTA Edenred <br />
+                        acceptance points.
+                    </p>
+                    <button class="smallbutton">LOCATIONS</button>
+                </div>
+                <div class="slds-col slds-size_2-of-6">
+                    <a><img src={imgnews}></a>
+                    <p>
+                        Get all news about UTA Edenred <br />
+                        directly from the source.
+                    </p>
+                    <button class="smallbutton">NEWS</button>
+                </div>
+                <div class="slds-col slds-size_2-of-6">
+                    <a><img src={imgdocuments}></a>
+                    <p>
+                        Manage your invoices and other <br />
+                        documents.
+                    </p>
+                    <button class="smallbutton">DOCUMENTS</button>
+                </div>
+            </div>
+        </div>
+        <div class="clsnews">
+            <div class="titlelvl2">
+                <span>Latest News</span>
+            </div>
+            <div class="titlelvl4">
+                <span>A short subline</span>
+            </div>
+            <div class="cardnews grid">
+                <template for:each={lstnews} for:item="nw">
+                    <c-lwc-p-a-r-t-card-news class="news colspan4 betweenFW mobFW" key={nw.id} news={nw}></c-lwc-p-a-r-t-card-news>
+                </template>
+            </div>
+            <div style="text-align: right; padding-right: 20px;">
+                <button class="bigbutton">SHOW ALL</button>
+            </div>
+        </div>
+        <div class="clsnews">
+            <div class="titlelvl2">
+                <span>Last Marketing Activities</span>
+            </div>
+            <div class="titlelvl4">
+                <span>A short subline</span>
+            </div>
+            <div class="cardnews grid">
+                <template for:each={lstmktacts} for:item="mktact">
+                    <c-lwc-p-a-r-t-card-mkt-activity class="news colspan4 betweenFW mobFW" key={mktact.id} activity={mktact}></c-lwc-p-a-r-t-card-mkt-activity>
+                </template>
+            </div>
+            <div style="text-align: right; padding-right: 20px;">
+                <button class="bigbutton">SHOW ALL</button>
+            </div>
+        </div>    
+        <div class="clsnews">
+            <div class="titlelvl2">
+                <span>My Locations</span>
+            </div>
+            <div class="titlelvl4">
+                <span>UTA Acceptance points</span>
+            </div>
+            <div class="cardnews grid">
+                <template for:each={lstlocations} for:item="loc">
+                    <c-lwc-p-a-r-t-card-location class="news colspan4 betweenFW mobFW" key={loc.id} location={loc}></c-lwc-p-a-r-t-card-location>
+                </template>
+            </div>
+            <div style="text-align: right; padding-right: 20px;">
+                <button class="bigbutton">SHOW ALL</button>
+            </div>        
+        </div>
+    </div>
+</template>

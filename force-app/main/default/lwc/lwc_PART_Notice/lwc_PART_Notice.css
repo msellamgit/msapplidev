@@ -1,0 +1,23 @@
+body {
+    background-color: transparent;
+}
+
+
+.partdivparagrapgh {
+    
+    text-align: left; 
+    margin: 20px 90px 20px 20px; 
+    font-family: Ubuntu, sans-serif;
+}
+
+.parttitle1 {
+    color: #47576B;
+    font-size: 32px;
+    margin-bottom: 32px;
+} 
+
+.partparagrapgh {
+    color: #5B5B5B;
+    font-size: 14px;
+    margin-bottom: 16px;
+}

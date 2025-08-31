@@ -1,0 +1,56 @@
+<template>
+<lightning-card>
+    <template if:true={account}>
+        <div class="slds-m-around_medium">    
+            <!--lightning-button variant="brand" label="Display Data" 
+            onclick={handleClick} 
+            class=""
+            slot="actions">
+            </lightning-button--> 
+            <!--        
+            <p><lightning-layout-item>
+                <img src={imageUrl} alt="Photo" style="width:100px;height:100px;"/>
+            </lightning-layout-item> 
+        </p> -->
+                <div class="slds-text-heading_large">
+                    <b>{vName}</b>
+                    <lightning-button class="slds-float_right" label="MAP" variant="brand" onclick={handleOpenModal}>
+                    </lightning-button>
+                </div>
+                <div class="slds-text-heading_medium">{accountvType}</div>
+                <p>
+                    <lightning-icon icon-name="utility:call" alternative-text="Phone"  size="small"></lightning-icon>
+                    <lightning-formatted-phone value={vPhone}></lightning-formatted-phone> 
+                </p>  
+                <div class="slds-text-heading_small">{vBillingStreet} - {vBillingPostalCode} {vBillingCity}</div>
+                <!--<div class="slds-p-around_medium">
+                    <lightning-button label="MAP" variant="brand" onclick={handleOpenModal}>
+                    </lightning-button>
+                </div>-->
+            </div>
+    </template>
+    <template if:true={isOpenModal}>
+        <div style="height: 500px;">
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={handleCloseModal}>
+                            <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close" size="medium">
+                            </lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </header>
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                    <lightning-map map-markers={mapMarkers} zoom-level="13"></lightning-map>
+                        </div>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </template>
+    <template if:true={error}>
+        <h1>Inside error</h1>
+        <div>{account.error}></div>
+    </template>
+</lightning-card>
+</template>

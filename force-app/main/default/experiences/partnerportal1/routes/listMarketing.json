@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "72a0973c-aa85-438c-ba07-b929b4ff011c",
+  "appPageId" : "f5386a29-743c-4449-849f-4bff63d37c71",
+  "configurationTags" : [ ],
+  "devName" : "Marketing__c",
+  "id" : "7ae29efd-f76c-4098-9a87-7c299d0f06da",
+  "label" : "List Marketing",
+  "routeType" : "custom-marketing",
+  "type" : "route",
+  "urlPrefix" : "marketing"
+}

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow-y: hidden;">
+<head><meta><meta name="viewport" content="width=device-width"><meta content="text/html; charset=UTF-8"><meta content="IE=edge"><meta name="x-apple-disable-message-reformatting">
+	<style type="text/css">@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+	</style>
+	<style type="text/css">html,
+      body {
+        margin: 0 auto !important;
+        padding: 0 !important;
+        height: 100% !important;
+        width: 100% !important;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+        font-family: Ubuntu, Helvetica, Arial, sans-serif;
+      }
+
+      /* What it does: Stops email clients resizing small text. */
+      * {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      /* What it does: Centers email on Android 4.4 */
+      div[style*="margin: 16px 0"] {
+        margin: 0 !important;
+      }
+
+      /* What it does: Stops Outlook from adding extra spacing to tables. */
+      table,
+      td {
+        mso-table-lspace: 0pt !important;
+        mso-table-rspace: 0pt !important;
+      }
+
+      /* What it does: Fixes webkit padding issue. */
+      table {
+        border-spacing: 0 !important;
+        border-collapse: collapse !important;
+        table-layout: fixed !important;
+        margin: 0 auto !important;
+      }
+
+      /* What it does: Uses a better rendering method when resizing images in IE. */
+      img {
+        -ms-interpolation-mode: bicubic;
+      }
+
+      /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+      a {
+        text-decoration: none;
+      }
+
+      /* What it does: A work-around for email clients meddling in triggered links. */
+      *[x-apple-data-detectors],  /* iOS */
+        .unstyle-auto-detected-links *,
+        .aBn {
+        border-bottom: 0 !important;
+        cursor: default !important;
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+
+      /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+      .a6S {
+        display: none !important;
+        opacity: 0.01 !important;
+      }
+
+      /* What it does: Prevents Gmail from changing the text color in conversation threads. */
+      .im {
+        color: inherit !important;
+      }
+
+      /* If the above doesn't work, add a .g-img class to any image in question. */
+      img.g-img + div {
+        display: none !important;
+      }
+
+      /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+      /* Create one of these media queries for each additional viewport size you'd like to fix */
+
+      /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+      @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+        u ~ div .email-container {
+          min-width: 320px !important;
+        }
+      }
+      /* iPhone 6, 6S, 7, 8, and X */
+      @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+        u ~ div .email-container {
+          min-width: 375px !important;
+        }
+      }
+      /* iPhone 6+, 7+, and 8+ */
+      @media only screen and (min-device-width: 414px) {
+        u ~ div .email-container {
+          min-width: 414px !important;
+        }
+      }
+
+    /*  @font-face {
+        font-family: "edenred-reg";
+        src: url("") format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "edenred-bold";
+        src: url("") format("opentype");
+        font-weight: 700;
+        font-style: normal;
+      }*/
+	</style>
+	<style type="text/css">body {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.8;
+        color: #47576b;
+        background-color: #d1d8e0;
+        margin: 0;
+      }
+
+      p {
+        color: #47576b;
+      }
+
+      a {
+        color: #000000;
+        text-decoration: underline;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      h1 {
+        font-family: Ubuntu, Helvetica, Arial, sans-serif !important;
+      }
+
+      .font-edenred-bold {
+        font-family: Ubuntu, Helvetica, Arial, sans-serif !important;
+      }
+
+      .font-edenred-reg {
+        font-family: Ubuntu, Helvetica, Arial, sans-serif !important;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #333e4d;
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+
+      h3 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      td {
+        font-size: 16px;
+      }
+
+      /* BACKGROUNDS */
+      .bg_white {
+        background: #ffffff;
+      }
+      .border-bottom {
+        border-bottom: 1px solid #d1d8e0;
+      }
+
+      /* SAMSUNG FIXES */
+      .underline-none a {
+        text-decoration: none !important;
+        text-decoration: none;
+        color: #5c6f8a !important;
+      }
+      .underline-none.fz-14 a {
+        font-size: 14px;
+      }
+      .samsung-fix .underline-none a {
+        text-decoration: none !important;
+        text-decoration: none;
+        color: #5c6f8a !important;
+      }
+      .samsung-fix .underline-none.fz-14 a {
+        font-size: 14px;
+      }
+      .samsung-fix a {
+        color: #000000 !important;
+        font-size: 14px !important;
+        line-height: 14px !important;
+      }
+      .samsung-order-fix a {
+        text-decoration: none !important;
+        color: #ffffff !important;
+      }
+      .samsung-table-fix a {
+        text-decoration: none !important;
+        color: #5c6f8a !important;
+      }
+      /* ./ SAMSUNG FIXES */
+
+      .email-container {
+        background-color: #fff;
+      }
+
+      .mb-24 {
+        margin-bottom: 24px !important;
+      }
+
+      /* MOBILE MEDIA QUERY */
+      @media screen and (max-width: 500px) {
+        /* NEWSLETTER NOT DISPLAYED */
+        .p-16-sm {
+          padding: 16px !important;
+        }
+        .font-btn-sm {
+          font-size: 14px !important;
+        }
+        h2 {
+          padding-top: 16px;
+        }
+        .row-sm {
+          width: 100% !important;
+          padding: 0;
+        }
+        .show-sm {
+          display: block !important;
+        }
+        .text-left-sm {
+          text-align: left !important;
+          padding-left: 0 !important;
+          padding-bottom: 2px;
+        }
+        .padding-bottom-sm {
+          padding-bottom: 8px;
+        }
+        .row-sm p {
+          padding-bottom: 16px;
+        }
+        .row-sm .link-full {
+          display: block !important;
+        }
+        /* FOOTER */
+        .hide-sm {
+          display: none !important;
+        }
+        .pt-sm {
+          padding-top: 16px !important;
+        }
+        .pl-sm {
+          padding-left: 24px !important;
+        }
+        .l-h-24-sm {
+          line-height: 24px !important;
+        }
+        .top-fix {
+          top: -10px !important;
+        }
+        .text-center-sm {
+          text-align: center !important;
+        }
+        .align-left-sm {
+          text-align: left !important;
+        }
+        .align-left-sm > div {
+          text-align: left !important;
+        }
+        .footer-pb-sm footer-pt-sm {
+          padding-bottom: 6px !important;
+        }
+        .footer-pt-sm {
+          padding-top: 34px !important;
+        }
+      }
+	</style>
+	<style type="text/css">@media only screen and (min-width: 480px) {
+        .mj-column-per-50 {
+          width: 50% !important;
+          max-width: 50%;
+        }
+      }
+	</style>
+	<style media="screen and (min-width:480px)" type="text/css">.moz-text-html .mj-column-per-50 {
+        width: 50% !important;
+        max-width: 50%;
+      }
+	</style>
+	<style type="text/css">@media only screen and (max-width: 480px) {
+        table.mj-full-width-mobile {
+          width: 100% !important;
+        }
+
+        td.mj-full-width-mobile {
+          width: auto !important;
+        }
+      }
+	</style>
+	<title>Veuillez valider votre adresse e-mail</title>
+</head>
+<body style="margin: 0px; padding: 0px !important; height: auto; min-height: auto;" width="100%">
+<center style="width: 100%; background-color: #d1d8e0">
+<div class="email-container" style="max-width: 600px; margin: 0 auto">
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: auto; background-color: #d1d8e0; text-align: center" width="100%">
+	<tbody>
+		<tr>
+			<td class="p-16-sm" style="padding: 48px 26px 8px 26px; font-size: 12px; line-height: 16px; color: #5c6f8a">&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" style="vertical-align: top; background-color: #ffffff" width="100%">
+	<tbody>
+		<tr>
+			<td style="padding: 0 16px">
+			<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="left" style="vertical-align: bottom; text-align: left"><img alt="Logo UTA Edenred" height="30" src="https://falcon-assets.edenredcdn.com/logo-uta-edenred.png" width="100" /></td>
+						<td class="font-edenred-reg" style="padding-top: 26px;
+                        padding-right: 8px;
+                        text-align: right;
+                        line-height: 11px;
+                        font-size: 11px;
+                        color: #1f252e;"><img alt="we simplify mobility" src="https://er-uta--uat--c.documentforce.com/servlet/servlet.ImageServer?id=0151l000001A1B1&oid=00D1l0000008ec8" style="height: 11px; width: 103px;" /></td>
+						<td align="right" style="width: 2px"><img alt="" src="https://falcon-assets.edenredcdn.com/header-line.png?up" style="width: 2px" width="2" /></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: auto; background-color: #ffffff" width="100%">
+	<tbody>
+		<tr>
+			<td style="text-align: center; padding: 48px 16px 0 16px">
+			<h1 style="font-size: 40px; line-height: 48px; color: #333e4d; margin-bottom: 0">Validation de l&#39;adresse e-mail</h1>
+
+			<table border="0" cellpadding="0" cellspacing="0" height="2px" style="margin: 0 auto; font-size: 1px" width="50px">
+				<tbody>
+					<tr height="2px">
+						<td style="border-bottom: 2px solid #5c6f8a;
+                      height: 2px;
+                      width: 50px;
+                      margin: 0px;
+                      padding-top: 12px;
+                      line-height: 1px;" width="50px">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: auto; clear: both; background-color: #ffffff" width="100%">
+	<tbody>
+		<tr>
+			<td>
+			<table border="0" cellpadding="0" cellspacing="0" style="text-align: center" width="100%">
+				<tbody>
+					<tr>
+						<td class="pt-sm" style="padding: 16px 16px 0 16px">
+						<h2 class="font-edenred-bold">Cher Client {{{Recipient.LastName}}},</h2>
+
+						<p style="font-size: 16px;
+                        line-height: 24px;
+                        color: #47576b;
+                        padding-left: 16px;
+                        padding-right: 16px;">Merci d&rsquo;avoir soumis votre demande &agrave; UTA Edenred.</p>
+
+						<p style="font-size: 16px;
+                        line-height: 24px;
+                        color: #47576b;
+                        padding-left: 16px;
+                        padding-right: 16px;"><span style="font-weight: 700">Pour poursuivre le processus, veuillez confirmer votre adresse e-mail en cliquant sur le bouton ci-dessous.</span></p>
+
+						<p style="font-size: 16px;
+                        line-height: 24px;
+                        color: #47576b;
+                        padding-left: 16px;
+                        padding-right: 16px;">En cliquant sur ce bouton, vous acceptez &eacute;galement que l&rsquo;on vous envoie des communications par e-mail conform&eacute;ment &agrave; toutes les s&eacute;lections pr&eacute;c&eacute;dentes que vous avez faites.</p>
+
+						<p style="font-size: 16px;
+                        line-height: 24px;
+                        color: #47576b;
+                        padding-left: 16px;
+                        padding-right: 16px;">Vous aurez besoin de votre <span style="font-weight: 700">code PIN </span>pour le processus de v&eacute;rification :</p>
+
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tbody>
+								<tr>
+									<td style="padding-bottom: 24px">
+									<table border="0" cellpadding="0" cellspacing="0" style="text-align: center" width="100%">
+										<tbody>
+											<tr>
+												<td style="padding: 24px; background-color: #f7f8f9; text-align: center"><font color="#1f252e" face="Ubuntu, Helvetica, Arial, sans-serif" style="font-size: 16px; line-height: 24px; font-weight: 500"><b>{{{Recipient.Pin__c}}}</b> </font></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto" width="350px">
+							<tbody>
+								<tr>
+									<td width="25px">
+									<p style="background-color: #000000;
+                              width: 25px;
+                              height: 52px;
+                              margin: 0;
+                              border-bottom-left-radius: 50px;
+                              border-top-left-radius: 50px;
+                              position: relative;
+                              right: -1px;">&nbsp;</p>
+									</td>
+									<td align="center" bgcolor="#000000" style="color: #ffffff;
+                            width: 350px;
+                            height: 50px;
+                            border-right: 1px solid #000000;
+                            border-left: 1px solid #000000;" valign="middle" width="350px"><a class="font-btn-sm" href="https://ms-appli-dev-ed.my.site.com/poc2demo/emailvalidation?language=fr&value={{{Recipient.Id}}}&redirect=false" style="display: block;
+                              font-size: 18px;
+                              font-weight: 500;
+                              height: auto;
+                              padding: 12px 0;
+                              text-decoration: none;
+                              color: #ffffff;
+                              background-color: #000000;" target="_blank"><strong>Confirmer mon e-mail </strong> </a></td>
+									<td style="border-left: 1px solid #000000" width="25px">
+									<p style="background-color: #000000;
+                              width: 25px;
+                              height: 52px;
+                              margin: 0;
+                              border-bottom-right-radius: 50px;
+                              border-top-right-radius: 50px;
+                              border-left: 1px solid #000000;
+                              position: relative;
+                              left: -1px;">&nbsp;</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<p style="margin-bottom: 24px"><a href="https://ms-appli-dev-ed.my.site.com/poc2demo/emailvalidation?language=fr&value={{{Recipient.Id}}}" style="display: inline-block" target="_blank"><span style="color: #000000; text-decoration: underline; font-size: 16px; line-height: 24px">Le bouton ne fonctionne pas ? Cliquez ici </span> </a></p>
+
+						<p style="margin-bottom: 0"><a href="https://ms-appli-dev-ed.my.site.com/poc2demo/emailvalidation?language=fr&reject={{{Recipient.Id}}}&redirect=false" style="display: inline-block" target="_blank"><span style="color: #f72717; text-decoration: underline; font-size: 16px; line-height: 24px">Refuser </span> </a></p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: auto; background-color: #ffffff" width="100%">
+	<tbody>
+		<tr class="border-bottom" style="padding: 48px 0">
+			<td style="padding: 48px 32px">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" style="margin: auto; text-align: center" width="100%">
+				<tbody>
+					<tr>
+						<td style="font-size: 16px; line-height: 24px; color: #47576b">Prenez soin de vous.</td>
+					</tr>
+					<tr>
+						<td style="font-weight: 700; font-size: 16px; line-height: 24px; color: #333e4d">L&rsquo;&eacute;quipe d&rsquo;assistance UTA Edenred</td>
+					</tr>
+					<tr>
+						<td style="font-size: 14px; line-height: 20px; color: #94a3b8; padding-top: 8px">Il s&rsquo;agit d&rsquo;un e-mail g&eacute;n&eacute;r&eacute; automatiquement. Merci de ne pas y r&eacute;pondre.</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#f7f8f9" style="text-align: center; padding-top: 48px">
+			<h3 style="color: #333e4d; margin-bottom: 10px">Vous avez d&rsquo;autres questions ?</h3>
+
+			<table border="0" cellpadding="0" cellspacing="0" height="1px" style="margin: 0 auto; font-size: 1px" width="25px">
+				<tbody>
+					<tr height="1px">
+						<td style="border-bottom: 1px solid #f72717; height: 1px; width: 25px; margin: 0px; line-height: 1px" width="25px">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#f7f8f9" style="padding-top: 25px; padding-bottom: 48px">
+			<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody>
+					<tr>
+						<td align="center" valign="middle"><img alt="Logo FAQ - UTA Edenred" src="https://falcon-assets.edenredcdn.com/package.png?up" style="width: 55px; height: auto; margin: auto; margin-bottom: 24px; display: block" width="55" /></td>
+					</tr>
+					<tr>
+						<td class="text-testimony" style="text-align: center">
+						<h3 class="name" style="color: #333e4d">Consultez notre FAQ.</h3>
+						<a href="https://uta.com/faq" style="color: #000000; text-decoration: underline; font-size: 16px; line-height: 24px">uta.com/faq</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td style="font-size: 0">
+			<div style="background: #ffffff; background-color: #ffffff; margin: 0px auto; max-width: 600px">
+			<table align="center" border="0" cellpadding="0" cellspacing="0" style="background: #ffffff; background-color: #ffffff; width: 100%">
+				<tbody>
+					<tr>
+						<td style="direction: rtl; font-size: 0px; padding: 16px 16px 0; text-align: center">
+						<div class="mj-column-per-50 mj-outlook-group-fix" style="font-size: 0px;
+                            text-align: left;
+                            direction: ltr;
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 100%;">
+						<table border="0" cellpadding="0" cellspacing="0" style="vertical-align: top" width="100%">
+							<tbody>
+								<tr>
+									<td align="center" style="font-size: 0px; word-break: break-word; padding-bottom: 16px">
+									<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; border-spacing: 0px; width: 100%">
+										<tbody>
+											<tr>
+												<td class="text-center-sm" style="text-align: right"><img height="auto" src="https://falcon-assets.edenredcdn.com/logo-uta-edenred.png" style="border: 0;
+                                              outline: none;
+                                              text-decoration: none;
+                                              height: auto;
+                                              width: 133px;" width="133" /></td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+
+						<div class="mj-column-per-50 mj-outlook-group-fix" style="font-size: 0px;
+                            text-align: left;
+                            direction: ltr;
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 100%;">
+						<table border="0" cellpadding="0" cellspacing="0" style="vertical-align: top" width="100%">
+							<tbody>
+								<tr>
+									<td style="width: 2px; border-radius: 2px 2px 0 0; background-color: #f72717; vertical-align: top" valign="top"><img alt="" src="https://falcon-assets.edenredcdn.com/footer-line-top.png?up" style="width: 2px;
+                                      outline: none;
+                                      text-decoration: none;
+                                      height: auto;
+                                      position: relative;
+                                      top: -1px;" /></td>
+									<td style="width: 8px">&nbsp;</td>
+									<td style="padding-bottom: 10px">
+									<table border="0" cellpadding="0" cellspacing="0" style="vertical-align: top" width="100%">
+										<tbody>
+											<tr>
+												<td align="left" class="row-sm" style="word-break: break-word; width: 100%; vertical-align: top">
+												<div style="line-height: 1; text-align: left; color: #000000"><a class="link-full" href="https://web.uta.com" style="text-decoration: none"><span style="color: #000000; font-size: 14px">Notre site internet </span> </a> <span class="hide-sm" style="color: #d1d8e0; font-size: 14px">&bull;</span> <a class="link-full" href="https://web.uta.com/agb" style="text-decoration: none"> <span style="color: #000000; font-size: 14px"> Conditions g&eacute;n&eacute;rales </span> </a></div>
+												</td>
+											</tr>
+											<tr>
+												<td align="left" class="row-sm" style="word-break: break-word; width: 100%; vertical-align: top">
+												<div style="line-height: 1; text-align: left; color: #000000"><a class="link-full" href="https://web.uta.com/impressum" style="text-decoration: none"><span style="color: #000000; font-size: 14px">Mentions l&eacute;gales - Confidentialit&eacute; des donn&eacute;es </span> </a></div>
+												</td>
+											</tr>
+											<tr>
+												<td style="color: #47576b; font-size: 14px; font-weight: 500; padding-top: 16px">UNION TANK Eckstein GmbH &amp; Co. KG</td>
+											</tr>
+										</tbody>
+									</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#d1d8e0" class="samsung-fix p-16-sm" style="padding: 16px 16px 40px 16px">
+			<p class="underline-none" style="font-size: 14px; line-height: 20px; color: #5c6f8a; margin: 0 0 16px 0">UNION TANK Eckstein GmbH &amp; Co. KG est une soci&eacute;t&eacute; en commandite dont le si&egrave;ge social est situ&eacute; au 63801 Kleinostheim, tribunal d&rsquo;enregistrement Aschaffenburg HRA 835. Le partenaire associ&eacute; commandit&eacute; est UNION TANK Eckstein GmbH dont le si&egrave;ge social est situ&eacute; au 63801 Kleinostheim, tribunal d&rsquo;enregistrement Aschaffenburg HRA 129, Directeur g&eacute;n&eacute;ral : Carsten Bettermann, Ust-IdNr. : DE132070459</p>
+
+			<p style="font-size: 14px; line-height: 20px; color: #5c6f8a; margin: 0 0 16px 0"><span style="font-weight: 700">Datenschutzinformation:</span> Wir verarbeiten personenbezogene Datenrechtskonform. Weitere Informationen zum Datenschutz, der Verantwortlichen und der Ansprechpartner sowie &uuml;ber Ihre diesbez&uuml;glichen Rechte entnehmen Sie bitte unserer <a href="https://web.uta.com/datenschutzerklaerung" style="font-size: 14px" target="_blank"> Datenschutzerkl&auml;rung.</a></p>
+
+			<p style="font-size: 14px; line-height: 20px; color: #5c6f8a; margin: 0 0 16px 0"><span style="font-weight: 700">HINWEIS ZUR VERTRAULICHKEIT:</span> Der Inhalt dieser E-Mail-Nachricht und etwaiger Anh&auml;nge ist ausschlie&szlig;lich f&uuml;r den/die Empf&auml;nger bestimmt und kann vertrauliche und/oder privilegierte Informationen enthalten, die rechtlich vor Offenlegung gesch&uuml;tzt sind. Wir fordern Sie freundlich auf, diese E-Mail und deren Anh&auml;nge zu l&ouml;schen, wenn Sie diese E-Mail irrt&uuml;mlich erhalten haben; die Nutzung ist in diesem Fall untersagt.</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</center>
+</body>
+</html>

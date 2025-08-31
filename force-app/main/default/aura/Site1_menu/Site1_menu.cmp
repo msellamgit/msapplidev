@@ -1,0 +1,21 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="UserConnect" type="String"/>    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:registerEvent name="mngestion" type="c:Site1_evt_menu" />    
+    <img class="logo" src="{!$Resource.logoIDsel}"/>
+    <!--<div>
+        <div class="namesoc1">IDSel</div><BR />
+        <div class="namesoc2">Consulting</div>
+    </div>-->
+    <button class="button_menu slds-button_destructive" name="menu_home" onclick="{!c.btn_home}">Home</button>
+    <button class="button_menu slds-button_destructive" name="menu_cv" onclick="{!c.btn_cv}">CV</button>
+    <button class="button_menu slds-button_destructive" name="menu_contact"  onclick="{!c.btn_contact}">Contact</button>
+    <aura:if isTrue="{!v.UserConnect}">
+        <button class="button_menu slds-button_destructive" name="menu_gestion"  onclick="{!c.btn_gestion}">Gestion</button>
+		<lightning:buttonIcon class="button_disconnect" iconName="utility:logout" onclick="{! c.btn_logout }" alternativeText="Déconnexion." />
+        <aura:set attribute="else">
+            <button class="button_connect slds-button_destructive" name="menu_connect"  onclick="{!c.btn_connect}">Se Connecter</button>
+        </aura:set>
+    </aura:if>
+
+</aura:component>
